@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from crawler import views
 
 urlpatterns = [
     path('',views.index, name='index'),
