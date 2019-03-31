@@ -4,6 +4,6 @@ from crawler.naverCrawler.naverCrawler import NewsCrawler
 # Create your views here.
 def index(request):
     crawler = NewsCrawler()
-    crawler.crawling(20190330,1)
+    crawler.start()
     return render(request, "index.html")
     # return HttpResponse ("Hello, World!")
