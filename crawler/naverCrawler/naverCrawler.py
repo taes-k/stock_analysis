@@ -5,11 +5,11 @@ from bs4 import BeautifulSoup
 from multiprocessing import Process
 from pytz import timezone
 import re
-from crawler.morepheme import morepheme
+from crawler.morpheme.morpheme import Morpheme
 
 class NewsCrawler:
     es = Elasticsearch()
-    morepheme = morepheme()
+    mor = Morpheme()
 
     def __init__(self):
         self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
@@ -57,7 +57,8 @@ class NewsCrawler:
             newsContents = re.sub('<a.*?>.*?</a>', '', newsContents, 0, re.I|re.S)
             newsContents = re.sub('<.+?>', '', newsContents, 0, re.I|re.S)
 
-            morepheme.store(newsContents)
+            self.mor.store(newsContents)
+
             conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
             news = {
                 'title': newsTitle[0].text,
@@ -88,6 +89,6 @@ class NewsCrawler:
 
 
     def start(self):
-        for i in range(0,2):
+        for i in range(0,1):
             proc = Process(target=self.crawling, args=(10*i,))
             proc.start()
