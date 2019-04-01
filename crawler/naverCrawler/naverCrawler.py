@@ -5,9 +5,11 @@ from bs4 import BeautifulSoup
 from multiprocessing import Process
 from pytz import timezone
 import re
+from crawler.morepheme import morepheme
 
 class NewsCrawler:
     es = Elasticsearch()
+    morepheme = morepheme()
 
     def __init__(self):
         self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
@@ -51,16 +53,17 @@ class NewsCrawler:
             newsDate = htmlSoup.select('#main_content > div.article_header > div.article_info > div > .t11')
             newsDate = datetime.strptime(newsDate[0].text,"%Y-%m-%d %H:%M")
 
-            newsContents = re.sub('<.+?>', '', newsContents, 0).strip()
+            newsContents = re.sub('<script.*?>.*?</script>', '', newsContents, 0, re.I|re.S)
+            newsContents = re.sub('<a.*?>.*?</a>', '', newsContents, 0, re.I|re.S)
+            newsContents = re.sub('<.+?>', '', newsContents, 0, re.I|re.S)
 
-
-            print(newsContents)
+            morepheme.store(newsContents)
             conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
             news = {
                 'title': newsTitle[0].text,
-                'contents': newsContents[0].text,
+                'contents': newsContents,
                 'positive': 0,
-                'date': datetime.strftime(newsDate,"%Y-%m-%d %H:%M"),
+                'date':  newsDate,
                 'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
                 'url': newsDetailUrl,
             }

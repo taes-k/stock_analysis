@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/morepheme/morepheme.py" afterPath="$PROJECT_DIR$/crawler/morepheme/morepheme.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" afterPath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +62,8 @@
           <file leaf-file-name="naverCrawler.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+                <state relative-caret-position="240">
+                  <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -75,8 +74,8 @@
           <file leaf-file-name="morepheme.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/crawler/morepheme/morepheme.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -140,8 +139,8 @@
         <option value="$PROJECT_DIR$/templates/include/head.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
         <option value="$PROJECT_DIR$/crawler/morepheme/morepheme.py" />
+        <option value="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
       </list>
     </option>
   </component>
@@ -683,8 +682,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -693,8 +692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/morepheme/morepheme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding />
         </state>
       </provider>

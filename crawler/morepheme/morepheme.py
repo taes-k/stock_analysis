@@ -6,13 +6,23 @@ class Morpheme:
     kkmaText = []
 
     def __init__(self):
+        print("init")
 
-    def setText(self,text):
+    def store(self,text):
         self.targetText=text
-        self.kkmaText = Kkma.pos(targetText)
+        self.kkmaText = self.kkma.pos(self.targetText)
+        print(self.kkmaText)
 
-    def getKeyword(self):
+
+    def keyword(self):
+        keywordDic = {}
         for morpheme in self.kkmaText :
-            
+            if keywordDic[morpheme] == "" :
+                keywordDic[morpheme]=0
+            else :
+                keywordDic[morpheme]=keywordDic[morpheme]+1
 
-        return
+        sorted(keywordDic, key=lambda k: keywordDic[k], reverse=True)
+        keywords = list(keywordDic.keys())
+        return keywords[0]
+
