@@ -4,8 +4,11 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from multiprocessing import Process
 from pytz import timezone
+import re
 
 class NewsCrawler:
+    es = Elasticsearch()
+
     def __init__(self):
         self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
         #속보 : https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001
@@ -17,8 +20,6 @@ class NewsCrawler:
         #과학 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=105
 
     def crawling(self,_page):
-
-        es = Elasticsearch()
         newsLinks = []
 
         for i in range(1,11):
@@ -39,7 +40,6 @@ class NewsCrawler:
             newsDetailUrl = link
 
             if "oid=091" in newsDetailUrl or "oid=077" in newsDetailUrl :
-                print("여기 영어 연합뉴스가 있습네다")
                 continue;
 
             request = requests.get(newsDetailUrl);
@@ -47,22 +47,41 @@ class NewsCrawler:
             htmlSoup = BeautifulSoup(html, 'html.parser')
 
             newsTitle = htmlSoup.select('#articleTitle')
-            newsContents = htmlSoup.select('#articleBodyContents')
+            newsContents = str(htmlSoup.select('#articleBodyContents'))
             newsDate = htmlSoup.select('#main_content > div.article_header > div.article_info > div > .t11')
+            newsDate = datetime.strptime(newsDate[0].text,"%Y-%m-%d %H:%M")
 
-            conNewsDate = datetime.strptime(newsDate[0].text,"%Y-%m-%d %H:%M").date()
-            strNewsDate = datetime.strftime(conNewsDate,"%Y%m%d")
+            newsContents = re.sub('<.+?>', '', newsContents, 0).strip()
 
+
+            print(newsContents)
+            conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
             news = {
                 'title': newsTitle[0].text,
                 'contents': newsContents[0].text,
                 'positive': 0,
-                'date': newsDate[0].text,
+                'date': datetime.strftime(newsDate,"%Y-%m-%d %H:%M"),
                 'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
                 'url': newsDetailUrl,
             }
-            response = es.index(index='news', doc_type='break', body=news)
+            response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news)
             print(response)
+
+
+    def search(self):
+
+        query = {
+            "sort": [
+                {"date": {"order": "desc"}},
+            ],
+            "query": {
+                "term": {"contents": "네이버"}
+                }
+            }
+
+        res = self.es.search(index="news", body=query)
+
+        return res
 
 
     def start(self):
