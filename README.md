@@ -9,7 +9,7 @@
 - Requests
 - BeautifulSoup
 - KoNLPy
-- Nori 분석기
+- Nori-analyzer
 
 - 한국예탁결제원 주식정보서비스api
 
@@ -29,6 +29,7 @@ KOSAC 감성사전 사용.
 0보다 크면 Positive, 0보다 작으면 Negative 으로 판단한다.
 
 ### 관련주 검색
+뉴스기사 학습을 통한 키워드-관련주 테이블 생성 
 키워드 + Positive 점수 -> 관련주 점수
 
 ```
