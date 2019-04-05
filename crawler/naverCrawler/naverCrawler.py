@@ -68,8 +68,8 @@ class NewsCrawler:
                 'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
                 'url': newsDetailUrl,
             }
-            response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news)
-            print(response)
+            # response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news)
+            # print(response)
 
 
     def search(self):

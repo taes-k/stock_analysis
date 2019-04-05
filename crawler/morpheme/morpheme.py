@@ -19,19 +19,23 @@ class Morpheme:
             "explain": "true"
         }
         i = IndicesClient(self.es)
-        self.posText = i.analyze(index="", body=posSetting)
-        print(self.posText)
+        tempText= i.analyze(index="", body=posSetting)
+        self.posText = tempText.get('detail').get('tokenizer').get('tokens')
 
+        self.keyword();
 
     def keyword(self):
         keywordDic = {}
         for morpheme in self.posText :
-            if keywordDic[morpheme] == "" :
-                keywordDic[morpheme]=0
-            else :
-                keywordDic[morpheme]=keywordDic[morpheme]+1
+            print(morpheme.get('leftPOS'))
+            if 'NNG' in morpheme.get('leftPOS') or 'NNP' in morpheme.get('leftPOS') or 'NP' in morpheme.get('leftPOS') :
+                print(morpheme.get('token'))
+                if keywordDic.get(morpheme.get('token')) == None :
+                    keywordDic[morpheme.get('token')]=0
+                else :
+                    keywordDic[morpheme.get('token')]=keywordDic[morpheme.get('token')]+1
 
-        sorted(keywordDic, key=lambda k: keywordDic[k], reverse=True)
-        keywords = list(keywordDic.keys())
-        return keywords[0]
+        keywords =sorted(keywordDic.items(),key=lambda x: x[1], reverse=True)
+        print(str(keywords))
+        return keywords[0][0]
 
