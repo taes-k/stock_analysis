@@ -63,6 +63,7 @@ class NewsCrawler:
             news = {
                 'title': newsTitle[0].text,
                 'contents': newsContents,
+                'keyword': self.mor.keyword(),
                 'positive': 0,
                 'date':  newsDate,
                 'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),

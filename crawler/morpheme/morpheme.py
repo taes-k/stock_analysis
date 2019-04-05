@@ -22,8 +22,6 @@ class Morpheme:
         tempText= i.analyze(index="", body=posSetting)
         self.posText = tempText.get('detail').get('tokenizer').get('tokens')
 
-        self.keyword();
-
     def keyword(self):
         keywordDic = {}
         for morpheme in self.posText :
@@ -36,6 +34,12 @@ class Morpheme:
                     keywordDic[morpheme.get('token')]=keywordDic[morpheme.get('token')]+1
 
         keywords =sorted(keywordDic.items(),key=lambda x: x[1], reverse=True)
-        print(str(keywords))
-        return keywords[0][0]
+
+        keywordsResult = []
+        for i in range(0,3) :
+            keywordsResult.append(keywords[i][0])
+
+        print(str(keywordsResult))
+
+        return keywordsResult
 
