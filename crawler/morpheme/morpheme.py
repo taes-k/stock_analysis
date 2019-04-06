@@ -17,13 +17,15 @@ class Morpheme:
         self.posdic()
 
     def posdic(self):
-        with open('./positiveDictionary.csv', 'rt') as csvfile:
+        with open('./crawler/morpheme/positiveDictionary.csv', 'rt') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 if self.positiveDictionary.get(row.get('token')) == None:
-                    self.positiveDictionary[(row.get('token'))] = 0.5*row.get('positive')
+                    self.positiveDictionary[(row.get('token'))] = float(row.get('positive'))/2
                 else:
-                    self.positiveDictionary[(row.get('token'))] = (self.positiveDictionary.get(row.get('token'))+row.get('positive'))/2
+                    self.positiveDictionary[(row.get('token'))] = float(self.positiveDictionary.get(row.get('token'))+float(row.get('positive')))/2
+        print(self.positiveDictionary)
+
 
     def positive(self):
         for morpheme in self.posText:
@@ -31,14 +33,14 @@ class Morpheme:
                 self.positiveScore += self.positiveDictionary[(morpheme.get('token')+morpheme.get('leftPOS'))]
 
         if self.positiveScore > 0 :
-            with open('./positiveDictionary.csv', 'a') as csvfile:
+            with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
                 fieldnames = ['token', 'positive']
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for morpheme in self.posText:
                     data = {(morpheme.get('token')+morpheme.get('leftPOS')),1}
                     writer.writerow(data)
         elif self.positiveScore < 0 :
-            with open('./positiveDictionary.csv', 'a') as csvfile:
+            with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
                 fieldnames = ['token', 'positive']
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for morpheme in self.posText:
