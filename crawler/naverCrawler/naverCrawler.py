@@ -41,6 +41,10 @@ class NewsCrawler:
             print(link)
             newsDetailUrl = link
 
+            oid = str(url.split('oid=')[1].split('&')[0])
+            aid = str(url.split('aid=')[1].split('&')[0])
+            newsId = oid+aid
+
             if "oid=091" in newsDetailUrl or "oid=077" in newsDetailUrl :
                 continue;
 
@@ -57,20 +61,20 @@ class NewsCrawler:
             newsContents = re.sub('<a.*?>.*?</a>', '', newsContents, 0, re.I|re.S)
             newsContents = re.sub('<.+?>', '', newsContents, 0, re.I|re.S)
 
-            self.mor.store(newsContents)
+            self.mor.store(newsTitle[0].text,newsContents)
 
             conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
             news = {
                 'title': newsTitle[0].text,
                 'contents': newsContents,
                 'keyword': self.mor.keyword(),
-                'positive': 0,
+                'positive': self.mor.positive(),
                 'date':  newsDate,
                 'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
                 'url': newsDetailUrl,
             }
-            # response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news)
-            # print(response)
+            response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news, id=newsId)
+            print(response)
 
 
     def search(self):
