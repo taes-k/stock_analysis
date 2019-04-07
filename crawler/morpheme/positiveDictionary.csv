@@ -1,4 +1,1105 @@
 token,positive
-산불NNG(General Noun),-1
-산불NNG(General Noun),-1
-산불NNG(General Noun),-1
+
+이낙연NNP(Proper Noun),1
+리더NNG(General Noun),1
+십NNG(General Noun),1
+이J(Ending Particle),1
+박수NNG(General Noun),1
+받VV(Verb),1
+는E(Verbal endings),1
+이유NNG(General Noun),1
+매일MAG(General Adverb),-1
+희평NNP(Proper Noun),-1
+내NNB(Dependent noun),-1
+로J(Ending Particle),-1
+남불NNP(Proper Noun),-1
+에J(Ending Particle),-1
+역지사지NNG(General Noun),-1
+에J(Ending Particle),-1
+돌VV(Verb),-1
+기E(Verbal endings),-1
+ᆫJ(Ending Particle),-1
+개기VV(Verb),-1
+ᆫE(Verbal endings),-1
+이MM(Modifier),-1
+범벅NNG(General Noun),-1
+되XSV(Verb Suffix),-1
+ᆫE(Verbal endings),-1
+취업NNG(General Noun),-1
+비리NNG(General Noun),-1
+김성태NNP(Proper Noun),-1
+대전NNP(Proper Noun),-1
+소아NNG(General Noun),-1
+병NNG(General Noun),-1
+원서NNG(General Noun),-1
+홍역NNG(General Noun),-1
+집단NNG(General Noun),-1
+발병NNG(General Noun),-1
+확진NNG(General Noun),-1
+아기NNG(General Noun),-1
+5명UNKNOWN(Unknown),-1
+격리NNG(General Noun),-1
+한양NNP(Proper Noun),1
+수자NNG(General Noun),1
+이VCP(Positive designator),1
+ᆫE(Verbal endings),1
+구리NNP(Proper Noun),1
+역NNG(General Noun),1
+모델NNG(General Noun),1
+하우스NNP(Proper Noun),1
+주말NNG(General Noun),1
+1만명UNKNOWN(Unknown),1
+방문NNG(General Noun),1
+장하성NNP(Proper Noun),1
+신임NNG(General Noun),1
+주중NNG(General Noun),1
+대사NNG(General Noun),1
+한중NNG(General Noun),1
+관계NNG(General Noun),1
+발전NNG(General Noun),1
+에J(Ending Particle),1
+기여NNG(General Noun),1
+하XSV(Verb Suffix),1
+겠E(Verbal endings),1
+다E(Verbal endings),1
+어제MAG(General Adverb),-1
+13건UNKNOWN(Unknown),-1
+오늘MAG(General Adverb),-1
+6건UNKNOWN(Unknown),-1
+건조NNG(General Noun),-1
+하XSA(Adjective Suffix),-1
+ᆫE(Verbal endings),-1
+날씨NNG(General Noun),-1
+속NNG(General Noun),-1
+동시NNG(General Noun),-1
+다발NNG(General Noun),-1
+산NNG(General Noun),-1
+불NNG(General Noun),-1
+5GSL(Foreign language),1
+시대NNG(General Noun),1
+활짝MAG(General Adverb),1
+통신NNG(General Noun),1
+장비NNG(General Noun),1
+게임NNG(General Noun),1
+株NNG(General Noun),1
+찜NNG(General Noun),1
+하XSV(Verb Suffix),1
+시E(Verbal endings),1
+어요E(Verbal endings),1
+글로벌NNG(General Noun),1
+자금NNG(General Noun),1
+주식NNG(General Noun),1
+시장NNG(General Noun),1
+으로J(Ending Particle),1
+방향NNG(General Noun),1
+틀VV(Verb),1
+ᆯE(Verbal endings),1
+것NNB(Dependent noun),1
+스마트NNP(Proper Noun),1
+팩토리NNP(Proper Noun),1
+반NNG(General Noun),1
+도체NNG(General Noun),1
+등NNB(Dependent noun),1
+성장NNG(General Noun),1
+株NNG(General Noun),1
+관심NNG(General Noun),1
+유엔NNP(Proper Noun),1
+기후NNG(General Noun),1
+변화NNG(General Noun),1
+협약NNG(General Noun),1
+적응NNG(General Noun),1
+주간NNG(General Noun),1
+8일UNKNOWN(Unknown),1
+한국NNP(Proper Noun),1
+서J(Ending Particle),1
+세계NNG(General Noun),1
+최초NNG(General Noun),1
+로J(Ending Particle),1
+열리VV(Verb),1
+ᆫ다E(Verbal endings),1
+가상NNG(General Noun),1
+화폐NNG(General Noun),1
+뉴스NNG(General Noun),1
+비트코인NNP(Proper Noun),1
+골드NNP(Proper Noun),1
+전일NNG(General Noun),1
+대비NNG(General Noun),1
+1SN(Number),1
+890원UNKNOWN(Unknown),1
+6SN(Number),1
+75SN(Number),1
+오르VV(Verb),1
+ᆫE(Verbal endings),1
+29SN(Number),1
+890원UNKNOWN(Unknown),1
+고군NNP(Proper Noun),1
+산XSN(Noun Suffix),1
+관광NNG(General Noun),1
+벨트NNG(General Noun),1
+조성NNG(General Noun),1
+3년간UNKNOWN(Unknown),1
+국비NNG(General Noun),1
+100억원UNKNOWN(Unknown),1
+투입NNG(General Noun),1
+미래NNG(General Noun),1
+에J(Ending Particle),1
+셋NR(Numeral),1
+벤처NNG(General Noun),1
+투자NNG(General Noun),1
+벤처NNG(General Noun),1
+산업NNG(General Noun),1
+활성NNG(General Noun),1
+화XSN(Noun Suffix),1
+정책NNG(General Noun),1
+수혜NNG(General Noun),1
+등NNB(Dependent noun),1
+불XPN(Prefix),-1
+끌NNG(General Noun),-1
+인력NNG(General Noun),-1
+도J(Ending Particle),-1
+장비NNG(General Noun),-1
+도J(Ending Particle),-1
+없VA(Adjective),-1
+어요E(Verbal endings),-1
+소방NNG(General Noun),-1
+관NNG(General Noun),-1
+의J(Ending Particle),-1
+悲哀NNG(General Noun),-1
+KTSL(Foreign language),1
+SKSL(Foreign language),1
+텔레콤NNP(Proper Noun),1
+등NNB(Dependent noun),1
+통신NNG(General Noun),1
+사NNG(General Noun),1
+매출NNG(General Noun),1
+高高NNG(General Noun),1
+예상NNG(General Noun),1
+에치NNP(Proper Noun),1
+에프NNG(General Noun),1
+알NNG(General Noun),1
+와이MM(Modifier),1
+솔NNG(General Noun),1
+등NNB(Dependent noun),1
+장비NNG(General Noun),1
+株NNG(General Noun),1
+도J(Ending Particle),1
+주목NNG(General Noun),1
+60대UNKNOWN(Unknown),-1
+그룹NNG(General Noun),-1
+작년NNG(General Noun),-1
+투자NNG(General Noun),-1
+3SN(Number),-1
+1조원UNKNOWN(Unknown),-1
+주VV(Verb),-1
+었E(Verbal endings),-1
+다E(Verbal endings),-1
+삼성NNP(Proper Noun),-1
+만J(Ending Particle),-1
+10조원UNKNOWN(Unknown),-1
+부동NNG(General Noun),-1
+산NNG(General Noun),-1
+전문NNG(General Noun),-1
+가NNG(General Noun),-1
+10명중UNKNOWN(Unknown),-1
+6명UNKNOWN(Unknown),-1
+내년NNG(General Noun),-1
+서울NNP(Proper Noun),-1
+집NNG(General Noun),-1
+값NNG(General Noun),-1
+더MAG(General Adverb),-1
+떨어지VV(Verb),-1
+ᆫ다E(Verbal endings),-1
+2분기UNKNOWN(Unknown),-1
+주담NNG(General Noun),-1
+대XPN(Prefix),-1
+심사NNG(General Noun),-1
+더MAG(General Adverb),-1
+까다롭VA(Adjective),-1
+어E(Verbal endings),-1
+지VX(Auxiliary Verb or Adjective),-1
+ᆯE(Verbal endings),-1
+듯NNB(Dependent noun),-1
+은행NNG(General Noun),-1
+들XSN(Noun Suffix),-1
+대출NNG(General Noun),-1
+태도NNG(General Noun),-1
+지수NNG(General Noun),-1
+마이너스NNG(General Noun),-1
+부동NNG(General Noun),-1
+산NNG(General Noun),-1
+전문NNG(General Noun),-1
+가NNG(General Noun),-1
+59SN(Number),-1
+1년UNKNOWN(Unknown),-1
+뒤NNG(General Noun),-1
+서울NNP(Proper Noun),-1
+집NNG(General Noun),-1
+값NNG(General Noun),-1
+하락NNG(General Noun),-1
+블랙NNG(General Noun),1
+핑크NNG(General Noun),1
+하XSV(Verb Suffix),1
+기E(Verbal endings),1
+ᆯJ(Ending Particle),1
+디스NNP(Proper Noun),1
+러브NNG(General Noun),1
+뮤NNG(General Noun),1
+비XPN(Prefix),1
+1억UNKNOWN(Unknown),1
+뷰NNP(Proper Noun),1
+유튜브NNP(Proper Noun),1
+신XPN(Prefix),1
+기록NNG(General Noun),1
+경찰NNG(General Noun),-1
+황하나NNP(Proper Noun),-1
+에J(Ending Particle),-1
+마약NNG(General Noun),-1
+권유NNG(General Noun),-1
+하XSA(Adjective Suffix),-1
+ᆫE(Verbal endings),-1
+연예NNG(General Noun),-1
+인NNG(General Noun),-1
+수사NNG(General Noun),-1
+착수NNG(General Noun),-1
+로또NNP(Proper Noun),-1
+853회UNKNOWN(Unknown),-1
+당첨NNG(General Noun),-1
+번호NNG(General Noun),-1
+발표NNG(General Noun),-1
+이전NNG(General Noun),-1
+당첨NNG(General Noun),-1
+자NNG(General Noun),-1
+48억UNKNOWN(Unknown),-1
+물NNG(General Noun),-1
+거품NNG(General Noun),-1
+허탈NNG(General Noun),-1
+하XSA(Adjective Suffix),-1
+ᆫE(Verbal endings),-1
+마음NNG(General Noun),-1
+다스리VV(Verb),-1
+는E(Verbal endings),-1
+중NNB(Dependent noun),-1
+스마트NNG(General Noun),1
+시티NNG(General Noun),1
+사업NNG(General Noun),1
+민간NNG(General Noun),1
+이J(Ending Particle),1
+주체NNG(General Noun),1
+로J(Ending Particle),1
+3차UNKNOWN(Unknown),1
+스마트NNG(General Noun),1
+도시NNG(General Noun),1
+종합NNG(General Noun),1
+계획NNG(General Noun),1
+수립NNG(General Noun),1
+제약NNG(General Noun),1
+업계NNG(General Noun),1
+식품NNG(General Noun),1
+사업NNG(General Noun),1
+진출NNG(General Noun),1
+활발XR(Root),1
+리스크NNG(General Noun),1
+분산NNG(General Noun),1
+효과NNG(General Noun),1
+화마NNG(General Noun),-1
+가J(Ending Particle),-1
+휩쓸VV(Verb),-1
+고E(Verbal endings),-1
+지나가VV(Verb),-1
+ᆫE(Verbal endings),-1
+속NNG(General Noun),-1
+초시NNG(General Noun),-1
+마을NNG(General Noun),-1
+곳NNG(General Noun),-1
+곳NNG(General Noun),-1
+이J(Ending Particle),-1
+무너지VV(Verb),-1
+ᆫE(Verbal endings),-1
+장천NNG(General Noun),-1
+마을NNG(General Noun),-1
+시NNG(General Noun),1
+승기NNG(General Noun),1
+오프로드NNP(Proper Noun),1
+를J(Ending Particle),1
+겁내VV(Verb),1
+지E(Verbal endings),1
+않VX(Auxiliary Verb or Adjective),1
+는E(Verbal endings),1
+존재NNG(General Noun),1
+쌍용NNP(Proper Noun),1
+렉스턴NNP(Proper Noun),1
+스포츠NNG(General Noun),1
+칸NNG(General Noun),1
+롯데NNP(Proper Noun),1
+복구NNG(General Noun),1
+이재민NNP(Proper Noun),1
+지원NNG(General Noun),1
+10억원UNKNOWN(Unknown),1
+쾌척NNG(General Noun),1
+구호NNG(General Noun),1
+키트NNG(General Noun),1
+생필NNG(General Noun),1
+품NNG(General Noun),1
+도J(Ending Particle),1
+지원NNG(General Noun),1
+이수앱지스NNP(Proper Noun),1
+BSL(Foreign language),1
+형XSN(Noun Suffix),1
+혈우NNG(General Noun),1
+병NNG(General Noun),1
+치료NNG(General Noun),1
+제NNG(General Noun),1
+임상NNG(General Noun),1
+2bSL(Foreign language),1
+상XSN(Noun Suffix),1
+개시NNG(General Noun),1
+8개UNKNOWN(Unknown),1
+공공NNG(General Noun),1
+기관NNG(General Noun),1
+흩어지VV(Verb),1
+ᆫE(Verbal endings),1
+금융NNG(General Noun),1
+정보NNG(General Noun),1
+모으VV(Verb),1
+아E(Verbal endings),1
+금융NNG(General Noun),1
+표준NNG(General Noun),1
+종합NNG(General Noun),1
+정보NNG(General Noun),1
+DBSL(Foreign language),1
+구축NNG(General Noun),1
+CUSL(Foreign language),1
+홈NNG(General Noun),1
+택배NNG(General Noun),1
+집NNG(General Noun),1
+앞NNG(General Noun),1
+접수NNG(General Noun),1
+서비스NNG(General Noun),1
+이용NNG(General Noun),1
+객NNG(General Noun),1
+3배UNKNOWN(Unknown),1
+증가NNG(General Noun),1
+부동NNG(General Noun),-1
+산NNG(General Noun),-1
+전문NNG(General Noun),-1
+가NNG(General Noun),-1
+59SN(Number),-1
+4SN(Number),-1
+1년UNKNOWN(Unknown),-1
+뒤NNG(General Noun),-1
+서울NNP(Proper Noun),-1
+집NNG(General Noun),-1
+값NNG(General Noun),-1
+하락NNG(General Noun),-1
+안산NNP(Proper Noun),1
+시NNG(General Noun),1
+공직NNG(General Noun),1
+자NNG(General Noun),1
+성금NNG(General Noun),1
+모금NNG(General Noun),1
+등NNB(Dependent noun),1
+강원NNG(General Noun),1
+도NNG(General Noun),1
+산NNG(General Noun),1
+불NNG(General Noun),1
+피해NNG(General Noun),1
+이재민NNP(Proper Noun),1
+돕VV(Verb),1
+기E(Verbal endings),1
+지원NNG(General Noun),1
+초조XR(Root),-1
+하XSA(Adjective Suffix),-1
+ᆫE(Verbal endings),-1
+산NNG(General Noun),-1
+불NNG(General Noun),-1
+피해NNG(General Noun),-1
+주민NNG(General Noun),-1
+대전NNP(Proper Noun),-1
+소아NNG(General Noun),-1
+병NNG(General Noun),-1
+원서NNG(General Noun),-1
+홍역NNG(General Noun),-1
+집단NNG(General Noun),-1
+발병NNG(General Noun),-1
+확진NNG(General Noun),-1
+아기NNG(General Noun),-1
+5명UNKNOWN(Unknown),-1
+격리NNG(General Noun),-1
+기아NNG(General Noun),1
+차NNG(General Noun),1
+봉고NNG(General Noun),1
+탑NNG(General Noun),1
+차NNG(General Noun),1
+고객NNG(General Noun),1
+에J(Ending Particle),1
+찾아가VV(Verb),1
+는E(Verbal endings),1
+점검NNG(General Noun),1
+교환NNG(General Noun),1
+서비스NNG(General Noun),1
+실시NNG(General Noun),1
+7주째UNKNOWN(Unknown),-1
+상승NNG(General Noun),-1
+하XSV(Verb Suffix),-1
+는E(Verbal endings),-1
+휘발NNG(General Noun),-1
+윳NNP(Proper Noun),-1
+값NNG(General Noun),-1
+시론NNG(General Noun),-1
+희망NNG(General Noun),-1
+의J(Ending Particle),-1
+메시지NNG(General Noun),-1
+인구NNG(General Noun),-1
+감소NNG(General Noun),-1
+전망NNG(General Noun),-1
+부동NNG(General Noun),-1
+산NNG(General Noun),-1
+경기NNG(General Noun),-1
+부진NNG(General Noun),-1
+에J(Ending Particle),-1
+주NNG(General Noun),-1
+담대NNG(General Noun),-1
+더MAG(General Adverb),-1
+깐깐XR(Root),-1
+하XSA(Adjective Suffix),-1
+아E(Verbal endings),-1
+지VX(Auxiliary Verb or Adjective),-1
+ᆫ다E(Verbal endings),-1
+국내NNG(General Noun),1
+항생NNG(General Noun),1
+제NNG(General Noun),1
+소비NNG(General Noun),1
+량NNG(General Noun),1
+OECDSL(Foreign language),1
+평균NNG(General Noun),1
+의J(Ending Particle),1
+1SN(Number),1
+63배UNKNOWN(Unknown),1
+만취NNG(General Noun),-1
+상태NNG(General Noun),-1
+운전NNG(General Noun),-1
+30대UNKNOWN(Unknown),-1
+男NNG(General Noun),-1
+도주NNG(General Noun),-1
+중NNB(Dependent noun),-1
+살VV(Verb),-1
+고E(Verbal endings),-1
+내VX(Auxiliary Verb or Adjective),-1
+ᆫE(Verbal endings),-1
+뒤NNG(General Noun),-1
+검거NNG(General Noun),-1
+보잉NNG(General Noun),-1
+사NR(Numeral),-1
+결국NNG(General Noun),-1
+737SN(Number),-1
+맥스NNP(Proper Noun),-1
+20SN(Number),-1
+감산NNG(General Noun),-1
+포토NNG(General Noun),-1
+뉴스NNG(General Noun),-1
+롯데NNP(Proper Noun),-1
+자이언츠NNP(Proper Noun),-1
+윤길현NNP(Proper Noun),-1
+망연NNG(General Noun),-1
+자실NNG(General Noun),-1
+서울NNP(Proper Noun),1
+200억UNKNOWN(Unknown),1
+원대NNG(General Noun),1
+불법NNG(General Noun),1
+다NNG(General Noun),1
+단계NNG(General Noun),1
+업체NNG(General Noun),1
+적발NNG(General Noun),1
+AISL(Foreign language),1
+수사NNG(General Noun),1
+기법NNG(General Noun),1
+크VA(Adjective),1
+ᆫE(Verbal endings),1
+역할NNG(General Noun),1
+금융NNG(General Noun),-1
+지주NNG(General Noun),-1
+회장NNG(General Noun),-1
+연간NNG(General Noun),-1
+보수NNG(General Noun),-1
+20억원UNKNOWN(Unknown),-1
+육박NNG(General Noun),-1
+은행NNG(General Noun),-1
+원NNG(General Noun),-1
+은J(Ending Particle),-1
+감원NNG(General Noun),-1
+바람NNG(General Noun),-1
+고군NNP(Proper Noun),1
+산XSN(Noun Suffix),1
+관광NNG(General Noun),1
+벨트NNG(General Noun),1
+조성NNG(General Noun),1
+3년간UNKNOWN(Unknown),1
+국비NNG(General Noun),1
+100억원UNKNOWN(Unknown),1
+투입NNG(General Noun),1
+도요타NNP(Proper Noun),1
+ANASL(Foreign language),1
+등NNB(Dependent noun),1
+日NNG(General Noun),1
+대XPN(Prefix),1
+기업NNG(General Noun),1
+40여곳UNKNOWN(Unknown),1
+신NNG(General Noun),1
+사업NNG(General Noun),1
+창출NNG(General Noun),1
+이례NNG(General Noun),1
+적XSN(Noun Suffix),1
+연대NNG(General Noun),1
+만NR(Numeral),1
+개NNBC(Dependent noun),1
+한MM(Modifier),1
+벚NNG(General Noun),1
+꽃NNG(General Noun),1
+즐기VV(Verb),1
+는E(Verbal endings),1
+상춘NNG(General Noun),1
+객NNG(General Noun),1
+들XSN(Noun Suffix),1
+절정NNG(General Noun),1
+맞VV(Verb),1
+은E(Verbal endings),1
+벚NNG(General Noun),1
+꽃NNG(General Noun),1
+을J(Ending Particle),1
+찾VV(Verb),1
+아E(Verbal endings),1
+벚NNG(General Noun),1
+꽃NNG(General Noun),1
+길NNG(General Noun),1
+따르VV(Verb),1
+아E(Verbal endings),1
+즐기VV(Verb),1
+는E(Verbal endings),1
+봄NNG(General Noun),1
+스트레스NNG(General Noun),1
+받VV(Verb),1
+는데E(Verbal endings),1
+오늘MAG(General Adverb),1
+다이소NNP(Proper Noun),1
+가VV(Verb),1
+ㄹ래E(Verbal endings),1
+직장NNG(General Noun),1
+인NNG(General Noun),1
+도J(Ending Particle),1
+빠지VV(Verb),1
+ᆫE(Verbal endings),1
+다이소NNP(Proper Noun),1
+덕NNG(General Noun),1
+후NNG(General Noun),1
+남광희NNP(Proper Noun),1
+한국NNP(Proper Noun),1
+환경NNG(General Noun),1
+산업NNG(General Noun),1
+기술NNG(General Noun),1
+원장NNG(General Noun),1
+환경NNG(General Noun),1
+전문NNG(General Noun),1
+강소NNG(General Noun),1
+기업NNG(General Noun),1
+100개UNKNOWN(Unknown),1
+육성NNG(General Noun),1
+하XSV(Verb Suffix),1
+ᆯE(Verbal endings),1
+것NNB(Dependent noun),1
+국제NNG(General Noun),1
+기구NNG(General Noun),1
+활용NNG(General Noun),1
+하XSV(Verb Suffix),1
+아E(Verbal endings),1
+환경NNG(General Noun),1
+기업NNG(General Noun),1
+해외NNG(General Noun),1
+진출NNG(General Noun),1
+교두NNG(General Noun),1
+보NNG(General Noun),1
+마련NNG(General Noun),1
+노영민NNP(Proper Noun),1
+트럼프NNG(General Noun),1
+초대NNG(General Noun),1
+비서NNG(General Noun),1
+실장NNG(General Noun),1
+과J(Ending Particle),1
+면담NNG(General Noun),1
+대미NNG(General Noun),1
+접촉NNG(General Noun),1
+강화NNG(General Noun),1
+차원NNG(General Noun),1
+부동NNG(General Noun),-1
+산NNG(General Noun),-1
+경기NNG(General Noun),-1
+부진NNG(General Noun),-1
+에J(Ending Particle),-1
+주NNG(General Noun),-1
+담대NNG(General Noun),-1
+더MAG(General Adverb),-1
+깐깐XR(Root),-1
+하XSA(Adjective Suffix),-1
+아E(Verbal endings),-1
+지VX(Auxiliary Verb or Adjective),-1
+ᆫ다E(Verbal endings),-1
+ECOSL(Foreign language),1
+LIFESL(Foreign language),1
+세상NNG(General Noun),1
+을J(Ending Particle),1
+바꾸VV(Verb),1
+는E(Verbal endings),1
+우리NP(Pronoun),1
+입찰NNG(General Noun),1
+평가NNG(General Noun),1
+에J(Ending Particle),1
+친NNG(General Noun),1
+환경NNG(General Noun),1
+기술NNG(General Noun),1
+더MAG(General Adverb),1
+반영NNG(General Noun),1
+하XSV(Verb Suffix),1
+면E(Verbal endings),1
+시공NNG(General Noun),1
+협력NNG(General Noun),1
+사NR(Numeral),1
+적용NNG(General Noun),1
+적극NNG(General Noun),1
+나서VV(Verb),1
+ᆯE(Verbal endings),1
+것NNB(Dependent noun),1
+ECOSL(Foreign language),1
+LIFESL(Foreign language),1
+세상NNG(General Noun),1
+을J(Ending Particle),1
+바꾸VV(Verb),1
+는E(Verbal endings),1
+우리NP(Pronoun),1
+공장NNG(General Noun),1
+미세NNG(General Noun),1
+먼지NNG(General Noun),1
+제거NNG(General Noun),1
+장치NNG(General Noun),1
+개발NNG(General Noun),1
+당장NNG(General Noun),1
+수익NNG(General Noun),1
+없VA(Adjective),1
+지만E(Verbal endings),1
+미래NNG(General Noun),1
+보고J(Ending Particle),1
+투자NNG(General Noun),1
+강원NNP(Proper Noun),-1
+산NNG(General Noun),-1
+불NNG(General Noun),-1
+이주민NNP(Proper Noun),-1
+재산NNG(General Noun),-1
+피해NNG(General Noun),-1
+급증NNG(General Noun),-1
+주택NNG(General Noun),-1
+401채UNKNOWN(Unknown),-1
+등NNB(Dependent noun),-1
+소실NNG(General Noun),-1
+대전NNP(Proper Noun),-1
+소아NNG(General Noun),-1
+병NNG(General Noun),-1
+원서NNG(General Noun),-1
+홍역NNG(General Noun),-1
+집단NNG(General Noun),-1
+발병NNG(General Noun),-1
+확진NNG(General Noun),-1
+아기NNG(General Noun),-1
+5명UNKNOWN(Unknown),-1
+격리NNG(General Noun),-1
+한국NNP(Proper Noun),1
+마사NNG(General Noun),1
+회NNG(General Noun),1
+축산NNG(General Noun),1
+발전NNG(General Noun),1
+기금NNG(General Noun),1
+1264억UNKNOWN(Unknown),1
+원NNG(General Noun),1
+전달NNG(General Noun),1
+아이유NNG(General Noun),1
+가J(Ending Particle),1
+물NNG(General Noun),1
+꼬NNG(General Noun),1
+틀VV(Verb),1
+ᆫE(Verbal endings),1
+강원NNP(Proper Noun),1
+산NNG(General Noun),1
+불NNG(General Noun),1
+성금NNG(General Noun),1
+54시간만에UNKNOWN(Unknown),1
+100억UNKNOWN(Unknown),1
+모이VV(Verb),1
+었E(Verbal endings),1
+다E(Verbal endings),1
+프로NNG(General Noun),1
+야구NNG(General Noun),1
+롯데NNP(Proper Noun),1
+초토NNG(General Noun),1
+화XSN(Noun Suffix),1
+한화NNG(General Noun),1
+한MM(Modifier),1
+이닝NNG(General Noun),1
+에J(Ending Particle),1
+16득점UNKNOWN(Unknown),1
+신XPN(Prefix),1
+기록NNG(General Noun),1
+민주NNG(General Noun),1
+당NNG(General Noun),1
+과기NNG(General Noun),1
+정통NNG(General Noun),1
+특위NNG(General Noun),1
+과학NNG(General Noun),1
+기술NNG(General Noun),1
+혁신NNG(General Noun),1
+법안NNG(General Noun),1
+속NNG(General Noun),1
+도J(Ending Particle),1
+내VV(Verb),1
+ᆫ다E(Verbal endings),1
+LGSL(Foreign language),1
+유NNP(Proper Noun),1
+플러스NNP(Proper Noun),1
+2000명에게UNKNOWN(Unknown),1
+1년간UNKNOWN(Unknown),1
+5GSL(Foreign language),1
+단말NNG(General Noun),1
+통신NNG(General Noun),1
+비NNG(General Noun),1
+쏘VV(Verb),1
+ᆫ다E(Verbal endings),1
+전문NNG(General Noun),-1
+가NNG(General Noun),-1
+59SN(Number),-1
+내년NNG(General Noun),-1
+서울NNP(Proper Noun),-1
+집NNG(General Noun),-1
+값NNG(General Noun),-1
+하락NNG(General Noun),-1
+이름NNG(General Noun),1
+값NNG(General Noun),1
+하XSV(Verb Suffix),1
+는E(Verbal endings),1
+명품NNG(General Noun),1
+브랜드NNG(General Noun),1
+주가NNG(General Noun),1
+럭셔리XR(Root),1
+펀드NNG(General Noun),1
+수익NNG(General Noun),1
+률XSN(Noun Suffix),1
+반짝MAG(General Adverb),1
+아연MAG(General Adverb),1
+구리NNG(General Noun),1
+값NNG(General Noun),1
+상승NNG(General Noun),1
+에J(Ending Particle),1
+신나VV(Verb),1
+는E(Verbal endings),1
+고려NNG(General Noun),1
+아연MAG(General Adverb),1
+풍산NNG(General Noun),1
+사모NNG(General Noun),1
+펀드NNG(General Noun),1
+전문NNG(General Noun),1
+운용NNG(General Noun),1
+사NR(Numeral),1
+인하NNG(General Noun),1
+브NNP(Proper Noun),1
+캐나다NNP(Proper Noun),1
+제트NNG(General Noun),1
+라인NNG(General Noun),1
+에J(Ending Particle),1
+159억UNKNOWN(Unknown),1
+투자NNG(General Noun),1
+정부NNG(General Noun),1
+특별NNG(General Noun),1
+재난NNG(General Noun),1
+지역NNG(General Noun),1
+발NNG(General Noun),1
+빠르VA(Adjective),1
+ᆫE(Verbal endings),1
+지정NNG(General Noun),1
+어떤MM(Modifier),1
+혜택NNG(General Noun),1
+받VV(Verb),1
+나E(Verbal endings),1
+춘천NNP(Proper Noun),-1
+권진규NNP(Proper Noun),-1
+미술NNG(General Noun),-1
+관NNG(General Noun),-1
+소송NNG(General Noun),-1
+휘말리VV(Verb),-1
+어E(Verbal endings),-1
+유족NNG(General Noun),-1
+작품NNG(General Noun),-1
+돌리VV(Verb),-1
+어E(Verbal endings),-1
+달VX(Auxiliary Verb or Adjective),-1
+라E(Verbal endings),-1
+ITSL(Foreign language),1
+부품NNG(General Noun),1
+헬스NNG(General Noun),1
+뷰티NNG(General Noun),1
+중소NNG(General Noun),1
+기업NNG(General Noun),1
+에J(Ending Particle),1
+해외NNG(General Noun),1
+홍보NNG(General Noun),1
+영상NNG(General Noun),1
+만들VV(Verb),1
+어E(Verbal endings),1
+주VX(Auxiliary Verb or Adjective),1
+ᆫ다E(Verbal endings),1
+저NP(Pronoun),1
+의J(Ending Particle),1
+17회UNKNOWN(Unknown),1
+영주NNP(Proper Noun),1
+소백NNG(General Noun),1
+산NNG(General Noun),1
+마라톤NNG(General Noun),1
+매일NNG(General Noun),1
+신문NNG(General Noun),1
+미녀NNG(General Noun),1
+와J(Ending Particle),1
+야수NNG(General Noun),1
+TVSL(Foreign language),1
+진행NNG(General Noun),1
+자NNG(General Noun),1
+이NNG(General Noun),1
+번NNG(General Noun),1
+대회NNG(General Noun),1
+이색NNG(General Noun),1
+참가NNG(General Noun),1
+자NNG(General Noun),1
+로J(Ending Particle),1
+꼽히VV(Verb),1
+어E(Verbal endings),1
+故SH(Chinese Characeter),1
+윤NNG(General Noun),1
+하XSA(Adjective Suffix),1
+ᆫE(Verbal endings),1
+덕NNG(General Noun),1
+센터NNG(General Noun),1
+장NNG(General Noun),1
+임세NNG(General Noun),1
+원NNG(General Noun),1
+교수NNG(General Noun),1
+국민NNG(General Noun),1
+훈장NNG(General Noun),1
+추서NNG(General Noun),1
+황하나NNP(Proper Noun),-1
+연예NNG(General Noun),-1
+인NNG(General Noun),-1
+지인NNG(General Noun),-1
+이J(Ending Particle),-1
+마약NNG(General Noun),-1
+권유NNG(General Noun),-1
+경찰NNG(General Noun),-1
+수사NNG(General Noun),-1
+확대NNG(General Noun),-1
+
+
+
+
+불교NNG(General Noun),1
+미술NNG(General Noun),1
+사NNG(General Noun),1
+학회NNG(General Noun),1
+봄NNG(General Noun),1
+학술NNG(General Noun),1
+대회NNG(General Noun),1
+문NNG(General Noun),1
+대통령NNG(General Noun),1
+강원NNP(Proper Noun),1
+산NNG(General Noun),1
+불NNG(General Noun),1
+에J(Ending Particle),1
+국민NNG(General Noun),1
+한NNG(General Noun),1
+마음NNG(General Noun),1
+정부NNG(General Noun),1
+도J(Ending Particle),1
+더MAG(General Adverb),1
+분발NNG(General Noun),1
+총리NNG(General Noun),1
+실NNG(General Noun),1
+이낙연NNP(Proper Noun),1
+강원NNP(Proper Noun),1
+산NNG(General Noun),1
+불NNG(General Noun),1
+대책NNG(General Noun),1
+깨NNG(General Noun),1
+알NNG(General Noun),1
+메모NNG(General Noun),1
+전문NNG(General Noun),1
+공개NNG(General Noun),1
+대전NNP(Proper Noun),-1
+소아NNG(General Noun),-1
+전문NNG(General Noun),-1
+병원NNG(General Noun),-1
+서J(Ending Particle),-1
+홍역NNG(General Noun),-1
+집단NNG(General Noun),-1
+발병NNG(General Noun),-1
+아기NNG(General Noun),-1
+5명UNKNOWN(Unknown),-1
+확진NNG(General Noun),-1
+격리NNG(General Noun),-1
+생필NNG(General Noun),1
+품NNG(General Noun),1
+서J(Ending Particle),1
+아파트NNG(General Noun),1
+임대NNG(General Noun),1
+까지J(Ending Particle),1
+각계NNG(General Noun),1
+각층NNG(General Noun),1
+성금NNG(General Noun),1
+구호NNG(General Noun),1
+행렬NNG(General Noun),1
+복구NNG(General Noun),1
+비XPN(Prefix),1
+최대NNG(General Noun),1
+80SN(Number),1
+특별NNG(General Noun),1
+재난NNG(General Noun),1
+지역NNG(General Noun),1
+주민NNG(General Noun),1
+보상NNG(General Noun),1
+규모NNG(General Noun),1
+는J(Ending Particle),1
+국토NNG(General Noun),1
+부NNG(General Noun),1
+지역NNG(General Noun),1
+발전NNG(General Noun),1
+투자NNG(General Noun),1
+협약NNG(General Noun),1
+시범NNG(General Noun),1
+사업NNG(General Noun),1
+발표NNG(General Noun),1
+의성NNG(General Noun),1
+공간NNG(General Noun),1
+혁신NNG(General Noun),1
+선정NNG(General Noun),1
+평양NNP(Proper Noun),1
+서J(Ending Particle),1
+연례NNG(General Noun),1
+국제NNG(General Noun),1
+마라톤NNG(General Noun),1
+해빙NNG(General Noun),1
+분위기NNG(General Noun),1
+속NNG(General Noun),1
+서방NNG(General Noun),1
+참가NNG(General Noun),1
+자NNG(General Noun),1
+작년NNG(General Noun),1
+의J(Ending Particle),1
+두MM(Modifier),1
+배NNG(General Noun),1
+장하성NNP(Proper Noun),1
+신임NNG(General Noun),1
+주중NNG(General Noun),1
+대사NNG(General Noun),1
+베이징NNP(Proper Noun),1
+도착NNG(General Noun),1
+한NNG(General Noun),1
+반도NNG(General Noun),1
+평화NNG(General Noun),1
+에J(Ending Particle),1
+中NNG(General Noun),1
+역할NNG(General Noun),1
+중요NNG(General Noun),1
+사설NNG(General Noun),1
+부산NNP(Proper Noun),1
+관광NNG(General Noun),1
+날NNG(General Noun),1
+개NNG(General Noun),1
+달NNG(General Noun),1
+지역NNG(General Noun),1
+지원NNG(General Noun),1
+센터NNG(General Noun),1
+유치NNG(General Noun),1
+총력NNG(General Noun),1
+을J(Ending Particle),1
+강원NNP(Proper Noun),1
+산NNG(General Noun),1
+불NNG(General Noun),1
+피해NNG(General Noun),1
+규모NNG(General Noun),1
+눈NNG(General Noun),1
+덩이NNG(General Noun),1
+이주민NNP(Proper Noun),1
+대책NNG(General Noun),1
+마련NNG(General Noun),1
+절실XR(Root),1
+황하나NNP(Proper Noun),-1
+연예NNG(General Noun),-1
+인NNG(General Noun),-1
+지인NNG(General Noun),-1
+이J(Ending Particle),-1
+마약NNG(General Noun),-1
+권유NNG(General Noun),-1
+계NNG(General Noun),-1
+수사NNG(General Noun),-1
+로J(Ending Particle),-1
+번지VV(Verb),-1
+나E(Verbal endings),-1
+평양NNP(Proper Noun),1
+서J(Ending Particle),1
+연례NNG(General Noun),1
+국제NNG(General Noun),1
+마라톤NNG(General Noun),1
+해빙NNG(General Noun),1
+분위기NNG(General Noun),1
+속NNG(General Noun),1
+서방NNG(General Noun),1
+참가NNG(General Noun),1
+자NNG(General Noun),1
+작년NNG(General Noun),1
+의J(Ending Particle),1
+두MM(Modifier),1
+배NNG(General Noun),1
+불교NNG(General Noun),1
+미술NNG(General Noun),1
+사NNG(General Noun),1
+학회NNG(General Noun),1
+봄NNG(General Noun),1
+학술NNG(General Noun),1
+대회NNG(General Noun),1
+문NNG(General Noun),1
+대통령NNG(General Noun),1
+강원NNP(Proper Noun),1
+산NNG(General Noun),1
+불NNG(General Noun),1
+에J(Ending Particle),1
+국민NNG(General Noun),1
+한NNG(General Noun),1
+마음NNG(General Noun),1
+정부NNG(General Noun),1
+도J(Ending Particle),1
+더MAG(General Adverb),1
+분발NNG(General Noun),1
+총리NNG(General Noun),1
+실NNG(General Noun),1
+이낙연NNP(Proper Noun),1
+강원NNP(Proper Noun),1
+산NNG(General Noun),1
+불NNG(General Noun),1
+대책NNG(General Noun),1
+깨NNG(General Noun),1
+알NNG(General Noun),1
+메모NNG(General Noun),1
+전문NNG(General Noun),1
+공개NNG(General Noun),1
+대전NNP(Proper Noun),-1
+소아NNG(General Noun),-1
+전문NNG(General Noun),-1
+병원NNG(General Noun),-1
+서J(Ending Particle),-1
+홍역NNG(General Noun),-1
+집단NNG(General Noun),-1
+발병NNG(General Noun),-1
+아기NNG(General Noun),-1
+5명UNKNOWN(Unknown),-1
+확진NNG(General Noun),-1
+격리NNG(General Noun),-1

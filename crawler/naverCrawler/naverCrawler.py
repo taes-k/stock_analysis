@@ -41,8 +41,8 @@ class NewsCrawler:
             print(link)
             newsDetailUrl = link
 
-            oid = str(url.split('oid=')[1].split('&')[0])
-            aid = str(url.split('aid=')[1].split('&')[0])
+            oid = str(newsDetailUrl.split('oid=')[1].split('&')[0])
+            aid = str(newsDetailUrl.split('aid=')[1].split('&')[0])
             newsId = oid+aid
 
             if "oid=091" in newsDetailUrl or "oid=077" in newsDetailUrl :
@@ -52,7 +52,7 @@ class NewsCrawler:
             html = request.text
             htmlSoup = BeautifulSoup(html, 'html.parser')
 
-            newsTitle = htmlSoup.select('#articleTitle')
+            newsTitle = htmlSoup.select('#articleTitle')[0].text
             newsContents = str(htmlSoup.select('#articleBodyContents'))
             newsDate = htmlSoup.select('#main_content > div.article_header > div.article_info > div > .t11')
             newsDate = datetime.strptime(newsDate[0].text,"%Y-%m-%d %H:%M")
@@ -61,20 +61,21 @@ class NewsCrawler:
             newsContents = re.sub('<a.*?>.*?</a>', '', newsContents, 0, re.I|re.S)
             newsContents = re.sub('<.+?>', '', newsContents, 0, re.I|re.S)
 
-            self.mor.store(newsTitle[0].text,newsContents)
+            self.mor.store(newsTitle,newsContents)
 
-            conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
-            news = {
-                'title': newsTitle[0].text,
-                'contents': newsContents,
-                'keyword': self.mor.keyword(),
-                'positive': self.mor.positive(),
-                'date':  newsDate,
-                'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
-                'url': newsDetailUrl,
-            }
-            response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news, id=newsId)
-            print(response)
+            if self.mor.positive()!=0 :
+                conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
+                news = {
+                    'title': newsTitle,
+                    'contents': newsContents,
+                    'keyword': self.mor.keyword(),
+                    'positive': self.mor.positiveScore,
+                    'date':  newsDate,
+                    'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
+                    'url': newsDetailUrl,
+                }
+                response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news, id=newsId)
+                print(response)
 
 
     def search(self):
@@ -94,6 +95,7 @@ class NewsCrawler:
 
 
     def start(self):
-        for i in range(0,1):
-            proc = Process(target=self.crawling, args=(10*i,))
-            proc.start()
+        self.crawling(10)
+        # for i in range(0,1):
+        #     proc = Process(target=self.crawling, args=(10*i,))
+        #     proc.start()
