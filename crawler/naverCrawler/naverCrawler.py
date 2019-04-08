@@ -52,10 +52,27 @@ class NewsCrawler:
             html = request.text
             htmlSoup = BeautifulSoup(html, 'html.parser')
 
-            newsTitle = htmlSoup.select('#articleTitle')[0].text
-            newsContents = str(htmlSoup.select('#articleBodyContents'))
             newsDate = htmlSoup.select('#main_content > div.article_header > div.article_info > div > .t11')
             newsDate = datetime.strptime(newsDate[0].text,"%Y-%m-%d %H:%M")
+            conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
+
+            try : # 중복기사 크롤링 막기
+                if self.es.get(index = 'news-'+conNewsDate, doc_type = 'break', id = newsId) != None :
+                    print('duplication news')
+                    break
+            except :
+                print('new news')
+
+            newsProfile = htmlSoup.select('#articleBodyContents > span.end_photo_org > img')
+            if len(newsProfile)>0 :
+                newsProfile = newsProfile[0]['src']
+            else :
+                newsProfile = None
+            print(newsProfile)
+
+
+            newsTitle = htmlSoup.select('#articleTitle')[0].text
+            newsContents = str(htmlSoup.select('#articleBodyContents'))
 
             newsContents = re.sub('<script.*?>.*?</script>', '', newsContents, 0, re.I|re.S)
             newsContents = re.sub('<a.*?>.*?</a>', '', newsContents, 0, re.I|re.S)
@@ -64,8 +81,8 @@ class NewsCrawler:
             self.mor.store(newsTitle,newsContents)
 
             if self.mor.positive()!=0 :
-                conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
                 news = {
+                    'profile': newsProfile,
                     'title': newsTitle,
                     'contents': newsContents,
                     'keyword': self.mor.keyword(),

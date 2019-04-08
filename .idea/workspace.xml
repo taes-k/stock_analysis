@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crawler/naverCrawler/dictionaryInitCrawler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/morpheme/morpheme.py" afterPath="$PROJECT_DIR$/crawler/morpheme/morpheme.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/morpheme/positiveDictionary.csv" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveDictionary.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" afterPath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/urls.py" afterPath="$PROJECT_DIR$/crawler/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/views.py" afterPath="$PROJECT_DIR$/crawler/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/include/head.html" afterPath="$PROJECT_DIR$/templates/include/head.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,12 +41,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-                  <folding />
+                <state relative-caret-position="795">
+                  <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+                  <folding>
+                    <element signature="e#4033#4039#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -76,11 +77,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="naverCrawler.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="naverCrawler.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="117">
-                  <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+                <state relative-caret-position="-408">
+                  <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -91,8 +92,8 @@
           <file leaf-file-name="dictionaryInitCrawler.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/dictionaryInitCrawler.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="282">
-                  <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+                <state relative-caret-position="240">
+                  <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -113,8 +114,8 @@
           <file leaf-file-name="positiveDictionary.csv" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveDictionary.csv">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1863">
-                  <caret line="1022" column="0" selection-start-line="1022" selection-start-column="0" selection-end-line="1022" selection-end-column="0" />
+                <state relative-caret-position="15648">
+                  <caret line="2021" column="0" selection-start-line="2021" selection-start-column="0" selection-end-line="2021" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -127,8 +128,8 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="470">
-                  <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+                <state relative-caret-position="463">
+                  <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -164,21 +165,21 @@
         <option value="$PROJECT_DIR$/static/js/dateFormat.js" />
         <option value="$PROJECT_DIR$/templates/include/mainHeader.html" />
         <option value="$PROJECT_DIR$/templates/include/head.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/crawler/morepheme/morepheme.py" />
         <option value="$PROJECT_DIR$/crawler/urls.py" />
-        <option value="$PROJECT_DIR$/crawler/naverCrawler/dictionaryInitCrawler.py" />
         <option value="$PROJECT_DIR$/crawler/views.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveDictionary.csv" />
         <option value="$PROJECT_DIR$/crawler/morpheme/morpheme.py" />
+        <option value="$PROJECT_DIR$/crawler/naverCrawler/dictionaryInitCrawler.py" />
         <option value="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1618" />
-    <option name="y" value="-232" />
+    <option name="x" value="1529" />
+    <option name="y" value="-233" />
     <option name="width" value="1412" />
     <option name="height" value="980" />
   </component>
@@ -498,8 +499,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1618" y="-232" width="1412" height="980" extended-state="0" />
-    <editor active="true" />
+    <frame x="1529" y="-233" width="1412" height="980" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14521927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -558,7 +559,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#4033#4039#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -586,7 +589,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#4033#4039#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -650,7 +655,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#4033#4039#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -714,7 +721,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#4033#4039#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -860,16 +869,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveDictionary.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1863">
-          <caret line="1022" column="0" selection-start-line="1022" selection-start-column="0" selection-end-line="1022" selection-end-column="0" />
+        <state relative-caret-position="15648">
+          <caret line="2021" column="0" selection-start-line="2021" selection-start-column="0" selection-end-line="2021" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+        <state relative-caret-position="463">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -881,22 +890,6 @@
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/dictionaryInitCrawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,12 +913,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/dictionaryInitCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="-408">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding>
+            <element signature="e#4033#4039#0" expanded="true" />
           </folding>
         </state>
       </provider>
