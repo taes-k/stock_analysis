@@ -68,7 +68,6 @@ class NewsCrawler:
                 newsProfile = newsProfile[0]['src']
             else :
                 newsProfile = None
-            print(newsProfile)
 
 
             newsTitle = htmlSoup.select('#articleTitle')[0].text
@@ -79,14 +78,17 @@ class NewsCrawler:
             newsContents = re.sub('<.+?>', '', newsContents, 0, re.I|re.S)
 
             self.mor.store(newsTitle,newsContents)
-
+            # self.mor.positiveinit()
+            self.mor.keyword()
+            self.mor.company_check()
             if self.mor.positive()!=0 :
                 news = {
                     'profile': newsProfile,
                     'title': newsTitle,
                     'contents': newsContents,
-                    'keyword': self.mor.keyword(),
+                    'keyword': self.mor.keywords,
                     'positive': self.mor.positiveScore,
+                    'company': self.mor.companies,
                     'date':  newsDate,
                     'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
                     'url': newsDetailUrl,
@@ -112,7 +114,7 @@ class NewsCrawler:
 
 
     def start(self):
-        self.crawling(10)
-        # for i in range(0,1):
-        #     proc = Process(target=self.crawling, args=(10*i,))
-        #     proc.start()
+         # self.crawling(10)
+        for i in range(0,2):
+            proc = Process(target=self.crawling, args=(10*i,))
+            proc.start()
