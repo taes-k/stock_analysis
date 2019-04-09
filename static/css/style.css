@@ -80,6 +80,10 @@
     border: 1px solid #ff0000;
     border-radius: 5px;
 }
+
+.companies:first{
+    margin-top:0px;
+}
 .main > .contents-container > .right > .companies{
     height:60px;
     line-height:60px;
