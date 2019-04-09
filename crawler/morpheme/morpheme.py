@@ -96,7 +96,7 @@ class Morpheme:
 
 
         if self.positiveScore > 0 :
-            if posiPercent > 0.2 :
+            if posiPercent > 0.25 :
                 with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
                     fieldnames = ['token', 'positive']
                     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -117,7 +117,7 @@ class Morpheme:
                 self.positiveScore = 0
 
         elif self.positiveScore < 0 :
-            if negaPercent > 0.2 :
+            if negaPercent > 0.25 :
                 with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
                     fieldnames = ['token', 'positive']
                     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -187,11 +187,11 @@ class Morpheme:
                 else:
                     comdict[keyword] = 1
 
-        companies = sorted(comdict.items(), key=lambda x: x[1], reverse=True)
+        companies = sorted(comdict.items(), key=lambda x: abs(x[1]), reverse=True)
         keyLen = (5 if len(companies) >= 5 else len(companies))
 
         for i in range(0, keyLen):
-            self.companies.append(companies[i][0])
+            self.companies.append({'name':companies[i][0],'score':companies[i][1]})
 
         print ('찾은회사 @@@@@@@@@@@@@@@@@@@@@@@@0 : '+str(self.companies))
 

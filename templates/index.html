@@ -19,8 +19,22 @@
                   if(idx==0){
                     $("#mainTitle").text(el._source.title);
                     $("#mainContents").text(el._source.contents);
+                    $(".jumbotron").css({"background":"url("+el._source.profile+")"});
+
+                    var positive = el._source.positive;
+                    el._source.company.forEach(function(ell,idx){
+                      var updown = positive>0?"up":"down";
+                      var style = updown=="up"?"color:#ff0000;border: 1px solid #ff0000;":"color:#0000ff;border: 1px solid #0000ff;";
+
+                      var contents = 
+                        '<div class="companies" style="'+style+'">'+
+                          '<img src="/static/images/'+updown+'-arrow.png"/> <span>'+ell.name+'</span>'+
+                        '</div>';
+                      
+                      $(".main > .contents-container > .right").append(contents);
+                    })
                   }else{
-                    if(idx%4==1){
+                    if(idx%2==1){
                       console.log(11111)
                       var feed = document.getElementById("feed");
                       var newDiv = document.createElement("div"); 
@@ -29,7 +43,7 @@
                       feed.appendChild(newDiv);
                     }
                     var contents = 
-                      '<div class="col-lg-4 col-md-6 mb-4">'+
+                      '<div class="col-lg-6 col-md-12 mb-12">'+
                       ' <div class="card h-100">'+
                       '   <div class="card-img-top" style="background-image:url('+el._source.profile+')" alt=""></div>'+
                       '   <div class="card-body">'+
@@ -90,10 +104,19 @@
   <div class="container">
 
     <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
-      <h1 id="mainTitle" class="display-3">A Warm Welcome!</h1>
-      <p id="mainContents" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+    <header class="jumbotron main">
+      <div class="background">
+      </div>
+      <div class="contents-container">
+        <div class="left">
+          <h1 id="mainTitle" class="display-3">title</h1>
+          <p id="mainContents" class="lead"></p>
+          <a href="#" class="btn btn-primary btn-lg">뉴스보기</a>
+        </div>
+
+        <div class="right">
+        </div>
+      </div>
     </header>
 
     <!-- Page Features -->

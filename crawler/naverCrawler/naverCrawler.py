@@ -81,7 +81,8 @@ class NewsCrawler:
             # self.mor.positiveinit()
             self.mor.keyword()
             self.mor.company_check()
-            if self.mor.positive()!=0 :
+            if self.mor.positive()!=0 and len(self.mor.companies)!=0 :
+
                 news = {
                     'profile': newsProfile,
                     'title': newsTitle,

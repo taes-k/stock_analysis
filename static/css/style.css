@@ -1,9 +1,21 @@
+#mainTitle{
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: box; 
+    height:180px; 
+    overflow:hidden; 
+    vertical-align:top; 
+    text-overflow: ellipsis; 
+    word-break:break-all; 
+    -webkit-box-orient:vertical; 
+    -webkit-line-clamp:2
+}
 .lead{
     display: -webkit-box; 
     display: -ms-flexbox; 
     display: box; 
-    margin-top:1px; 
-    max-height:90px; 
+    margin-top:10px; 
+    height:90px; 
     overflow:hidden; 
     vertical-align:top; 
     text-overflow: ellipsis; 
@@ -11,7 +23,78 @@
     -webkit-box-orient:vertical; 
     -webkit-line-clamp:3
 }
+.main{
+    height:100%;
+    margin-top:70px !important;
+    padding: 50px 35px !important;
+    position: relative;
+    overflow:hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover !important;
+}
+.main:after{
+	display:block;
+	clear: both;
 
+}
+.background{
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.8)
+}
+
+.contents-container {
+    position:relative;
+}
+.main > .contents-container > .left{
+    color:#fff;
+    width:70%;
+    height:100%;
+    padding-right:20px;
+    float:left;
+}
+.left:after{
+	display:block;
+	clear: both;
+}
+.main > .contents-container > .left > a{
+    margin-top:20px;
+}
+
+.main >.contents-container > .right{
+    width:30%;
+    height:100%;
+    float:left;
+}
+.right:after{
+	display:block;
+	clear: both;
+}
+
+.companies{
+    width:100%;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+}
+.main > .contents-container > .right > .companies{
+    height:60px;
+    line-height:60px;
+    padding:0 15px;
+    margin-top:15px;
+    font-size:17px;
+    color:#ff0000;
+    background-color:#fff;
+
+}
+
+.companies > img{
+    width:12px;
+    vertical-align:baseline;
+}
 .card-img-top{
     width:100%;
     height:233px;
