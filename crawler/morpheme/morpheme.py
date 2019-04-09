@@ -10,11 +10,13 @@ class Morpheme:
     posTitle = []
     posText = []
     positiveDictionary = {}
+    companydictionary = {}
     positiveScore = 0
 
     def __init__(self):
         print("init")
         self.posdic()
+        self.comdic()
 
 
     def posdic(self):
@@ -26,6 +28,12 @@ class Morpheme:
                         self.positiveDictionary[(row.get('token'))] = float(row.get('positive'))/2
                 else:
                     self.positiveDictionary[(row.get('token'))] = float(self.positiveDictionary.get(row.get('token'))+float(row.get('positive'))/2)/1.8
+
+    def comdic(self):
+        with open('./crawler/morpheme/listedCompanyList.csv', 'rt') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                self.positiveDictionary[(row.get('name'))] = row.get('code')
 
 
     def positive(self):
@@ -111,13 +119,13 @@ class Morpheme:
         self.positiveScore = 0
 
         posTitleSetting = {
-            "tokenizer": "nori_tokenizer",
+            "tokenizer": "my_analyzer",
             "text": self.targetTitle,
             "attributes": ["posType", "leftPOS", "rightPOS", "morphemes", "reading"],
             "explain": "true"
         }
         posTextSetting = {
-            "tokenizer": "nori_tokenizer",
+            "tokenizer": "my_analyzer",
             "text": self.targetText,
             "attributes": ["posType", "leftPOS", "rightPOS", "morphemes", "reading"],
             "explain": "true"
