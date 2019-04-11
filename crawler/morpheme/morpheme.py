@@ -96,7 +96,7 @@ class Morpheme:
 
 
         if self.positiveScore > 0 :
-            if posiPercent > 0.25 :
+            if posiPercent > 0.3 :
                 with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
                     fieldnames = ['token', 'positive']
                     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -117,7 +117,7 @@ class Morpheme:
                 self.positiveScore = 0
 
         elif self.positiveScore < 0 :
-            if negaPercent > 0.25 :
+            if negaPercent > 0.3 :
                 with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
                     fieldnames = ['token', 'positive']
                     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
