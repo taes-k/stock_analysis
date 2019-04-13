@@ -38,15 +38,15 @@ class Morpheme:
             for row in reader:
                 self.company_list.append(row.get('name'))
 
-        with open('./crawler/morpheme/positiveCompanyDic.csv', 'rt') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                if self.companydictionary.get(row.get('keyword')) == None :
-                    self.companydictionary[(row.get('keyword'))] = [{'name':row.get('company'),'score':row.get('score')}]
-                else :
-                    list = self.companydictionary.get(row.get('keyword'))
-                    list.append({'name':row.get('company'),'score':row.get('score')})
-                    self.companydictionary[(row.get('keyword'))] = list
+        # with open('./crawler/morpheme/positiveCompanyDic.csv', 'rt') as csvfile:
+        #     reader = csv.DictReader(csvfile)
+        #     for row in reader:
+        #         if self.companydictionary.get(row.get('keyword')) == None :
+        #             self.companydictionary[(row.get('keyword'))] = [{'name':row.get('company'),'score':row.get('score')}]
+        #         else :
+        #             list = self.companydictionary.get(row.get('keyword'))
+        #             list.append({'name':row.get('company'),'score':row.get('score')})
+        #             self.companydictionary[(row.get('keyword'))] = list
 
     def store(self,title,text):
         self.targetTitle = title
@@ -147,9 +147,9 @@ class Morpheme:
         for morpheme in self.posTitle :
             if 'SL' in morpheme.get('leftPOS') or 'NNG' in morpheme.get('leftPOS') or 'NNP' in morpheme.get('leftPOS') or 'NP' in morpheme.get('leftPOS') :
                 if keywordDic.get(morpheme.get('token')) == None :
-                    keywordDic[morpheme.get('token')]=5
+                    keywordDic[morpheme.get('token')]=3
                 else :
-                    keywordDic[morpheme.get('token')]=keywordDic[morpheme.get('token')]+5
+                    keywordDic[morpheme.get('token')]=keywordDic[morpheme.get('token')]+3
 
         for morpheme in self.posText :
             if 'SL' in morpheme.get('leftPOS') or 'NNG' in morpheme.get('leftPOS') or 'NNP' in morpheme.get('leftPOS') or 'NP' in morpheme.get('leftPOS') :
@@ -174,26 +174,37 @@ class Morpheme:
         self.companies = []
         comdict = {}
         for keyword in self.keywords:
-            if self.companydictionary.get(keyword) != None:
-                for company in self.companydictionary.get(keyword):
-                    if comdict.get(company.get('name')) != None :
-                        comdict[company.get('name')] = comdict[company.get('name')]+1
-                    else :
-                        comdict[company.get('name')] = int(company.get('score'))
+            # if self.companydictionary.get(keyword) != None:
+            #     for company in self.companydictionary.get(keyword):
+            #         if comdict.get(company.get('name')) != None :
+            #             comdict[company.get('name')] = comdict[company.get('name')]+1
+            #         else :
+            #             comdict[company.get('name')] = float(company.get('score'))
+
 
             if keyword in self.company_list :
-                if comdict.get(keyword) != None:
+                with open('./crawler/morpheme/positiveCompanyDic.csv', 'a') as csvfile:
+                    fieldnames = ['keyword','company','score']
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+                    if comdict.get(keyword) == None:
+                        score = keyword==self.keyword[0] and 1 or 0.5
+                        data = {'keyword': self.keywords[0], 'company': keyword, 'score': score}
+                        writer.writerow(data)
+                        score = keyword==self.keyword[1] and 1 or 0.5
+                        data = {'keyword': self.keywords[1], 'company': keyword, 'score': score}
+                        writer.writerow(data)
+
+                if comdict.get(keyword) == None:
                     comdict[keyword] = comdict[keyword] + 1
-                else:
-                    comdict[keyword] = 1
 
-        companies = sorted(comdict.items(), key=lambda x: abs(x[1]), reverse=True)
-        keyLen = (5 if len(companies) >= 5 else len(companies))
+        # companies = sorted(comdict.items(), key=lambda x: abs(x[1]), reverse=True)
+        # keyLen = (5 if len(companies) >= 5 else len(companies))
 
-        for i in range(0, keyLen):
-            self.companies.append({'name':companies[i][0],'score':companies[i][1]})
-
-        print ('찾은회사 @@@@@@@@@@@@@@@@@@@@@@@@0 : '+str(self.companies))
+        # for i in range(0, keyLen):
+        #     self.companies.append({'name':companies[i][0],'score':companies[i][1]})
+        #
+        # print ('찾은회사 @@@@@@@@@@@@@@@@@@@@@@@@0 : '+str(self.companies))
 
 
     def positiveinit(self):

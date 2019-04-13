@@ -4,15 +4,17 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from multiprocessing import Process
 from pytz import timezone
+from time import sleep
+import random
 import re
 from crawler.morpheme.morpheme import Morpheme
 
 class NewsCrawler:
     es = Elasticsearch()
     mor = Morpheme()
-
+    newsUrl=""
     def __init__(self):
-        self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
+        self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=20190405"
         #속보 : https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001
         #정치 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=100
         #경제 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101
@@ -49,6 +51,11 @@ class NewsCrawler:
                 continue;
 
             request = requests.get(newsDetailUrl);
+
+
+            sleepTime = random.randrange(2,4)
+            sleep(sleepTime)
+
             html = request.text
             htmlSoup = BeautifulSoup(html, 'html.parser')
 
@@ -115,7 +122,23 @@ class NewsCrawler:
 
 
     def start(self):
-         # self.crawling(10)
-        for i in range(0,2):
-            proc = Process(target=self.crawling, args=(10*i,))
-            proc.start()
+
+        for k in range(1,13):
+            strk = str(k)
+            if k<10:
+                strk = '0'+strk
+
+            for j in range(1,29):
+                strj = str(j)
+                if j<10:
+                    strj = '0'+strj;
+
+
+                self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=2017"+strk+strj
+                 # self.crawling(10)
+                for i in range(3,14):
+                    proc = Process(target=self.crawling, args=(10*i,))
+                    proc.start()
+                    sleep(0.5)
+
+        sleep(10)
