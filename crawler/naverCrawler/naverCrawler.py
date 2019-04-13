@@ -14,7 +14,7 @@ class NewsCrawler:
     mor = Morpheme()
     newsUrl=""
     def __init__(self):
-        self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=20190405"
+        self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
         #속보 : https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001
         #정치 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=100
         #경제 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101
@@ -51,10 +51,6 @@ class NewsCrawler:
                 continue;
 
             request = requests.get(newsDetailUrl);
-
-
-            sleepTime = random.randrange(2,4)
-            sleep(sleepTime)
 
             html = request.text
             htmlSoup = BeautifulSoup(html, 'html.parser')
@@ -122,6 +118,11 @@ class NewsCrawler:
 
 
     def start(self):
+        for i in range(0,10):
+            proc = Process(target=self.crawling, args=(10*i,))
+            proc.start()
+
+    def initial_start(self):
 
         for k in range(1,13):
             strk = str(k)
@@ -134,7 +135,7 @@ class NewsCrawler:
                     strj = '0'+strj;
 
 
-                self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=2017"+strk+strj
+                # self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=2017"+strk+strj
                  # self.crawling(10)
                 for i in range(3,14):
                     proc = Process(target=self.crawling, args=(10*i,))
