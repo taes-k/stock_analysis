@@ -13,6 +13,8 @@ class NewsCrawler:
     es = Elasticsearch()
     mor = Morpheme()
     newsUrl=""
+    exceptUrl=[]
+
     def __init__(self):
         self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
         #속보 : https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001
@@ -22,6 +24,20 @@ class NewsCrawler:
         #생활 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=103
         #세계 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=104
         #과학 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=105
+        self.exceptUrl = ['oid=091', #해외뉴스
+                          'oid=077', #해외뉴스
+                          'oid=410', #mkSports
+                          'oid=076', #sports조선
+                          'oid=382', #스포츠동아
+                          'oid=396', #스포츠월드
+                          'oid=144', #스포츠경향
+                          'oid=413', #인터풋볼
+                          'oid=351', #바스켓코리아
+                          'oid=065', #점프볼
+                          'oid=477', #스포츠티비
+                          'oid=358', #스포탈
+                          'oid=468', #스포츠서울
+                          ]
 
     def crawling(self,_page):
         newsLinks = []
@@ -45,12 +61,27 @@ class NewsCrawler:
 
             oid = str(newsDetailUrl.split('oid=')[1].split('&')[0])
             aid = str(newsDetailUrl.split('aid=')[1].split('&')[0])
-            newsId = oid+aid
 
-            if "oid=091" in newsDetailUrl or "oid=077" in newsDetailUrl :
+            newsId = oid+aid #뉴스 아이디 지정
+
+
+            #제외 언론사
+            if  "oid=091" in newsDetailUrl or \
+                "oid=077" in newsDetailUrl or \
+                "oid=410" in newsDetailUrl or \
+                "oid=076" in newsDetailUrl or \
+                "oid=382" in newsDetailUrl or \
+                "oid=396" in newsDetailUrl or \
+                "oid=144" in newsDetailUrl or \
+                "oid=413" in newsDetailUrl or \
+                "oid=351" in newsDetailUrl or \
+                "oid=065" in newsDetailUrl or \
+                "oid=477" in newsDetailUrl or \
+                "oid=358" in newsDetailUrl or \
+                "oid=468" in newsDetailUrl :
                 continue;
 
-            request = requests.get(newsDetailUrl);
+            request = requests.get(newsDetailUrl)
 
             html = request.text
             htmlSoup = BeautifulSoup(html, 'html.parser')
@@ -81,7 +112,6 @@ class NewsCrawler:
             newsContents = re.sub('<.+?>', '', newsContents, 0, re.I|re.S)
 
             self.mor.store(newsTitle,newsContents)
-            # self.mor.positiveinit()
             self.mor.keyword()
             self.mor.company_check()
             if self.mor.positive()!=0 and len(self.mor.companies)!=0 :
@@ -118,7 +148,7 @@ class NewsCrawler:
 
 
     def start(self):
-        for i in range(0,10):
+        for i in range(0,20):
             proc = Process(target=self.crawling, args=(10*i,))
             proc.start()
 

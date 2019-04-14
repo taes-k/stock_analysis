@@ -173,37 +173,43 @@ class Morpheme:
 
     def company_check(self):
         self.companies = []
-        comdict = {}
-        for keyword in self.keywords:
-            if self.companydictionary.get(keyword) != None:
-                for company in self.companydictionary.get(keyword):
-                    if comdict.get(company.get('name')) != None :
-                        comdict[company.get('name')] = abs(comdict[company.get('name')])+1
-                    else :
-                        comdict[company.get('name')] = abs(float(company.get('score')))
+        companyKeywords = []
+        companyScoreDict = {}
+
+        if  not '야구' in self.keywords or\
+            not '축구' in self.keywords or\
+            not '배구' in self.keywords :
+
+            for keyword in self.keywords:
+                if self.companydictionary.get(keyword) != None:
+                    for company in self.companydictionary.get(keyword):
+                        if companyScoreDict.get(company.get('name')) != None :
+                            companyScoreDict[company.get('name')] = companyScoreDict[company.get('name')]+abs(float(company.get('score')))
+                        else :
+                            companyScoreDict[company.get('name')] = abs(float(company.get('score')))
+                        companyKeywords.append(keyword+company.get('name'))
 
 
-            if keyword in self.company_list :
-                with open('./crawler/morpheme/positiveCompanyDic.csv', 'a') as csvfile:
-                    fieldnames = ['keyword','company','score']
-                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                if keyword in self.company_list :
+                    for idx in range(0,2):
+                        if not self.keywords[idx]+keyword in companyKeywords :
+                            score = (keyword == self.keywords[idx] and 1 or 0.5)
+                            data = {'keyword': self.keywords[idx], 'company': keyword, 'score': score}
+                            with open('./crawler/morpheme/positiveCompanyDic.csv', 'a') as csvfile:
+                                fieldnames = ['keyword','company','score']
+                                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                                writer.writerow(data)
 
-                    if comdict.get(keyword) == None:
-                        score = keyword==self.keyword[0] and 1 or 0.5
-                        data = {'keyword': self.keywords[0], 'company': keyword, 'score': score}
-                        writer.writerow(data)
-                        score = keyword==self.keyword[1] and 1 or 0.5
-                        data = {'keyword': self.keywords[1], 'company': keyword, 'score': score}
-                        writer.writerow(data)
+                            companyKeywords.append(keyword[idx]+keyword)
+                            companyScoreDict[keyword] = score
+                            self.companydictionary[self.keywords[idx]] = [{'name': keyword, 'score': score}]
 
-                if comdict.get(keyword) == None:
-                    comdict[keyword] = comdict[keyword] + 1
-
-        companies = sorted(comdict.items(), key=lambda x: abs(x[1]), reverse=True)
+        companies = sorted(companyScoreDict.items(), key=lambda x: abs(x[1]), reverse=True)
         keyLen = (5 if len(companies) >= 5 else len(companies))
 
         for i in range(0, keyLen):
-            self.companies.append({'name':companies[i][0],'score':companies[i][1]})
+            if companies[i][1] >= 0.8 :
+                self.companies.append({'name':companies[i][0],'score':companies[i][1]})
 
         print ('찾은회사 @@@@@@@@@@@@@@@@@@@@@@@@0 : '+str(self.companies))
 
