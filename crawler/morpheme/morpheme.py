@@ -178,7 +178,9 @@ class Morpheme:
 
         if  not '야구' in self.keywords or\
             not '축구' in self.keywords or\
-            not '배구' in self.keywords :
+            not '배구' in self.keywords or\
+            not '별세' in self.keywords or\
+            not '부고' in self.keywords :
 
             for keyword in self.keywords:
                 if self.companydictionary.get(keyword) != None:
