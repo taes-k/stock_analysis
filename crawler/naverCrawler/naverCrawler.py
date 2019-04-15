@@ -16,7 +16,7 @@ class NewsCrawler:
     exceptUrl=[]
 
     def __init__(self):
-        self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=20190120"
+        self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
         #속보 : https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001
         #정치 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=100
         #경제 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101
@@ -114,23 +114,23 @@ class NewsCrawler:
             self.mor.store(newsTitle,newsContents)
             self.mor.keyword()
             self.mor.company_check()
-            self.mor.positiveinit()
+            # self.mor.positiveinit()
 
-            # if self.mor.positive()!=0 and len(self.mor.companies)!=0 :
-            #
-            #     news = {
-            #         'profile': newsProfile,
-            #         'title': newsTitle,
-            #         'contents': newsContents,
-            #         'keyword': self.mor.keywords,
-            #         'positive': self.mor.positiveScore,
-            #         'company': self.mor.companies,
-            #         'date':  newsDate,
-            #         'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
-            #         'url': newsDetailUrl,
-            #     }
-            #     response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news, id=newsId)
-            #     print(response)
+            if self.mor.positive()!=0 and len(self.mor.companies)!=0 :
+
+                news = {
+                    'profile': newsProfile,
+                    'title': newsTitle,
+                    'contents': newsContents,
+                    'keyword': self.mor.keywords,
+                    'positive': self.mor.positiveScore,
+                    'company': self.mor.companies,
+                    'date':  newsDate,
+                    'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
+                    'url': newsDetailUrl,
+                }
+                response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news, id=newsId)
+                print(response)
 
 
     def search(self):
@@ -150,10 +150,10 @@ class NewsCrawler:
 
 
     def start(self):
-        for i in range(3,20):
-            self.crawling(10*i)
-            # proc = Process(target=self.crawling, args=(10*i,))
-            # proc.start()
+        for i in range(0,10):
+            # self.crawling(10*i)
+            proc = Process(target=self.crawling, args=(10*i,))
+            proc.start()
 
     def initial_start(self):
 

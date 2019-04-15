@@ -5,7 +5,7 @@ import csv
 class Positive:
     texts=[]
     score=[]
-    vectorizer = CountVectorizer(ngram_range=(1, 3),min_df=1) #tri-gram 까지 분석
+    vectorizer = CountVectorizer(ngram_range=(1, 3),min_df=2) #tri-gram 까지 분석
     forest = RandomForestClassifier(n_estimators=100, n_jobs=-1, random_state=2018)
 
     def __init__(self):
@@ -29,6 +29,6 @@ class Positive:
         predict_data = self.vectorizer.transform(target_data)
         predict_data_array = predict_data.toarray()
 
-        result = self.forest.transform(predict_data_array)
+        result = self.forest.predict(predict_data_array)
 
-        return result
+        return result[0]

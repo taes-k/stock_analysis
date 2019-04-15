@@ -2,6 +2,7 @@ from konlpy.tag import Kkma
 from elasticsearch import Elasticsearch
 from elasticsearch.client import IndicesClient
 from crawler.morpheme.positive import Positive
+from crawler.morpheme.company import Company
 import csv
 
 class Morpheme:
@@ -12,51 +13,18 @@ class Morpheme:
     posText = []
     keywords = []
     companies = []
-    company_list = []
-    positiveDictionary = {}
-    companydictionary = {}
     positiveScore = 0
 
     ps = Positive()
-
+    com = Company()
 
     def __init__(self):
         print("init")
-        self.posdic()
-        self.comdic()
-
-
-    def posdic(self):
-        with open('./crawler/morpheme/positiveDictionary.csv', 'rt') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                if self.positiveDictionary.get(row.get('token')) == None:
-                    if 'NNG' in row.get('token') or 'XR' in row.get('token') or 'VV' in row.get('token') or 'VA' in row.get('token') or 'VP' in row.get('token') :
-                        self.positiveDictionary[(row.get('token'))] = float(row.get('positive'))/2
-                else:
-                    self.positiveDictionary[(row.get('token'))] = float(self.positiveDictionary.get(row.get('token'))+float(row.get('positive'))/2)/1.8
-
-    def comdic(self):
-        with open('./crawler/morpheme/listedCompanyList.csv', 'rt') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                self.company_list.append(row.get('name'))
-
-        with open('./crawler/morpheme/positiveCompanyDic.csv', 'rt') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                if self.companydictionary.get(row.get('keyword')) == None :
-                    self.companydictionary[(row.get('keyword'))] = [{'name':row.get('company'),'score':row.get('score')}]
-                else :
-                    list = self.companydictionary.get(row.get('keyword'))
-                    list.append({'name':row.get('company'),'score':row.get('score')})
-                    self.companydictionary[(row.get('keyword'))] = list
 
 
     def store(self,title,text):
         self.targetTitle = title
         self.targetText = text
-        self.positiveScore = 0
 
         posTitleSetting = {
             "analyzer": "my_analyzer",
@@ -79,73 +47,21 @@ class Morpheme:
         self.posText = tempText.get('detail').get('tokenizer').get('tokens')
         self.posText = list({token['token']: token for token in self.posText}.values()) # 중복제거
 
+
     def positive(self):
-
-        self.positiveScore = 0
-        posiCount = 0
-        negaCount = 0
+        text = ''
         for morpheme in self.posTitle:
-            if self.positiveDictionary.get(str(morpheme.get('token')+morpheme.get('leftPOS'))) != None :
-                self.positiveScore += self.positiveDictionary[(morpheme.get('token')+morpheme.get('leftPOS'))]
-                if self.positiveDictionary[(morpheme.get('token')+morpheme.get('leftPOS'))] > 0 :
-                    posiCount += 1
-                else :
-                    negaCount += 1
+            if 'NNG' in morpheme.get('leftPOS') or \
+                'XR' in morpheme.get('leftPOS') or \
+                'VV' in morpheme.get('leftPOS') or \
+                'VA' in morpheme.get('leftPOS') or \
+                'VP' in morpheme.get('token') or \
+                'MAG' in morpheme.get('token'):
+                if not (morpheme.get('token') in self.company_list):
+                    text = text + morpheme.get('token') + (morpheme.get('leftPOS').split('(')[0]) + ' '
 
-        posiPercent = float(posiCount/len(self.posTitle))
-        negaPercent = float(negaCount/len(self.posTitle))
-
-        print(self.targetTitle)
-        print(self.positiveScore)
-        print("positive Percent : "+str(posiPercent))
-        print("negative Percent : "+str(negaPercent))
-
-
-        if self.positiveScore > 0 :
-            if posiPercent > 0.3 :
-                with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
-                    fieldnames = ['token', 'positive']
-                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                    for morpheme in self.posTitle:
-                        if  'NNG' in morpheme.get('leftPOS') or \
-                            'XR' in morpheme.get('leftPOS') or \
-                            'VV' in morpheme.get('leftPOS') or \
-                            'VA' in morpheme.get('leftPOS') or \
-                            'VP' in morpheme.get('leftPOS'):
-
-                            if not(morpheme.get('token') in self.company_list) :
-                                data = {'token':(morpheme.get('token')+morpheme.get('leftPOS')),'positive':1}
-                                writer.writerow(data)
-                                if self.positiveDictionary.get(morpheme.get('token')) == None:
-                                    self.positiveDictionary[(morpheme.get('token'))] = float(1) / 2
-                                else:
-                                    self.positiveDictionary[(morpheme.get('token'))] = float(
-                                        self.positiveDictionary.get(morpheme.get('token')) + float(1) / 2) / 1.8
-
-
-            else :
-                self.positiveScore = 0
-
-        elif self.positiveScore < 0 :
-            if negaPercent > 0.3 :
-                with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
-                    fieldnames = ['token', 'positive']
-                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                    for morpheme in self.posTitle:
-                        if 'NNG' in morpheme.get('leftPOS') or 'XR' in morpheme.get('leftPOS') or 'VV' in morpheme.get(
-                                'leftPOS') or 'VA' in morpheme.get('leftPOS') or 'VP' in morpheme.get('leftPOS'):
-                            if not(morpheme.get('token') in self.company_list) :
-                                data = {'token':(morpheme.get('token')+morpheme.get('leftPOS')),'positive':-1}
-                                writer.writerow(data)
-                                if self.positiveDictionary.get(morpheme.get('token')) == None:
-                                    self.positiveDictionary[(morpheme.get('token'))] = float(-1) / 2
-                                else:
-                                    self.positiveDictionary[(morpheme.get('token'))] = float(
-                                        self.positiveDictionary.get(morpheme.get('token')) + float(-1) / 2) / 1.8
-
-            else :
-                self.positiveScore = 0
-
+        if text != '':
+            self.positiveScore = self.ps.get_positive(text)
 
         return self.positiveScore
 
@@ -180,6 +96,8 @@ class Morpheme:
         return self.keywords
 
     def company_check(self):
+        self.com.get_realated_companies(self.keywords)
+
         self.companies = []
         companyKeywords = []
         companyScoreDict = {}
