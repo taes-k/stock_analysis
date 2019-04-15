@@ -1,6 +1,7 @@
 from konlpy.tag import Kkma
 from elasticsearch import Elasticsearch
 from elasticsearch.client import IndicesClient
+from crawler.morpheme.positive import Positive
 import csv
 
 class Morpheme:
@@ -16,6 +17,9 @@ class Morpheme:
     companydictionary = {}
     positiveScore = 0
 
+    ps = Positive()
+
+
     def __init__(self):
         print("init")
         self.posdic()
@@ -23,7 +27,6 @@ class Morpheme:
 
 
     def posdic(self):
-
         with open('./crawler/morpheme/positiveDictionary.csv', 'rt') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
@@ -77,6 +80,7 @@ class Morpheme:
         self.posText = list({token['token']: token for token in self.posText}.values()) # 중복제거
 
     def positive(self):
+
         self.positiveScore = 0
         posiCount = 0
         negaCount = 0
@@ -103,8 +107,12 @@ class Morpheme:
                     fieldnames = ['token', 'positive']
                     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                     for morpheme in self.posTitle:
-                        if 'NNG' in morpheme.get('leftPOS') or 'XR' in morpheme.get('leftPOS') or 'VV' in morpheme.get(
-                                'leftPOS') or 'VA' in morpheme.get('leftPOS') or 'VP' in morpheme.get('leftPOS'):
+                        if  'NNG' in morpheme.get('leftPOS') or \
+                            'XR' in morpheme.get('leftPOS') or \
+                            'VV' in morpheme.get('leftPOS') or \
+                            'VA' in morpheme.get('leftPOS') or \
+                            'VP' in morpheme.get('leftPOS'):
+
                             if not(morpheme.get('token') in self.company_list) :
                                 data = {'token':(morpheme.get('token')+morpheme.get('leftPOS')),'positive':1}
                                 writer.writerow(data)
@@ -176,10 +184,10 @@ class Morpheme:
         companyKeywords = []
         companyScoreDict = {}
 
-        if  not '야구' in self.keywords or\
-            not '축구' in self.keywords or\
-            not '배구' in self.keywords or\
-            not '별세' in self.keywords or\
+        if  not '야구' in self.keywords and\
+            not '축구' in self.keywords and\
+            not '배구' in self.keywords and\
+            not '별세' in self.keywords and\
             not '부고' in self.keywords :
 
             for keyword in self.keywords:
@@ -189,20 +197,20 @@ class Morpheme:
                             companyScoreDict[company.get('name')] = companyScoreDict[company.get('name')]+abs(float(company.get('score')))
                         else :
                             companyScoreDict[company.get('name')] = abs(float(company.get('score')))
-                        companyKeywords.append(keyword+company.get('name'))
+                        companyKeywords.append((keyword+company.get('name')))
 
 
                 if keyword in self.company_list :
                     for idx in range(0,2):
-                        if not self.keywords[idx]+keyword in companyKeywords :
-                            score = (keyword == self.keywords[idx] and 1 or 0.5)
+                        if not (self.keywords[idx]+keyword) in companyKeywords :
+                            score = (keyword == self.keywords[idx] and 1 or (self.keywords[idx] in self.company_list and 0.5 or 0.3))
                             data = {'keyword': self.keywords[idx], 'company': keyword, 'score': score}
                             with open('./crawler/morpheme/positiveCompanyDic.csv', 'a') as csvfile:
                                 fieldnames = ['keyword','company','score']
                                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                                 writer.writerow(data)
 
-                            companyKeywords.append(keyword[idx]+keyword)
+                            companyKeywords.append((self.keywords[idx]+keyword))
                             companyScoreDict[keyword] = score
                             self.companydictionary[self.keywords[idx]] = [{'name': keyword, 'score': score}]
 
@@ -220,26 +228,23 @@ class Morpheme:
 
         print(self.targetTitle)
         i = input()
-        if i == '1':
-            with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
-                fieldnames = ['token', 'positive']
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                for morpheme in self.posTitle:
-                    if 'NNG' in morpheme.get('leftPOS') or 'XR' in morpheme.get('leftPOS') or \
-                                    'VV' in morpheme.get('leftPOS') or 'VA' in morpheme.get('leftPOS') or 'VP' in morpheme.get('token'):
-                        if not (morpheme.get('token') in self.company_list):
-                            data = {'token': (morpheme.get('token') + morpheme.get('leftPOS')), 'positive': 1}
-                            print("저장 Positive 데이터 : "+str(data))
-                            writer.writerow(data)
-        if i == '2':
-            with open('./crawler/morpheme/positiveDictionary.csv', 'a') as csvfile:
-                fieldnames = ['token', 'positive']
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                for morpheme in self.posTitle:
-                    if 'NNG' in morpheme.get('leftPOS') or 'XR' in morpheme.get('leftPOS') or \
-                                    'VV' in morpheme.get('leftPOS') or 'VA' in morpheme.get('leftPOS') or 'VP' in morpheme.get('token'):
-                        if not (morpheme.get('token') in self.company_list):
-                            data = {'token': (morpheme.get('token') + morpheme.get('leftPOS')), 'positive': -1}
-                            print("저장 Positive 데이터 : "+str(data))
-                            writer.writerow(data)
 
+        if i!='3' :
+            with open('./crawler/morpheme/positiveTrainData.csv', 'a') as csvfile:
+                fieldnames = ['text', 'positive']
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                text = ''
+                for morpheme in self.posTitle:
+                    if 'NNG' in morpheme.get('leftPOS') or \
+                        'XR' in morpheme.get('leftPOS') or \
+                        'VV' in morpheme.get('leftPOS') or \
+                        'VA' in morpheme.get('leftPOS') or \
+                        'VP' in morpheme.get('token') or \
+                        'MAG' in morpheme.get('token'):
+                        if not (morpheme.get('token') in self.company_list):
+                            text = text + morpheme.get('token')+(morpheme.get('leftPOS').split('(')[0])+' '
+
+                if text!='' :
+                    data = {'text': text, 'positive': i }
+                    print("저장 Positive 데이터 : "+text)
+                    writer.writerow(data)
