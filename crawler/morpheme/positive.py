@@ -22,13 +22,55 @@ class Positive:
                 self.texts.append(row.get('text'))
                 self.score.append(row.get('positive'))
 
-    def get_positive(self,target):
+    def get_positive(self,pos_title_list):
+        text = ''
+        pos_filter_list = ['NNG', 'XR', 'VV', 'VA', 'VP', 'MAG']
 
+        for pos in self.pos_title_list:
+            filter_check = False
+            # pos Filtering
+            for filter in pos_filter_list:
+                if filter:
+                    filter_check = True
+                    break
 
-        target_data = [target]
-        predict_data = self.vectorizer.transform(target_data)
-        predict_data_array = predict_data.toarray()
+            if filter_check:
+                # compnay name Filtering
+                if not (pos.get('token') in self.com.company_list):
+                    # positive score text 조합
+                    text = text + pos.get('token') + (pos.get('leftPOS').split('(')[0]) + ' '
 
-        result = self.forest.predict(predict_data_array)
+        result = 0
+        if text != '':
+            target_data = [text]
+            predict_data = self.vectorizer.transform(target_data)
+            predict_data_array = predict_data.toarray()
+
+            result = self.forest.predict(predict_data_array)
 
         return result[0]
+
+    def set_positive(self,title):
+
+        print(title)
+        i = input()
+
+        if i!='3' :
+            with open('./crawler/morpheme/positiveTrainData.csv', 'a') as csvfile:
+                fieldnames = ['text', 'positive']
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                text = ''
+                for morpheme in self.posTitle:
+                    if 'NNG' in morpheme.get('leftPOS') or \
+                        'XR' in morpheme.get('leftPOS') or \
+                        'VV' in morpheme.get('leftPOS') or \
+                        'VA' in morpheme.get('leftPOS') or \
+                        'VP' in morpheme.get('token') or \
+                        'MAG' in morpheme.get('token'):
+                        if not (morpheme.get('token') in self.company_list):
+                            text = text + morpheme.get('token')+(morpheme.get('leftPOS').split('(')[0])+' '
+
+                if text!='' :
+                    data = {'text': text, 'positive': i }
+                    print("저장 Positive 데이터 : "+text)
+                    writer.writerow(data)

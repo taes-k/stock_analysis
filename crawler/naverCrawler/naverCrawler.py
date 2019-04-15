@@ -5,174 +5,154 @@ from bs4 import BeautifulSoup
 from multiprocessing import Process
 from pytz import timezone
 from time import sleep
-import random
 import re
 from crawler.morpheme.morpheme import Morpheme
 
 class NewsCrawler:
     es = Elasticsearch()
     mor = Morpheme()
-    newsUrl=""
+    news_url=''
     exceptUrl=[]
 
     def __init__(self):
-        self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001"
-        #속보 : https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001
-        #정치 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=100
-        #경제 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101
-        #사회 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=102
-        #생활 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=103
-        #세계 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=104
-        #과학 : https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=105
-        self.exceptUrl = ['oid=091', #해외뉴스
-                          'oid=077', #해외뉴스
-                          'oid=410', #mkSports
-                          'oid=076', #sports조선
-                          'oid=382', #스포츠동아
-                          'oid=396', #스포츠월드
-                          'oid=144', #스포츠경향
-                          'oid=413', #인터풋볼
-                          'oid=351', #바스켓코리아
-                          'oid=065', #점프볼
-                          'oid=477', #스포츠티비
-                          'oid=358', #스포탈
-                          'oid=468', #스포츠서울
-                          ]
+        self.news_url = 'https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001'
+        self.except_url_list = ['oid=091', #해외뉴스
+                              'oid=077', #해외뉴스
+                              'oid=410', #mkSports
+                              'oid=076', #sports조선
+                              'oid=382', #스포츠동아
+                              'oid=396', #스포츠월드
+                              'oid=144', #스포츠경향
+                              'oid=413', #인터풋볼
+                              'oid=351', #바스켓코리아
+                              'oid=065', #점프볼
+                              'oid=477', #스포츠티비
+                              'oid=358', #스포탈
+                              'oid=468', #스포츠서울
+                              ]
 
     def crawling(self,_page):
-        newsLinks = []
+        news_link_list = []
 
         for i in range(1,11):
-            url = str(self.newsUrl) + "&page=" + str(_page+i)
+            url = str(self.news_url) + "&page=" + str(_page+i)
             request = requests.get(url);
             html = request.text
-            htmlSoup = BeautifulSoup(html, 'html.parser')
-            onePageNewsLinks=htmlSoup.select(
+            soup = BeautifulSoup(html, 'html.parser')
+            news_links=soup.select(
                 '#main_content > div.list_body.newsflash_body > ul.type06_headline > li > dl > dt:nth-child(1) > a'
             )
 
-            for link in onePageNewsLinks:
-                newsLinks.append(link['href'])
+            for link in news_links:
+                news_link_list.append(link['href'])
 
 
-        for link in newsLinks :
-            print(link)
-            newsDetailUrl = link
+        for link in news_link_list :
+            print('link : ' + link)
+            url = link
 
-            oid = str(newsDetailUrl.split('oid=')[1].split('&')[0])
-            aid = str(newsDetailUrl.split('aid=')[1].split('&')[0])
+            oid = str(url.split('oid=')[1].split('&')[0])
+            aid = str(url.split('aid=')[1].split('&')[0])
 
-            newsId = oid+aid #뉴스 아이디 지정
+            news_id = oid+aid #뉴스 아이디 지정
 
+            except_check = False
+            #제외 언론사 필터링
+            for except_url in self.except_url_list:
+                if except_url in url:
+                    except_check = True
+                    break
 
-            #제외 언론사
-            if  "oid=091" in newsDetailUrl or \
-                "oid=077" in newsDetailUrl or \
-                "oid=410" in newsDetailUrl or \
-                "oid=076" in newsDetailUrl or \
-                "oid=382" in newsDetailUrl or \
-                "oid=396" in newsDetailUrl or \
-                "oid=144" in newsDetailUrl or \
-                "oid=413" in newsDetailUrl or \
-                "oid=351" in newsDetailUrl or \
-                "oid=065" in newsDetailUrl or \
-                "oid=477" in newsDetailUrl or \
-                "oid=358" in newsDetailUrl or \
-                "oid=468" in newsDetailUrl :
-                continue;
+            if except_check :
+                continue
+            #제외 언론사 필터링
 
-            request = requests.get(newsDetailUrl)
+            request = requests.get(url)
 
             html = request.text
-            htmlSoup = BeautifulSoup(html, 'html.parser')
+            soup = BeautifulSoup(html, 'html.parser')
 
-            newsDate = htmlSoup.select('#main_content > div.article_header > div.article_info > div > .t11')
-            newsDate = datetime.strptime(newsDate[0].text,"%Y-%m-%d %H:%M")
-            conNewsDate = datetime.strftime(newsDate,"%Y-%m-%d")
+            news_date = soup.select('#main_content > div.article_header > div.article_info > div > .t11')
+            news_date = datetime.strptime(news_date[0].text,"%Y-%m-%d %H:%M")
+            convert_news_date = datetime.strftime(news_date,"%Y-%m-%d")
 
             try : # 중복기사 크롤링 막기
-                if self.es.get(index = 'news-'+conNewsDate, doc_type = 'break', id = newsId) != None :
+                #Duplication news
+                if self.es.get(index = 'news-'+convert_news_date, doc_type = 'break', id = news_id) != None :
                     print('duplication news')
                     break
             except :
+                #New news
                 print('new news')
 
-            newsProfile = htmlSoup.select('#articleBodyContents > span.end_photo_org > img')
-            if len(newsProfile)>0 :
-                newsProfile = newsProfile[0]['src']
+            news_profile = soup.select('#articleBodyContents > span.end_photo_org > img')
+            if len(news_profile)>0 :
+                news_profile = news_profile[0]['src']
             else :
-                newsProfile = None
+                news_profile = None
 
 
-            newsTitle = htmlSoup.select('#articleTitle')[0].text
-            newsContents = str(htmlSoup.select('#articleBodyContents'))
+            news_title = soup.select('#articleTitle')[0].text
+            news_contents = str(soup.select('#articleBodyContents'))
 
-            newsContents = re.sub('<script.*?>.*?</script>', '', newsContents, 0, re.I|re.S)
-            newsContents = re.sub('<a.*?>.*?</a>', '', newsContents, 0, re.I|re.S)
-            newsContents = re.sub('<.+?>', '', newsContents, 0, re.I|re.S)
+            #태그제거
+            news_contents = re.sub('<script.*?>.*?</script>', '', news_contents, 0, re.I|re.S)
+            news_contents = re.sub('<a.*?>.*?</a>', '', news_contents, 0, re.I|re.S)
+            news_contents = re.sub('<.+?>', '', news_contents, 0, re.I|re.S)
 
-            self.mor.store(newsTitle,newsContents)
-            self.mor.keyword()
-            self.mor.company_check()
-            # self.mor.positiveinit()
+            self.mor.store(news_title,news_contents)
 
-            if self.mor.positive()!=0 and len(self.mor.companies)!=0 :
+            positive_score = self.mor.get_positive()
+            keyword_list = self.mor.get_keyword()
+            related_company_list = self.mor.get_company()
 
+            if positive_score!=0 and len(related_company_list)!=0 :
                 news = {
-                    'profile': newsProfile,
-                    'title': newsTitle,
-                    'contents': newsContents,
-                    'keyword': self.mor.keywords,
-                    'positive': self.mor.positiveScore,
-                    'company': self.mor.companies,
-                    'date':  newsDate,
+                    'profile': news_profile,
+                    'title': news_title,
+                    'contents': news_contents,
+                    'keyword': keyword_list,
+                    'positive': positive_score,
+                    'company': related_company_list,
+                    'date':  news_date,
                     'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
-                    'url': newsDetailUrl,
+                    'url': url,
                 }
-                response = self.es.index(index='news-'+conNewsDate, doc_type='break', body=news, id=newsId)
-                print(response)
+                response = self.es.index(index='news-'+convert_news_date, doc_type='break', body=news, id=news_id)
 
 
-    def search(self):
-
+    def search(self,text):
         query = {
             "sort": [
                 {"date": {"order": "desc"}},
             ],
             "query": {
-                "term": {"contents": "네이버"}
+                "term": {"contents": text}
                 }
             }
+        result = self.es.search(index="news", body=query)
 
-        res = self.es.search(index="news", body=query)
-
-        return res
+        return result
 
 
-    def start(self):
+    def crawling_start(self):
         for i in range(0,10):
             # self.crawling(10*i)
             proc = Process(target=self.crawling, args=(10*i,))
             proc.start()
 
-    def initial_start(self):
-
-        for k in range(1,13):
-            strk = str(k)
-            if k<10:
-                strk = '0'+strk
-
-            for j in range(1,29):
-                strj = str(j)
-                if j<10:
-                    strj = '0'+strj;
-
-
-                # self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=2017"+strk+strj
-                 # self.crawling(10)
-                for i in range(3,14):
-                    proc = Process(target=self.crawling, args=(10*i,))
+    def initial_crawling_start(self):
+        for month in range(1,13):
+            str_month = str(month)
+            if month<10:
+                str_month = '0'+str_month
+            for day in range(1,29):
+                str_day = str(day)
+                if day<10:
+                    str_day = '0'+str_day;
+                self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=2017"+str_month+str_day
+                for page in range(3,14):
+                    proc = Process(target=self.crawling, args=(10*page,))
                     proc.start()
                     sleep(0.5)
-
-        sleep(10)
+            sleep(10)

@@ -2,8 +2,7 @@ import csv
 
 class Company:
 
-    company_list = []
-    companydictionary = {}
+    company_realtion_keyword_dic = {}
 
     def __init__(self):
         self.company_init()
@@ -18,61 +17,67 @@ class Company:
         with open('./crawler/morpheme/positiveCompanyDic.csv', 'rt') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                if self.companydictionary.get(row.get('keyword')) == None:
-                    self.companydictionary[(row.get('keyword'))] = [{'name': row.get('company'), 'score': row.get('score')}]
+                if self.company_realtion_keyword_dic.get(row.get('keyword')) == None:
+                    self.company_realtion_keyword_dic[(row.get('keyword'))] = [{'name': row.get('company'), 'score': row.get('score')}]
                 else:
-                    check = True
-                    for keyList in self.companydictionary.get(row.get('keyword')) :
-                        if row.get('company') == keyList.get('name') :
-                            check = False
-
-                    if check :
-                        list = self.companydictionary.get(row.get('keyword'))
+                    duplication_check = False
+                    for key_list in self.company_realtion_keyword_dic.get(row.get('keyword')) :
+                        if row.get('company') == key_list.get('name') :
+                            duplication_check = True
+                    if not duplication_check :
+                        list = self.company_realtion_keyword_dic.get(row.get('keyword'))
                         list.append({'name': row.get('company'), 'score': row.get('score')})
-                        self.companydictionary[(row.get('keyword'))] = list
+                        self.company_realtion_keyword_dic[(row.get('keyword'))] = list
 
     def get_realated_companies(self, keywords):
+        filter_keywords = ['야구','축구','배구','별세','부고','인사']
+        filter_check = False
 
+        company_keyword_list = []
+        company_score_dic = {}
 
-        self.companies = []
-        companyKeywords = []
-        companyScoreDict = {}
+        for filter in filter_keywords :
+            if filter in keywords :
+                filter_check = True
 
-        if  not '야구' in self.keywords and\
-            not '축구' in self.keywords and\
-            not '배구' in self.keywords and\
-            not '별세' in self.keywords and\
-            not '부고' in self.keywords :
-
-            for keyword in self.keywords:
-                if self.companydictionary.get(keyword) != None:
-                    for company in self.companydictionary.get(keyword):
-                        if companyScoreDict.get(company.get('name')) != None :
-                            companyScoreDict[company.get('name')] = companyScoreDict[company.get('name')]+abs(float(company.get('score')))
+        if not filter_check :
+            for keyword in keywords:
+                #연관 키워드 dic 검색하여 score 점수 확인
+                if self.company_realtion_keyword_dic.get(keyword) != None:
+                    for company_info in self.company_realtion_keyword_dic.get(keyword):
+                        if company_score_dic.get(company_info.get('name')) != None :
+                            company_score_dic[company_info.get('name')] = company_score_dic[company_info.get('name')]+abs(float(company_info.get('score')))
                         else :
-                            companyScoreDict[company.get('name')] = abs(float(company.get('score')))
-                        companyKeywords.append((keyword+company.get('name')))
+                            company_score_dic[company_info.get('name')] = abs(float(company_info.get('score')))
+                        #중복방지를 위한 키워드리스트 생성
+                        company_keyword_list.append(keyword+company_info.get('name'))
 
-
+                #새로운 연관 키워드 생성
                 if keyword in self.company_list :
+                    company_name = keyword
                     for idx in range(0,2):
-                        if not (self.keywords[idx]+keyword) in companyKeywords :
-                            score = (keyword == self.keywords[idx] and 1 or (self.keywords[idx] in self.company_list and 0.5 or 0.3))
-                            data = {'keyword': self.keywords[idx], 'company': keyword, 'score': score}
+                        #기존에 없는 키워드일경우에만 저장
+                        if not (keywords[idx]+company_name) in company_keyword_list :
+                            #다른 회사 이름이 keyword일 경우 0.5점 , 기타 keyword일 경우 0.3점
+                            score = (company_name == self.keywords[idx] and 1 or (self.keywords[idx] in self.company_list and 0.5 or 0.3))
+                            data = {'keyword': self.keywords[idx], 'company': company_name, 'score': score}
                             with open('./crawler/morpheme/positiveCompanyDic.csv', 'a') as csvfile:
                                 fieldnames = ['keyword','company','score']
                                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                                 writer.writerow(data)
 
-                            companyKeywords.append((self.keywords[idx]+keyword))
-                            companyScoreDict[keyword] = score
-                            self.companydictionary[self.keywords[idx]] = [{'name': keyword, 'score': score}]
+                            if company_score_dic.get(company_name) != None:
+                                company_score_dic[company_name] = company_score_dic[company_info.get('name')] + abs(score)
+                            else:
+                                company_score_dic[company_name] = abs(score)
 
-        companies = sorted(companyScoreDict.items(), key=lambda x: abs(x[1]), reverse=True)
-        keyLen = (5 if len(companies) >= 5 else len(companies))
+        acc_company_list = sorted(company_score_dic.items(), key=lambda x: abs(x[1]), reverse=True)
+        len = (5 if len(acc_company_list) >= 5 else len(acc_company_list))
 
-        for i in range(0, keyLen):
-            if companies[i][1] >= 0.8 :
-                self.companies.append({'name':companies[i][0],'score':companies[i][1]})
+        result_list = []
+        for i in range(0, len):
+            #0.8점 이상의 관련도를 갖은 회사명만 추출
+            if acc_company_list[i][1] >= 0.8 :
+                result_list.append({'name':acc_company_list[i][0],'score':acc_company_list[i][1]})
 
-        print ('찾은회사 @@@@@@@@@@@@@@@@@@@@@@@@0 : '+str(self.companies))
+        return result_list
