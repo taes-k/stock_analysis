@@ -1,7 +1,7 @@
 import csv
 
 class Company:
-
+    company_list = []
     company_realtion_keyword_dic = {}
 
     def __init__(self):
@@ -72,10 +72,10 @@ class Company:
                                 company_score_dic[company_name] = abs(score)
 
         acc_company_list = sorted(company_score_dic.items(), key=lambda x: abs(x[1]), reverse=True)
-        len = (5 if len(acc_company_list) >= 5 else len(acc_company_list))
+        size = (5 and len(acc_company_list) >= 5 or len(acc_company_list))
 
         result_list = []
-        for i in range(0, len):
+        for i in range(0, size):
             #0.8점 이상의 관련도를 갖은 회사명만 추출
             if acc_company_list[i][1] >= 0.8 :
                 result_list.append({'name':acc_company_list[i][0],'score':acc_company_list[i][1]})

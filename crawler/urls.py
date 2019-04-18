@@ -20,5 +20,4 @@ from crawler import views
 urlpatterns = [
     path('crawling',views.index, name='index'),
     path('search',views.search, name='search'),
-    path('dict',views.positiveInit, name='positiveInit'),
 ]

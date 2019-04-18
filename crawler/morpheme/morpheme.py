@@ -47,7 +47,7 @@ class Morpheme:
     def get_positive(self):
         #positive score 초기화
         self.positive_score = 0
-        self.positive_score = self.ps.get_positive(self.pos_title_list)
+        self.positive_score = self.ps.get_positive(self.pos_title_list,self.com.company_list)
         return self.positive_score
 
     def get_keyword(self):

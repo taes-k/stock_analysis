@@ -22,11 +22,11 @@ class Positive:
                 self.texts.append(row.get('text'))
                 self.score.append(row.get('positive'))
 
-    def get_positive(self,pos_title_list):
+    def get_positive(self,pos_title_list,company_list):
         text = ''
         pos_filter_list = ['NNG', 'XR', 'VV', 'VA', 'VP', 'MAG']
 
-        for pos in self.pos_title_list:
+        for pos in pos_title_list:
             filter_check = False
             # pos Filtering
             for filter in pos_filter_list:
@@ -35,8 +35,8 @@ class Positive:
                     break
 
             if filter_check:
-                # compnay name Filtering
-                if not (pos.get('token') in self.com.company_list):
+                # 토큰이 상장기업명일시 필터링함
+                if not (pos.get('token') in company_list):
                     # positive score text 조합
                     text = text + pos.get('token') + (pos.get('leftPOS').split('(')[0]) + ' '
 

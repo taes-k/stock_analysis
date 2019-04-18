@@ -41,10 +41,10 @@ class Keyword:
 
         #최대 5개 키워드 추출
         acc_keyword_list =sorted(keyword_dic.items(),key=lambda x: x[1], reverse=True)
-        len = (5 if len(acc_keyword_list)>=5 else len(acc_keyword_list))
+        size = (5 and len(acc_keyword_list)>=5 or len(acc_keyword_list))
 
         result_list = []
-        for i in range(0,len) :
+        for i in range(0,size) :
             result_list.append(acc_keyword_list[i][0])
 
         return result_list

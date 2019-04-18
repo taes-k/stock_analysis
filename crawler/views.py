@@ -4,7 +4,7 @@ from crawler.naverCrawler.naverCrawler import NewsCrawler
 # Create your views here.
 def index(request):
     crawler = NewsCrawler()
-    result = crawler.start()
+    result = crawler.crawling_start()
 
 def search(request):
     crawler = NewsCrawler()
