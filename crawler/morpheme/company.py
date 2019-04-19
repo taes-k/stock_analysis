@@ -30,7 +30,7 @@ class Company:
                         self.company_realtion_keyword_dic[(row.get('keyword'))] = list
 
     def get_realated_companies(self, keywords):
-        filter_keywords = ['야구','축구','배구','별세','부고','인사']
+        filter_keywords = ['야구','축구','배구','별세','부고','인사','클로징','홈런']
         filter_check = False
 
         company_keyword_list = []
@@ -42,6 +42,7 @@ class Company:
 
         if not filter_check :
             for keyword in keywords:
+                print(self.company_realtion_keyword_dic.get(keyword) )
                 #연관 키워드 dic 검색하여 score 점수 확인
                 if self.company_realtion_keyword_dic.get(keyword) != None:
                     for company_info in self.company_realtion_keyword_dic.get(keyword):
@@ -59,20 +60,20 @@ class Company:
                         #기존에 없는 키워드일경우에만 저장
                         if not (keywords[idx]+company_name) in company_keyword_list :
                             #다른 회사 이름이 keyword일 경우 0.5점 , 기타 keyword일 경우 0.3점
-                            score = (company_name == self.keywords[idx] and 1 or (self.keywords[idx] in self.company_list and 0.5 or 0.3))
-                            data = {'keyword': self.keywords[idx], 'company': company_name, 'score': score}
+                            score = (company_name == keywords[idx] and 1 or (keywords[idx] in self.company_list and 0.5 or 0.3))
+                            data = {'keyword': keywords[idx], 'company': company_name, 'score': score}
                             with open('./crawler/morpheme/positiveCompanyDic.csv', 'a') as csvfile:
                                 fieldnames = ['keyword','company','score']
                                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                                 writer.writerow(data)
 
                             if company_score_dic.get(company_name) != None:
-                                company_score_dic[company_name] = company_score_dic[company_info.get('name')] + abs(score)
+                                company_score_dic[company_name] = company_score_dic[company_name] + abs(score)
                             else:
                                 company_score_dic[company_name] = abs(score)
 
         acc_company_list = sorted(company_score_dic.items(), key=lambda x: abs(x[1]), reverse=True)
-        size = (5 and len(acc_company_list) >= 5 or len(acc_company_list))
+        size = (5 if len(acc_company_list) >= 5 else len(acc_company_list))
 
         result_list = []
         for i in range(0, size):

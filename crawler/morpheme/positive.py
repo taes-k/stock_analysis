@@ -30,7 +30,7 @@ class Positive:
             filter_check = False
             # pos Filtering
             for filter in pos_filter_list:
-                if filter:
+                if filter in pos.get('leftPOS'):
                     filter_check = True
                     break
 
