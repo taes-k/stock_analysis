@@ -1,0 +1,23 @@
+.container{
+    background-color:#d0d0d0;
+    width: 100%;
+    margin:auto;
+    padding: 10px 0;
+}
+
+.home-container{
+    width: 1080px;
+    margin:auto;
+    padding: 0 10px;
+}
+.headline-container{
+    width:100%;
+    height:200px;
+    background-color:#fff;
+}
+
+.news-container{
+    width:100%;
+    height:200px;
+    background-color:#fff;
+}
