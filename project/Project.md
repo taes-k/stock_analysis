@@ -9,20 +9,20 @@
 - 뉴스기사 키워드와 긍정적/부정적 기사 분석
 
 ## 사이트맵
-<img width="500" src="https://github.com/taes-k/stock-analysis/project/sitemap.png">
+<img width="500" src="https://github.com/taes-k/stock_analysis/master/project/sitemap.png">
  
 ## 페이지 상세
 1. Home
 - 크롤링된 뉴스 기사 1분마다 업데이트 되어 최신뉴스순으로 보여줌
 - 상장사 주가에 영향을 줄수 있는 기사들만을 선별하여 보여줌 
 - 검색을 통해 관련뉴스 / 회사를 검색 할 수 있음
-> <img width="500" src="https://github.com/taes-k/stock-analysis/project/home.png">
+> <img width="500" src="https://github.com/taes-k/stock_analysis/master/project/home.png">
   
 2. Search
 - 관련뉴스 & 회사 검색기능
-> <img width="500" src="https://github.com/taes-k/stock-analysis/project/search.png">    
+> <img width="500" src="https://github.com/taes-k//stock_analysis/master/project/search.png">    
 
 3. Company
 - 회사정보 상세 페이지  
 - 회사 주식현황 및 관련 뉴스들 큐레이팅
-> <img width="500" src="https://github.com/taes-k/stock-analysis/project/company.png">   
+> <img width="500" src="https://github.com/taes-k/stock_analysis/master/project/company.png">   
