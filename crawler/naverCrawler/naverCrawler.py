@@ -73,7 +73,7 @@ class NewsCrawler:
             soup = BeautifulSoup(html, 'html.parser')
 
             news_date = soup.select('#main_content > div.article_header > div.article_info > div > .t11')
-            news_date = datetime.strptime(news_date[0].text,"%Y-%m-%d %H:%M")
+            news_date = datetime.strptime(news_date[0].text.replace(u'오전','AM').replace(u'오후','PM'),"%Y.%m.%d. %p %I:%M")
             convert_news_date = datetime.strftime(news_date,"%Y-%m-%d")
 
             try : # 중복기사 크롤링 막기

@@ -10,14 +10,112 @@
     margin:auto;
     padding: 0 10px;
 }
-.headline-container{
+.black-background{
+    position:absolute;
     width:100%;
-    height:200px;
-    background-color:#fff;
+    height:100%;
+    background-color:rgba(0,0,0,0.7);
+}
+.contents-background{
+    padding:30px 50px;
+    position:relative;
+    color:#fff;
 }
 
-.news-container{
+
+/* Headline CSS */
+.headline-container{
+    position:relative;
     width:100%;
-    height:200px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.headline-top{
+    width:100%;
+    overflow:hidden;
+}
+.headline-top > .title{
+    font-size:30px;
+    font-weight:bold;
+    width:80%;
+    float:left;
+}
+.headline-top > .date{
+    font-size:14px;
+    width:20%;
+    text-align:right;
+    float:left;
+
+}
+.headline-middle{
+    margin: 40px 0;
+    overflow:hidden;
+}
+.headline-middle >.contents{
+    height:100px;
+    font-size:20px;
+    line-height:35px;
+
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: box; 
+    overflow:hidden; 
+    vertical-align:top; 
+    text-overflow: ellipsis; 
+    word-break:break-all; 
+    -webkit-box-orient:vertical; 
+    -webkit-line-clamp:3
+}
+.headline-bottom > .companies{
+    overflow:hidden;
+}
+
+.headline-bottom > .companies> .card{
+    height:130px;
+    width:130px;
+    border: 1px solid #ff0000;
+    padding:10px;
+    border-radius: 5px;
+    float:left;
+    text-align:center;
+}
+
+.headline-bottom > .companies> .card > .title{
+    font-size:16px;
+
+}
+.headline-bottom > .companies> .card > .title >.company-id{
+    font-size:12px;
+}
+.headline-bottom > .companies> .card > .info{
+    margin: 15px 0;
+    font-size:14px;
+}
+
+/* Newsline CSS */
+.newsline-container{
+    width:100%;
+    overflow:hidden;
     background-color:#fff;
+    margin:20px 0;
+}
+.newsline-box{
+    height:300px;
+    position:relative;
+    width:32%;
+    float:left;
+}
+.newsline-box:nth-child(2){
+    margin:0 2%;
+}
+.newsline-top{
+    width:100%;
+    overflow:hidden;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import todo from '../store/modules/Todo';
-import { actionCreators } from '../store/modules/Todo';
+import news from '../store/modules/News';
+import { actionCreators } from '../store/modules/News';
 import { Link } from 'react-router-dom';
 
 class TodoComponent extends Component{

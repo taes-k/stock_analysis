@@ -1,25 +1,79 @@
 import React, { Component } from "react";
-import News from "../../components/NewsComponent";
+import { connect } from 'react-redux';
 
 class Headline extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            url : "",
+            title : "",
+            contents : "",
+            date : "",
+            profile : "",
+            positivie : 0,
+            keyword : [],
+            company : []
+        }
+    }
+
     render (){
+        const companies = []
+        this.props.company.forEach(el => {
+            companies.push(<CompanyCard name={el.name}/>)
+        });
+
         return (
-            <div className="headline-container">
-                <div className="black-background"></div>
-                <div>
-                    <div className="title">
-                        [속보] 미세먼지 경보단계 
+            <div className="headline-container" style={{backgroundImage: `url(${this.props.profile})`}}>
+                <div className="black-background" ></div>
+                <div className="contents-background">
+                    <div className="headline-top">
+                        <div className="title">
+                            {this.props.title}
+                        </div>
+                        <div className="date">
+                            {this.props.date}
+                        </div>
                     </div>
-                    <div className="contents">
-                        4월 30일 북서쪽에서 불어온 미세먼지로 인해 전국이 까만 하늘로 뒤덮힐 예정입니다. 외출에 각별히 유의해주시고 ...
+                    <div className="headline-middle">
+                        <div className="contents">
+                            {this.props.contents}
+                        </div>
                     </div>
-                    <div className="companies">
-                        웅진
+                    <div className="headline-bottom">
+                        <div className="companies">
+                            {companies}
+                        </div>
                     </div>
                 </div>
             </div>
         );
     }
+
+
 };
-1
-export default Headline;
+
+const CompanyCard = (props) => (
+    <div className="card">
+        <div className="title">
+            <span>{props.name}</span> 
+            <span className="company-id"> 012345</span>
+        </div>
+        <div className="info">▼19,000</div>
+        <div className="info">▲19,000</div>
+    </div>
+);
+
+const mapStateToProps = ({ news }) => (
+    {
+    url : news.news[0].url,
+    title : news.news[0].title,
+    contents : news.news[0].contents,
+    date : new Date(news.news[0].date).toLocaleString(),
+    profile : news.news[0].profile,
+    positivie : news.news[0].positivie,
+    keyword : news.news[0].keyword,
+    company : news.news[0].company,
+});
+
+export default connect(mapStateToProps)(Headline);

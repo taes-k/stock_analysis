@@ -4,10 +4,16 @@
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack-test/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpack-test/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack-test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpack-test/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack-test/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack-test/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack-test/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack-test/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NewsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NewsComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Headline.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Headline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/Todo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/modules/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/webpack.config.js" afterDir="false" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,45 +32,56 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv">
+        <entry file="file://$PROJECT_DIR$/crawler/morpheme/keyword.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            <state relative-caret-position="285">
+              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/morpheme/morpheme.py">
+        <entry file="file://$PROJECT_DIR$/crawler/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="61" column="67" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="67" />
+            <state relative-caret-position="15">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/morpheme/keyword.py">
+        <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="1170">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack-test/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="47" column="104" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="104" />
+              <folding>
+                <element signature="e#4778#4784#0" expanded="true" />
+                <marker date="1554817791644" expanded="true" signature="4491:4505" ph="..." />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webpack-test/package.json">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="60">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="10" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -149,6 +166,7 @@
       <find>get_realated_companies</find>
       <find>진도</find>
       <find>남성</find>
+      <find>url</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,17 +197,18 @@
         <option value="$PROJECT_DIR$/crawler/urls.py" />
         <option value="$PROJECT_DIR$/crawler/views.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/morpheme.py" />
-        <option value="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positive.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/keyword.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" />
         <option value="$PROJECT_DIR$/crawler/morpheme/company.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" />
         <option value="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" />
+        <option value="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="43" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
@@ -199,6 +218,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,41 +234,29 @@
             <path>
               <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="morpheme" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="naverCrawler" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="webpack-test" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -447,53 +455,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveDic.csv" />
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveDictionary2.csv" />
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic2.csv" />
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="38" column="24" selection-start-line="20" selection-start-column="65" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#4778#4784#0" expanded="true" />
-            <marker date="1554817791644" expanded="true" signature="4491:4505" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveDictionary.csv" />
     <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/dictionaryInitCrawler.py" />
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic 복사본.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positive.csv" />
-    <entry file="file://$PROJECT_DIR$/crawler/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2055">
-          <caret line="145" column="24" selection-start-line="145" selection-start-column="24" selection-end-line="145" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -508,12 +478,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webpack-test/webpack.config.js" />
+    <entry file="file://$PROJECT_DIR$/webpack-test/package.json" />
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/morpheme.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="61" column="67" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="67" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/morpheme/keyword.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -556,20 +555,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/morpheme/keyword.py">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="148">
+          <caret line="47" column="104" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="104" />
+          <folding>
+            <element signature="e#4778#4784#0" expanded="true" />
+            <marker date="1554817791644" expanded="true" signature="4491:4505" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack-test/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack-test/package.json">
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="60">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>

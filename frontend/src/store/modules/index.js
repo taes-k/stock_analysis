@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import todo from './Todo';
+import news from './News';
 
 //통합 리듀서 모듈
 export default combineReducers({
-    todo
+    news
 });

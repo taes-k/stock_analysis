@@ -1,24 +1,59 @@
 import React, { Component } from "react";
-import News from "../../components/NewsComponent";
+import { connect } from 'react-redux';
 
 class Newsline extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            news:[]
+        }
+    }
+
     render (){
+
+        const newscard = []
+
+        this.props.news[0].forEach((el,idx) => {
+            newscard.push( <NewslineCard key={idx} data={el}/> )
+        });
+
         return (
             <div className="newsline-container">
-                <div>
-                    <div className="title">
-                        [속보] 미세먼지 경보단계 
-                    </div>
-                    <div className="contents">
-                        4월 30일 북서쪽에서 불어온 미세먼지로 인해 전국이 까만 하늘로 뒤덮힐 예정입니다. 외출에 각별히 유의해주시고 ...
-                    </div>
-                    <div className="companies">
-                        웅진
-                    </div>
-                </div>
+                {newscard}
             </div>
         );
     }
 };
-1
-export default Newsline;
+
+
+const NewslineCard = (props) => (
+    <div className="newsline-box" style={{backgroundImage: `url(${props.data.profile})`}}>
+        <div className="black-background" ></div>
+        <div className="contents-background">
+            <div className="newsline-top">
+                <div className="title">
+                    {props.data.title}
+                </div>
+                <div className="date">
+                    {props.data.date}
+                </div>
+            </div>
+            <div className="headline-middle">
+                <div className="contents">
+                </div>
+            </div>
+            <div className="headline-bottom">
+                <div className="companies">
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
+const mapStateToProps = ({ news }) => (
+{
+    news : Array(news.news)
+});
+
+export default connect(mapStateToProps)(Newsline);
