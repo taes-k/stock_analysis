@@ -11,9 +11,7 @@ class Newsline extends Component{
     }
 
     render (){
-
         const newscard = []
-
         this.props.news[0].forEach((el,idx) => {
             newscard.push( <NewslineCard key={idx} data={el}/> )
         });
@@ -26,30 +24,40 @@ class Newsline extends Component{
     }
 };
 
-
-const NewslineCard = (props) => (
-    <div className="newsline-box" style={{backgroundImage: `url(${props.data.profile})`}}>
-        <div className="black-background" ></div>
-        <div className="contents-background">
-            <div className="newsline-top">
-                <div className="title">
-                    {props.data.title}
-                </div>
-                <div className="date">
-                    {props.data.date}
+const NewslineCard = (props) => {
+    let act = <div>hello</div>
+    let companies = []
+    console.log(props.data.company)
+    props.data.company.forEach((el,idx)=>{
+        companies.push(<Companies data={el}/>)
+    })
+    return(
+        <div className="newsline-box">
+            <div className="newsline-top" style={{backgroundImage: `url(${props.data.profile})`}}>
+                <div className="black-background" ></div>
+                <div className="contents-background">
+                    <div className="title">
+                        {props.data.title}
+                    </div>
+                    <div className="date">
+                        {props.data.date}
+                    </div>
                 </div>
             </div>
-            <div className="headline-middle">
-                <div className="contents">
-                </div>
-            </div>
-            <div className="headline-bottom">
-                <div className="companies">
+            <div className="newsline-bottom">
+                <div className="company-list">
+                        {companies}
                 </div>
             </div>
         </div>
-    </div>
-);
+    )
+};
+
+ const Companies = (props) => (
+     <div className="company">
+        {props.data.name}
+     </div>
+ );
 
 const mapStateToProps = ({ news }) => (
 {
