@@ -27,7 +27,6 @@ class Newsline extends Component{
 const NewslineCard = (props) => {
     let act = <div>hello</div>
     let companies = []
-    console.log(props.data.company)
     props.data.company.forEach((el,idx)=>{
         companies.push(<Companies data={el}/>)
     })
@@ -53,11 +52,13 @@ const NewslineCard = (props) => {
     )
 };
 
- const Companies = (props) => (
-     <div className="company">
-        {props.data.name}
-     </div>
- );
+ const Companies = (props) => {
+    
+    return(
+        <div className="company">
+            {props.data.name}
+        </div>
+)};
 
 const mapStateToProps = ({ news }) => (
 {

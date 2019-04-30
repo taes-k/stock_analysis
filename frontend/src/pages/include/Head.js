@@ -7,14 +7,22 @@ class Head extends Component{
         return (
             <div className="header">
                 <div className="header-container">
-                    <div>
+                    <div className="logo-container">
                         <span className="title">BSN</span>
                         <span className="sub-title">Breaking Stock News</span>
                     </div>
+                    <SearchBar/>
                 </div>
             </div>
         );
     }
 };
-1
+
+const SearchBar = (props) => {
+    return(
+        <div className="search-container">
+            <input></input>
+        </div>
+    )
+}
 export default Head;
