@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { Home, Todo } from "./pages";
+import { Home, Search, Company } from "./pages";
 
 class App extends Component{
     render (){
         return (
             <div>
                 <Route exact path="/" component={Home}/>
-                <Route path="/todo/:title" component={Todo}/>
-                <Route exact path="/todo" component={Todo}/>
+                <Route path="/search/:text" component={Search}/>
+                <Route path="/company/:id" component={Company}/>
             </div>
         );
     }

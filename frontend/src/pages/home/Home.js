@@ -57,8 +57,6 @@ class Home extends Component{
         })
     }
 
-    
-
     render (){
         return (
             <div className="home">
@@ -73,7 +71,7 @@ class Home extends Component{
             </div>
         );
     }
-};
+}
 
 let mapDispatchToProps = (dispatch) => {
     return {
