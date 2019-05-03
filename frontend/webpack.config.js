@@ -15,6 +15,21 @@ module.exports = {
             {
                 test: /\.css$/,
                 use:["style-loader","css-loader"]
+            },
+            // {
+            //     test: /\.(jpg|png|svg)$/,
+            //     loader: 'url-loader',
+            //     options: {
+            //         name: '[hash].[ext]',
+            //         limit: 10000,
+            //     },
+            // },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name].[hash].[ext]',
+                },
             }
         ]
     },
@@ -29,4 +44,4 @@ module.exports = {
         port: 3000,
         historyApiFallback: true
     },
-};
+}

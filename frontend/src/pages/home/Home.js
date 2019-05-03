@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import axios from "axios"
-import './Home.css';
-import Head from "../include/Head"
-import Foot from "../include/Foot"
-import News from "../../store/modules/News";
 import { actionCreators } from "../../store/modules/News";
 
+import Head from "../include/head/Head"
+import Foot from "../include/foot/Foot"
 import Headline from "./Headline"
-import Newsline from "./Newsline"
+import NewsComponent from "../../components/NewsComponent";
+
+import './Home.css';
 
 class Home extends Component{
     constructor(props){
@@ -26,14 +26,13 @@ class Home extends Component{
             });
     }
     getNews(){
-        return axios.get('http://127.0.0.1:9200/news-2019-04-28/break/_search',{
+        return axios.get('http://127.0.0.1:8000/news/',{
             params:{
-                sort: {"date":"desc"},
-                size: 9,
+                page: 0,
             }
         })
         .then((response)=>{
-            let result = response.data.hits.hits;
+            let result = response.data.res;
             let newsData = [];
             result.forEach(el => {
                 let data = {
@@ -64,7 +63,7 @@ class Home extends Component{
                 <div className="container">
                     <div className="home-container">
                         <Headline />
-                        <Newsline />
+                        <NewsComponent />
                     </div>
                 </div>
                 <Foot />

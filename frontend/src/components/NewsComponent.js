@@ -1,42 +1,70 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import news from '../store/modules/News';
-import { actionCreators } from '../store/modules/News';
-import { Link } from 'react-router-dom';
 
-class TodoComponent extends Component{
-constructor(props) {
-    super(props);
-    this.state = {
-        text: props.text,
-        link: "/todo/"+props.text,
+class NewsComponent extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            news:[]
+        }
     }
-    this.deleteTodoList = this.deleteTodoList.bind(this);
-}
-deleteTodoList (){
-    this.setState({
-        text: "",
-        link: ""
-    });
-    this.props.delTodo()
-}
+    getNewssss(){
 
-render() {
-    return(
-        <div className="todo">
-            <div className="text">
-                <Link to={this.state.link}>{ this.state.text }</Link>
+    }
+
+    render (){
+        const newscard = []
+        this.props.news[0].forEach((el,idx) => {
+            newscard.push( <NewslineCard key={idx} data={el}/> )
+        });
+
+        return (
+            <div className="newsline-container">
+                {newscard}
             </div>
-            <button onClick={this.deleteTodoList}>Delete</button>
-        </div>
         );
     }
-}
+};
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        delTodo: () => dispatch(actionCreators.subTodoCount(-1))
-    }
-}
+const NewslineCard = (props) => {
+    let act = <div>hello</div>
+    let companies = []
+    props.data.company.forEach((el,idx)=>{
+        companies.push(<Companies data={el}/>)
+    })
+    return(
+        <div className="newsline-box">
+            <div className="newsline-top" style={{backgroundImage: `url(${props.data.profile})`}}>
+                <div className="black-background" ></div>
+                <div className="contents-background">
+                    <div className="title">
+                        {props.data.title}
+                    </div>
+                    <div className="date">
+                        {props.data.date}
+                    </div>
+                </div>
+            </div>
+            <div className="newsline-bottom">
+                <div className="company-list">
+                        {companies}
+                </div>
+            </div>
+        </div>
+    )
+};
 
-export default connect(undefined,mapDispatchToProps)(TodoComponent);
+ const Companies = (props) => {
+    
+    return(
+        <div className="company">
+            {props.data.name}
+        </div>
+)};
+
+const mapStateToProps = ({ news }) => (
+{
+    news : Array(news.news)
+});
+
+export default connect(mapStateToProps)(NewsComponent);

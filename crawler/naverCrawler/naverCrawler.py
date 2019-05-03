@@ -134,6 +134,7 @@ class NewsCrawler:
                 "term": {"contents": text}
                 }
             }
+
         result = self.es.search(index="news", body=query)
 
         return result

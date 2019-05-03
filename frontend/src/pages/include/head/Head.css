@@ -1,0 +1,65 @@
+.header{
+    border-bottom:1px solid #999;
+}
+.header-container{
+    position:relative;
+    height:80px;
+    line-height:80px;
+    width: 1080px;
+    margin:auto;
+    padding: 0 10px;
+    overflow:hidden;
+    
+}
+.header-container > .logo-container{
+    position:absolute;
+    left:10px;
+}
+
+.header-container > .logo-container > .title{
+    font-size:30px;
+}
+.header-contianer > .logo-container >.sub-title{
+    font-size:20px;
+}
+
+
+.header-container > .search-container{
+    position:absolute;
+    right:10px;
+    top : 20px;
+    width:200px;
+    height:40px;
+    border:1px solid #d0d0d0;
+    border-radius:20px;
+    box-sizing: border-box;
+
+}
+.header-container > .search-container > input{
+    height:40px;
+    background: none;
+    display: block;
+    box-sizing: border-box;
+	border: none;
+	font-size:18px;
+}
+.header-container > .search-container > input:focus {
+    outline: none;
+}
+.header-container > .search-container > a {
+    position:absolute;
+    top:0;
+    right:12px;
+   
+}
+.header-container > .search-container > a >button{
+    background: url( "../../../assets/search.png" ) no-repeat;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    border: none;
+    cursor: pointer;
+}
