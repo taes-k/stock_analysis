@@ -99,6 +99,9 @@ class NewsCrawler:
             news_contents = re.sub('<script.*?>.*?</script>', '', news_contents, 0, re.I|re.S)
             news_contents = re.sub('<a.*?>.*?</a>', '', news_contents, 0, re.I|re.S)
             news_contents = re.sub('<.+?>', '', news_contents, 0, re.I|re.S)
+            news_contents = re.sub('&lt.*?&gt', '', news_contents, 0, re.I|re.S)
+            news_contents = re.sub('저작권자.*?금지', '', news_contents, 0, re.I|re.S)
+            news_contents = re.sub('무단전재.*?금지', '', news_contents, 0, re.I|re.S)
 
             self.mor.store(news_title,news_contents)
 
@@ -106,11 +109,13 @@ class NewsCrawler:
             keyword_list = self.mor.get_keyword()
             related_company_list = self.mor.get_company()
 
-            print("positive score : "+positive_score)
-            print("keyword_list : "+str(keyword_list))
-            print("related_company_list : "+str(related_company_list))
 
             if positive_score!=0 and len(related_company_list)!=0 :
+                print("Hit!!!!!!!!!!")
+                print("positive score : "+positive_score)
+                print("keyword_list : "+str(keyword_list))
+                print("related_company_list : "+str(related_company_list))
+
                 news = {
                     'profile': news_profile,
                     'title': news_title,
@@ -118,12 +123,11 @@ class NewsCrawler:
                     'keyword': keyword_list,
                     'positive': positive_score,
                     'company': related_company_list,
-                    'date':  news_date,
-                    'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M"),
+                    'crawling_date': datetime.strftime(datetime.now(timezone('Asia/Seoul')),"%Y-%m-%d %H:%M:%S"),
+                    'date':  datetime.strftime(news_date,"%Y-%m-%d %H:%M:%S"),
                     'url': url,
                 }
-                response = self.es.index(index='news-'+convert_news_date, doc_type='break', body=news, id=news_id)
-
+                response = self.es.index(index='news', doc_type='news_type', body=news, id=news_id)
 
     def search(self,text):
         query = {
@@ -147,7 +151,7 @@ class NewsCrawler:
             proc.start()
 
     def initial_crawling_start(self):
-        for month in range(1,13):
+        for month in range(1,6):
             str_month = str(month)
             if month<10:
                 str_month = '0'+str_month
@@ -155,7 +159,7 @@ class NewsCrawler:
                 str_day = str(day)
                 if day<10:
                     str_day = '0'+str_day;
-                self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=2017"+str_month+str_day
+                self.newsUrl = "https://news.naver.com/main/list.nhn?mode=LSD&mid=sec&sid1=001&date=2019"+str_month+str_day
                 for page in range(3,14):
                     proc = Process(target=self.crawling, args=(10*page,))
                     proc.start()

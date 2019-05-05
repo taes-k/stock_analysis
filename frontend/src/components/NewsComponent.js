@@ -5,17 +5,15 @@ class NewsComponent extends Component{
     constructor(props){
         super(props);
         this.state = {
-            news:[]
+            news:[],
+            companyDic:{}
         }
-    }
-    getNewssss(){
-
     }
 
     render (){
         const newscard = []
         this.props.news[0].forEach((el,idx) => {
-            newscard.push( <NewslineCard key={idx} data={el}/> )
+            newscard.push( <NewslineCard key={idx} data={el} companyDic={this.props.companyDic}/> )
         });
 
         return (
@@ -27,10 +25,12 @@ class NewsComponent extends Component{
 };
 
 const NewslineCard = (props) => {
-    let act = <div>hello</div>
     let companies = []
+    const defaultCompanyInfo = props.companyDic["000000"]
+    console.log("COMDIC :::: ",props.companyDic)
     props.data.company.forEach((el,idx)=>{
-        companies.push(<Companies data={el}/>)
+        let companyInfo = (props.companyDic[el.code]==undefined?defaultCompanyInfo:props.companyDic[el.code])
+        companies.push(<Companies data={el} info={companyInfo} />)
     })
     return(
         <div className="newsline-box">
@@ -58,13 +58,18 @@ const NewslineCard = (props) => {
     
     return(
         <div className="company">
-            {props.data.name}
+            <div class="name">{props.data.name}</div>
+            <div class="code">{props.info.code}</div>
+            <div class="percent">({props.info.change_percent}%)</div>
+            <div class="price">₩ {props.info.current_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
+            
         </div>
 )};
 
-const mapStateToProps = ({ news }) => (
+const mapStateToProps = (state) => (
 {
-    news : Array(news.news)
+    news : Array(state.newsReducer.news),
+    companyDic : state.companyReducer.company
 });
 
 export default connect(mapStateToProps)(NewsComponent);

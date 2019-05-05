@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
-import news from './News';
+import newsReducer from './News';
+import companyReducer from './Company'
 
 //통합 리듀서 모듈
 export default combineReducers({
-    news
+    newsReducer,
+    companyReducer
 });

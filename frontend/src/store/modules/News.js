@@ -1,5 +1,6 @@
 //Type
 const ADD_NEWS = "ADD_NEWS"
+const DEL_NEWS = "DEL_NEWS"
 
 //Action
 function addNews(value){
@@ -15,6 +16,12 @@ function addNews(value){
             keyword : value.keyword,
             company : value.company
         }
+    }
+}
+
+function deleteNews(){
+    return{
+        type: DEL_NEWS
     }
 }
 
@@ -36,7 +43,7 @@ const initTodoCountState = {
 }
 
 //Reducer
-function reducer(state = initTodoCountState, action) {
+function newsReducer(state = initTodoCountState, action) {
     switch (action.type) {
     case ADD_NEWS:
         console.log(state)
@@ -52,6 +59,11 @@ function reducer(state = initTodoCountState, action) {
             news: newsArr,
             count: state.count+1
         });
+    case DEL_NEWS:
+        return Object.assign({}, state, {
+            news: [],
+            count: 0
+        });
     default:
         return state;
     }
@@ -59,8 +71,9 @@ function reducer(state = initTodoCountState, action) {
 
 
 // Export
-const actionCreators = {
-    addNews
+const newsActionCreators = {
+    addNews,
+    deleteNews
 };
-export { actionCreators };  // action export
-export default reducer;     // reducer export
+export { newsActionCreators };  // action export
+export default newsReducer;     // reducer export

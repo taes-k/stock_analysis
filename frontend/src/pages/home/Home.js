@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import axios from "axios"
-import { actionCreators } from "../../store/modules/News";
+import { newsActionCreators } from "../../store/modules/News";
+import { companyActionCreators } from "../../store/modules/Company";
 
 import Head from "../include/head/Head"
 import Foot from "../include/foot/Foot"
@@ -18,11 +19,14 @@ class Home extends Component{
         }
     }
     componentDidMount(){
+        //뉴스 불러오기
         this.getNews()
             .then((result) => {
                 this.state.news.forEach(el => {
                     this.props.addNews(el)
                 });
+                //회사정보 불러오기
+                this.getCompanyInfo()
             });
     }
     getNews(){
@@ -32,8 +36,10 @@ class Home extends Component{
             }
         })
         .then((response)=>{
-            let result = response.data.res;
-            let newsData = [];
+            let result = response.data.res
+            let newsData = []
+            let companyData = []
+
             result.forEach(el => {
                 let data = {
                     url : el._source.url,
@@ -46,13 +52,39 @@ class Home extends Component{
                     company : el._source.company
                 };
                 newsData.push(data);
+                companyData.push(el._source.company)
             });
+            console.log("newsData",newsData)
             this.setState({
-               news:newsData     
+                news:newsData,
+                company:companyData     
             })
         })
+
         .catch((error)=>{
             console.log("ERROR : "+error)
+        })
+    }
+
+    getCompanyInfo(){
+        return new Promise(() =>{
+            this.state.company.forEach(companyArrEl => {
+                console.log("companyEl.code",companyArrEl)
+                companyArrEl.forEach(companyEl => {
+                    axios.get('http://127.0.0.1:8000/company/',{
+                        params:{
+                            company: companyEl.code,
+                        }
+                    })
+                    .then(res => {
+                        this.props.addCompany(res.data)
+                    })
+                    .catch((error)=>{
+                        console.log("ERROR 222: "+error)
+                    })
+                })
+                
+            })
         })
     }
 
@@ -74,7 +106,8 @@ class Home extends Component{
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addNews: (data) => dispatch(actionCreators.addNews(data))
+        addNews: (data) => dispatch(newsActionCreators.addNews(data)),
+        addCompany: (data) => dispatch(companyActionCreators.addCompany(data))
     }
 }
 

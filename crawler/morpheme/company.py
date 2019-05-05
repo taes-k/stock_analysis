@@ -1,6 +1,7 @@
 import csv
 
 class Company:
+    company_dic = {}
     company_list = []
     company_realtion_keyword_dic = {}
 
@@ -13,6 +14,7 @@ class Company:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self.company_list.append(row.get('name'))
+                self.company_dic[row.get('name')] = row.get('code')
         #키워드 List init
         with open('./crawler/morpheme/positiveCompanyDic.csv', 'rt') as csvfile:
             reader = csv.DictReader(csvfile)
@@ -79,6 +81,6 @@ class Company:
         for i in range(0, size):
             #0.8점 이상의 관련도를 갖은 회사명만 추출
             if acc_company_list[i][1] >= 0.8 :
-                result_list.append({'name':acc_company_list[i][0],'score':acc_company_list[i][1]})
+                result_list.append({'name':acc_company_list[i][0],'code': self.company_dic.get(acc_company_list[i][0]) ,'score':acc_company_list[i][1]})
 
         return result_list

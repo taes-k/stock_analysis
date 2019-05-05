@@ -76,8 +76,8 @@
 }
 
 .headline-bottom > .companies> .card{
-    height:130px;
-    width:130px;
+    height:138px;
+    width:154px;
     border: 1px solid #ff0000;
     padding:10px;
     border-radius: 5px;
@@ -86,15 +86,26 @@
 }
 
 .headline-bottom > .companies> .card > .title{
-    font-size:16px;
+    font-size:14px;
+    font-weight:bold;
 
 }
 .headline-bottom > .companies> .card > .title >.company-id{
-    font-size:12px;
+    font-size:10px;
+    font-weight:lighter;
 }
-.headline-bottom > .companies> .card > .info{
+.headline-bottom > .companies> .card > .market{
+    margin: 10px 0;
+    font-size:11px;
+}
+.headline-bottom > .companies> .card > .info.current{
     margin: 15px 0;
-    font-size:14px;
+    font-size:11px;
+}
+.headline-bottom > .companies> .card > .info.total{
+    margin: 15px 0;
+    font-size:11px;
+    line-height:15px;
 }
 
 /* Newsline CSS */
@@ -119,6 +130,17 @@
 }
 .newsline-top > .contents-background{
     padding : 20px;
+    height:100%;
+    box-sizing: border-box;
+}
+.newsline-top > .contents-background > .title{
+    font-size:20px;
+}
+.newsline-top > .contents-background > .date{
+    position:absolute;
+    bottom:20px;
+    right:10px;
+    font-size:10px;
 }
 .newsline-bottom {
     height:150px;
@@ -131,4 +153,25 @@
     padding:0 20px;
     border-bottom:1px solid #d0d0d0;
     box-sizing: border-box;
+    font-size:10px;
+}
+
+.newsline-bottom > .company-list > .company >.name{
+   float:left;
+   font-size:12px;
+   font-weight:bold;
+}
+.newsline-bottom > .company-list > .company >.code{
+    float:left;
+    font-size:10px;
+    margin-left:10px;
+ }
+.newsline-bottom > .company-list > .company >.price{
+    float:right;
+    font-size:10px;
+}
+.newsline-bottom > .company-list > .company >.percent{
+    float:right;
+    font-size:10px;
+    margin-left:10px;
 }

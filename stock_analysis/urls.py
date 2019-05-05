@@ -19,6 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('crawler/',include('crawler.urls')),
     path('news/',include('news.urls')),
-    # path('company/',include('company.urls')),
+    path('company/',include('company.urls')),
     path('admin/', admin.site.urls),
 ]

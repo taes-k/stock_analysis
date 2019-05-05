@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import axios from "axios";
-import { actionCreators } from "../../store/modules/News";
+import { newsActionCreators } from "../../store/modules/News";
 
 import Head from "../include/head/Head";
 import Foot from "../include/foot/Foot";
@@ -16,6 +16,7 @@ class Search extends Component{
     }
 
     componentDidMount(){
+        this.props.deleteNews()
         this.getNews()
             .then((result) => {
                 this.state.news.forEach(el => {
@@ -76,7 +77,8 @@ class Search extends Component{
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addNews: (data) => dispatch(actionCreators.addNews(data))
+        addNews: (data) => dispatch(newsActionCreators.addNews(data)),
+        deleteNews: () => dispatch(newsActionCreators.deleteNews())
     }
 }
 

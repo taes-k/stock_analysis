@@ -10,7 +10,7 @@ class News:
     def getNews(self,_page):
 
         result = {}
-        res = self.es.search(index="", sort='date:desc', size='9')
+        res = self.es.search(index="news", sort='date:desc', size='9')
         res = ((res['hits'])['hits'])
         result['res'] = res
         print(result)
@@ -22,10 +22,10 @@ class News:
         result = {}
         query = {
             "query": {
-                "term": {"contents": _text}
+                "term": {"keyword": _text}
                 }
             }
-        res = self.es.search(index="", sort='date:desc', body=query)
+        res = self.es.search(index="news", sort='date:desc', body=query)
 
         res = ((res['hits'])['hits'])
         result['res'] = res
