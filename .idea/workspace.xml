@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/company/module/company.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NewsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NewsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Headline.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Headline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/modules/News.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/modules/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/module/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/module/news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_analysis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_analysis/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/include/head/Head.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/include/head/Head.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock_analysis/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_analysis/settings.py" afterDir="false" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/company/module/company.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
@@ -56,6 +42,15 @@
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stock_analysis/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -103,18 +98,6 @@
               <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock_analysis/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-              <folding>
-                <element signature="e#638#670#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -209,7 +192,6 @@
         <option value="$PROJECT_DIR$/crawler/morpheme/positive.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/stock_analysis/settings.py" />
         <option value="$PROJECT_DIR$/news/views.py" />
         <option value="$PROJECT_DIR$/news/urls.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/company.py" />
@@ -224,6 +206,7 @@
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" />
         <option value="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" />
         <option value="$PROJECT_DIR$/company/module/company.py" />
+        <option value="$PROJECT_DIR$/stock_analysis/settings.py" />
       </list>
     </option>
   </component>
@@ -245,22 +228,6 @@
             <path>
               <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="crawler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stock_analysis" type="b2602c69:ProjectViewProjectNode" />
@@ -366,8 +333,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1861" y="-170" width="1304" height="901" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67156863" visible="true" weight="0.22603273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67156863" visible="true" weight="0.22603273" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.32843137" side_tool="true" visible="true" weight="0.22603273" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -379,7 +347,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50898635" side_tool="true" weight="0.31306306" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32951945" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.2435105" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.2435105" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -471,13 +439,6 @@
     <entry file="file://$PROJECT_DIR$/main/views.py" />
     <entry file="file://$PROJECT_DIR$/news/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock_analysis/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/news/models.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -611,6 +572,13 @@
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock_analysis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
         </state>
       </provider>
     </entry>
