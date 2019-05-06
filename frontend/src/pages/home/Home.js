@@ -30,7 +30,7 @@ class Home extends Component{
             });
     }
     getNews(){
-        return axios.get('http://54.180.24.20:8000/news/',{
+        return axios.get('http://13.209.47.27:8000/news/',{
             params:{
                 page: 0,
             }
@@ -71,7 +71,7 @@ class Home extends Component{
             this.state.company.forEach(companyArrEl => {
                 console.log("companyEl.code",companyArrEl)
                 companyArrEl.forEach(companyEl => {
-                    axios.get('http://54.180.24.20:8000/company/',{
+                    axios.get('http://13.209.47.27:8000/company/',{
                         params:{
                             company: companyEl.code,
                         }

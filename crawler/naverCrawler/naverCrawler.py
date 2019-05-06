@@ -145,10 +145,10 @@ class NewsCrawler:
 
 
     def crawling_start(self):
-        for i in range(0,10):
-            # self.crawling(10*i)
-            proc = Process(target=self.crawling, args=(10*i,))
-            proc.start()
+        for i in range(0,4):
+            self.crawling(10*i)
+            # proc = Process(target=self.crawling, args=(10*i,))
+            # proc.start()
 
     def initial_crawling_start(self):
         for month in range(1,6):
