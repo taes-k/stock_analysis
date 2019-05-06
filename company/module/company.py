@@ -12,20 +12,14 @@ class Company:
     def getCompanyInfo(self,_code):
         result = {}
 
-        print("CODE :::::::::",_code)
         url = "https://finance.naver.com/item/main.nhn?code="+str(_code)
 
-        print("url :::::::::",url)
         request = requests.get(url);
         html = request.text
         soup = BeautifulSoup(html, 'html.parser')
 
 
-        print(soup)
-        total_info = soup.select('.new_totalinfo > .blind > dd')
-
-        print("total_info:::::",total_info)
-
+        #total_info = soup.select('.new_totalinfo > .blind > dd')
 
         name = soup.select('#middle > div.h_company > div.wrap_company > h2 > a')[0]
         current_price = soup.select('#chart_area > div.rate_info > div > p.no_today > em > span.blind')[0]
@@ -49,19 +43,6 @@ class Company:
         total_stock = soup.select('#tab_con1 > div.first > table > tr:nth-child(4) > td > em')[0]
 
 
-        print("name :::: ", name)
-        print("current_price :::: ", current_price)
-
-        print("market :::: ", market)
-        print("change :::: ", change)
-        print("change_price :::: ", change_price)
-        print("change_percent :::: ", change_percent)
-        print("max_price :::: ", max_price)
-        print("min_price :::: ", min_price)
-        print("yesterday_price :::: ", yesterday_price)
-        print("total_price :::: ", total_price)
-        print("total_stock :::: ", total_stock)
-
         result['code'] = _code
         result['name'] = name.text
         result['market'] = market.text[0:3]
@@ -75,5 +56,4 @@ class Company:
         result['total_price'] = total_price_text
         result['total_stock'] = int(re.sub(',','',total_stock.text,0,re.I | re.S))
 
-        print("REULST :::: ", result)
         return result
