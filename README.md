@@ -15,6 +15,16 @@
 
 - 한국예탁결제원 주식정보서비스api
 
+## Demo
+<http://13.209.47.27>
+
+## Example
+
+<div>
+<img width="500" src="https://github.com/taes-k/stock_analysis/raw/master/example_1.png">
+<img width="500" src="https://github.com/taes-k/stock_analysis/raw/master/example_2.png">
+</div>
+
 ## 개요
 뉴스 기사 크롤링으로, 형태소 분석을 통해 상장기업들의 연관성 및 호재/악재를 분석하는 웹 서비스 프로젝트.
 
