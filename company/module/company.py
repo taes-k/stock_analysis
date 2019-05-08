@@ -18,8 +18,7 @@ class Company:
         html = request.text
         soup = BeautifulSoup(html, 'html.parser')
 
-
-        #total_info = soup.select('.new_totalinfo > .blind > dd')
+        total_info = soup.select('.new_totalinfo > .blind > dd')
 
         name = soup.select('#middle > div.h_company > div.wrap_company > h2 > a')[0]
         current_price = soup.select('#chart_area > div.rate_info > div > p.no_today > em > span.blind')[0]
