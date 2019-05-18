@@ -30,7 +30,7 @@ class Home extends Component{
             });
     }
     getNews(){
-        return axios.get('http://13.209.47.27:8000/news/',{
+        return axios.get('http://45.119.146.58/news/',{
             params:{
                 page: 0,
             }

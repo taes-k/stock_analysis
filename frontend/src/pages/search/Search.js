@@ -26,7 +26,7 @@ class Search extends Component{
     }
 
     getNews(){
-        return axios.get('http://127.0.0.1:8000/news/search/',{
+        return axios.get('http://45.119.146.58/news/search/',{
             params:{
                 text: this.props.match.params.text,
             }

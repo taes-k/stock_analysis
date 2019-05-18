@@ -50,8 +50,6 @@ class Positive:
             result = result[0]
 
 
-        print("reusltttttttttttt : ",result)
-
         return result
 
     def set_positive(self,title):
