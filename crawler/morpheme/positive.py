@@ -47,8 +47,12 @@ class Positive:
             predict_data_array = predict_data.toarray()
 
             result = self.forest.predict(predict_data_array)
+            result = result[0]
 
-        return result[0]
+
+        print("reusltttttttttttt : ",result)
+
+        return result
 
     def set_positive(self,title):
 
