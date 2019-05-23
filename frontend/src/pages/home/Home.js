@@ -31,6 +31,7 @@ class Home extends Component{
     }
     getNews(){
         return axios.get('http://45.119.146.58/news/',{
+        //return axios.get('http://127.0.0.1:8000/news/',{
             params:{
                 page: 0,
             }
