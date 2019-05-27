@@ -14,3 +14,7 @@ def search(request):
 def initCrawling(request):
     crawler = NewsCrawler()
     result = crawler.initial_crawling_start()
+
+def autoCrawling(request):
+    crawler = NewsCrawler()
+    result = crawler.auto_crawling_start()

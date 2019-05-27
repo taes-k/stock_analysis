@@ -165,3 +165,7 @@ class NewsCrawler:
                     proc.start()
                     sleep(0.5)
             sleep(10)
+
+    # 자동 크롤링을 위한 api (5분에 10개의 기사를 스크랩을 기준으로 함)
+    def auto_crawling_start(self):
+        self.crawling(0);

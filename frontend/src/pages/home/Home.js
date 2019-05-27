@@ -72,17 +72,17 @@ class Home extends Component{
             this.state.company.forEach(companyArrEl => {
                 console.log("companyEl.code",companyArrEl)
                 companyArrEl.forEach(companyEl => {
-                    // axios.get('http://13.209.47.27:8000/company/',{
-                    //     params:{
-                    //         company: companyEl.code,
-                    //     }
-                    // })
-                    // .then(res => {
-                    //     this.props.addCompany(res.data)
-                    // })
-                    // .catch((error)=>{
-                    //     console.log("ERROR 222: "+error)
-                    // })
+                    axios.get('http://13.209.47.27:8000/company/',{
+                        params:{
+                            company: companyEl.code,
+                        }
+                    })
+                    .then(res => {
+                        this.props.addCompany(res.data)
+                    })
+                    .catch((error)=>{
+                        console.log("ERROR 222: "+error)
+                    })
                 })
                 
             })
