@@ -5,15 +5,15 @@
     position:relative;
     height:116px;
     line-height:116px;
-    width: 1080px;
+    width: 1060px;
     margin:auto;
-    padding: 0 10px;
+    padding: 0 20px;
     overflow:hidden;
 
 }
 .header-container > .logo-container{
     position:absolute;
-    left:10px;
+    left:20px;
 }
 
 .logo-container > .title{

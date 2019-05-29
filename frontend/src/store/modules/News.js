@@ -13,7 +13,7 @@ function addNews(value){
             crawlingDate : value.crawlingDate,
             date : value.date,
             profile : value.profile,
-            positivie : value.positive,
+            positive : value.positive,
             keyword : value.keyword,
             company : value.company
         }
@@ -36,7 +36,7 @@ const initTodoCountState = {
          crawlingDate : "",
          date : "",
          profile : "",
-         positivie : 0,
+         positive : 0,
          keyword : [],
          company : []
         }

@@ -65,7 +65,6 @@ class Headline extends Component{
 };
 
 const CompanyCard = (props) => {
-
     return (
         <div className={"card "+(props.positive>0 ? "up" : "down")}>
             <div className="title">
