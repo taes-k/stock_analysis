@@ -6,8 +6,15 @@ class Foot extends Component{
         return (
             <div className="footer">
                 <div className="footer-container">
-                    <div>
-                        <span >c.2019</span>
+                    <div className="info">
+                        <span >Taes.k @2019</span>
+                    </div>
+                    <div className="link">
+                        <img class="home" onClick={()=>window.open("https://taes-k.github.io/")}></img>
+
+                        <img class="git" onClick={()=>window.open("https://github.com/taes-k")}></img>
+
+
                     </div>
                 </div>
             </div>

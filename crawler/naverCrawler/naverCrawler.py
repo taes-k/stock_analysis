@@ -110,11 +110,7 @@ class NewsCrawler:
             related_company_list = self.mor.get_company()
 
 
-            if positive_score!=0 and len(related_company_list)!=0 :
-                print("Hit!!!!!!!!!!")
-                print("positive score : "+positive_score)
-                print("keyword_list : "+str(keyword_list))
-                print("related_company_list : "+str(related_company_list))
+            if abs(positive_score)==1 and len(related_company_list)!=0 :
 
                 news = {
                     'profile': news_profile,

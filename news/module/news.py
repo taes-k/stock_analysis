@@ -31,3 +31,43 @@ class News:
         result['res'] = res
 
         return result
+
+    def getUpdateNews(self,_crawlingDate):
+
+        result = {}
+        query: {
+            "range": {
+                "crawling_date": {
+                    "gte": _crawlingDate
+                }
+            },
+            "sort": [
+                {"crawling_date": "asc"}
+            ]
+        }
+        res = self.es.search(index="news", body=query, size='9')
+
+        res = ((res['hits'])['hits'])
+        result['res'] = res
+
+        return result
+
+    def getPreviousNews(self,_crawlingDate):
+
+        result = {}
+        query: {
+            "range": {
+                "crawling_date": {
+                    "gte": _crawlingDate
+                }
+            },
+            "sort": [
+                {"crawling_date": "asc"}
+            ]
+        }
+        res = self.es.search(index="news", body=query, size='9')
+
+        res = ((res['hits'])['hits'])
+        result['res'] = res
+
+        return result

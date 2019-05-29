@@ -14,22 +14,17 @@ import './Home.css';
 class Home extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            news:[]
-        }
     }
     componentDidMount(){
-        //뉴스 불러오기
-        this.getNews()
-            .then((result) => {
-                this.state.news.forEach(el => {
-                    this.props.addNews(el)
-                });
-                //회사정보 불러오기
-                this.getCompanyInfo()
-            });
+        //초기 뉴스 불러오기
+        this.getNewsInit()
+
+        this.interval = setInterval(()=> {
+            this.getNewsUpdate()
+        },300000);
     }
-    getNews(){
+
+    getNewsInit(){
         return axios.get('http://45.119.146.58/news/',{
         //return axios.get('http://127.0.0.1:8000/news/',{
             params:{
@@ -38,9 +33,44 @@ class Home extends Component{
         })
         .then((response)=>{
             let result = response.data.res
-            let newsData = []
             let companyData = []
+            
+            result.forEach(el => {
+            
+                let data = {
+                    url : el._source.url,
+                    title : el._source.title,
+                    contents : el._source.contents,
+                    crawlingDate : el._source.crawling_date,
+                    date : el._source.date,
+                    profile : el._source.profile,
+                    positive : el._source.positive,
+                    keyword : el._source.keyword,
+                    company : el._source.company
+                };
+                companyData.push(el._source.company)
 
+                this.props.addNews(data)
+            });
+            this.getCompanyInfo(companyData)
+        })
+
+        .catch((error)=>{
+            console.log("ERROR : "+error)
+        })
+    }
+
+    getNewsUpdate(){
+        return axios.get('http://45.119.146.58/news/update',{
+        //return axios.get('http://127.0.0.1:8000/news/update',{
+            params:{
+                crawlingDate: this.props.news[0][0].crawlingDate,
+            }
+        })
+        .then((response)=>{
+            let result = response.data.res
+            let companyData = []
+            
             result.forEach(el => {
                 let data = {
                     url : el._source.url,
@@ -52,14 +82,11 @@ class Home extends Component{
                     keyword : el._source.keyword,
                     company : el._source.company
                 };
-                newsData.push(data);
                 companyData.push(el._source.company)
+
+                this.props.addNews(data)
             });
-            console.log("newsData",newsData)
-            this.setState({
-                news:newsData,
-                company:companyData     
-            })
+            this.getCompanyInfo(companyData)
         })
 
         .catch((error)=>{
@@ -67,12 +94,12 @@ class Home extends Component{
         })
     }
 
-    getCompanyInfo(){
+    getCompanyInfo(companyData){
         return new Promise(() =>{
-            this.state.company.forEach(companyArrEl => {
+            companyData.forEach(companyArrEl => {
                 console.log("companyEl.code",companyArrEl)
                 companyArrEl.forEach(companyEl => {
-                    axios.get('http://13.209.47.27:8000/company/',{
+                    axios.get('http://45.119.146.58/company/',{
                         params:{
                             company: companyEl.code,
                         }
@@ -104,6 +131,11 @@ class Home extends Component{
         );
     }
 }
+const mapStateToProps = (state) => (
+{
+    news : Array(state.newsReducer.news),
+    companyDic : state.companyReducer.company
+});
 
 let mapDispatchToProps = (dispatch) => {
     return {
@@ -112,4 +144,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(undefined,mapDispatchToProps)(Home); 
+export default connect(mapStateToProps,mapDispatchToProps)(Home); 

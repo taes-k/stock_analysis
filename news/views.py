@@ -12,4 +12,16 @@ def searchNews(request):
     result = JsonResponse(news.searchNews(request.GET['text']))
     return result
 
+def getUpdateNews(request):
+    news = News()
+    result = JsonResponse(news.getUpdateNews(request.GET['crawlingDate']))
+    return result
+
+def getPreviousNews(request):
+    news = News()
+    result = JsonResponse(news.getUpdateNews(request.GET['crawlingDate']))
+    return result
+
+
+
 

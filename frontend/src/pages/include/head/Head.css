@@ -1,36 +1,38 @@
 .header{
-    border-bottom:1px solid #999;
+    border-bottom:1px solid #dee2e6;
 }
 .header-container{
     position:relative;
-    height:80px;
-    line-height:80px;
+    height:116px;
+    line-height:116px;
     width: 1080px;
     margin:auto;
     padding: 0 10px;
     overflow:hidden;
-    
+
 }
 .header-container > .logo-container{
     position:absolute;
     left:10px;
 }
 
-.header-container > .logo-container > .title{
-    font-size:30px;
+.logo-container > .title{
+    font-size:32px;
 }
-.header-contianer > .logo-container >.sub-title{
-    font-size:20px;
+.logo-container > span.sub-title{
+    font-size:14px;
+    font-weight:300;
+    margin-left:6px;
 }
 
 
 .header-container > .search-container{
     position:absolute;
     right:10px;
-    top : 20px;
+    top : 40px;
     width:200px;
     height:40px;
-    border:1px solid #d0d0d0;
+    border:2px solid #343a40;
     border-radius:20px;
     box-sizing: border-box;
 
@@ -40,19 +42,19 @@
     background: none;
     display: block;
     box-sizing: border-box;
-	border: none;
-	font-size:18px;
+        border: none;
+        font-size:18px;
 }
 .header-container > .search-container > input:focus {
     outline: none;
 }
 .header-container > .search-container > a {
     position:absolute;
-    width:25px;
-    height:25px;
+    width:22px;
+    height:22px;
     top:7px;
     right:10px;
-   
+
 }
 .header-container > .search-container > a >button{
     position:absolute;
@@ -62,8 +64,8 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     border: none;
     cursor: pointer;
 }

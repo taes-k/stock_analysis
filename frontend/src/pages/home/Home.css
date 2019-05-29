@@ -1,8 +1,8 @@
 .container{
-    background-color:#d0d0d0;
+    background-color:#f8f9fa;
     width: 100%;
     margin:auto;
-    padding: 10px 0;
+    padding: 16px 0;
 }
 
 .home-container{
@@ -16,7 +16,7 @@
     top:0;
     width:100%;
     height:100%;
-    background-color:rgba(0,0,0,0.7);
+    background-color:rgba(0,0,0,0.8);
 }
 .contents-background{
     padding:30px 50px;
@@ -24,6 +24,12 @@
     color:#fff;
 }
 
+.arrow.up{
+    content: url( "../../assets/up-arrow.png" );
+}
+.arrow.down{
+    content: url( "../../assets/down-arrow.png" );
+}
 
 /* Headline CSS */
 .headline-container{
@@ -35,80 +41,160 @@
     background-size: cover;
 }
 
+.headline-container > .positive-status{
+    position:absolute;
+    top:0;
+    width: 100%;
+    height: 6px;
+}
+.headline-container > .positive-status.up{
+  background-color: #f03e3e;
+}
+
+.headline-container > .positive-status.down{
+  background-color: #228be6;
+}
 .headline-top{
     width:100%;
     overflow:hidden;
 }
 .headline-top > .title{
-    font-size:30px;
-    font-weight:bold;
+    font-size:26px;
     width:80%;
     float:left;
 }
 .headline-top > .date{
-    font-size:14px;
+    font-size:12px;
     width:20%;
     text-align:right;
     float:left;
+    color: rgba(255, 255, 255, 0.5);
 
 }
 .headline-middle{
-    margin: 40px 0;
+    margin: 24px 0;
     overflow:hidden;
 }
 .headline-middle >.contents{
-    height:100px;
-    font-size:20px;
-    line-height:35px;
+    height:46px;
+    font-size:14px;
+    line-height: 23px;
+    letter-spacing: -0.02px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    overflow:hidden;
+    vertical-align:top;
+    text-overflow: ellipsis;
+    word-break:break-all;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2
+}
+.headline-middle > .more{
+    width:80px;
+    margin:18px 0 ;
+    font-size:14px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor:pointer;
 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: box; 
-    overflow:hidden; 
-    vertical-align:top; 
-    text-overflow: ellipsis; 
-    word-break:break-all; 
-    -webkit-box-orient:vertical; 
-    -webkit-line-clamp:3
+}
+
+.headline-bottom{
+    margin-top:50px;
 }
 .headline-bottom > .companies{
     overflow:hidden;
 }
 
 .headline-bottom > .companies> .card{
-    height:138px;
-    width:154px;
-    border: 1px solid #ff0000;
+    box-sizing: border-box;
+    height:158px;
+    width:174px;
     padding:10px;
-    border-radius: 5px;
+    border-radius: 13px;
     float:left;
     text-align:center;
+    margin-left:24px;
+
 }
 
-.headline-bottom > .companies> .card > .title{
+.headline-bottom > .companies> .card.up{
+    border: 1px solid #f03e3e;
+    color: #f03e3e;
+}
+
+.headline-bottom > .companies> .card.down{
+    border: 1px solid #228be6;
+    color: #228be6 !important;
+}
+.headline-bottom > .companies> .card:first-child{
+    margin-left:0 !important;
+}
+
+.headline-bottom > .companies> .card > .title > .arrow{
+    width:12px;
+    height:15px;
+    vertical-align:middle;
+    margin-right:5px;
+}
+
+.headline-bottom > .companies> .card > .title > .name{
     font-size:14px;
     font-weight:bold;
-
+    text-decoration: underline;
+    cursor: pointer;
+}
+.headline-bottom > .companies> .card > .title > .name.up{
+    color: #f03e3e;
+}
+.headline-bottom > .companies> .card > .title > .name.down{
+    color: #228be6;
 }
 .headline-bottom > .companies> .card > .title >.company-id{
     font-size:10px;
-    font-weight:lighter;
+    font-weight:300;
 }
-.headline-bottom > .companies> .card > .market{
+/* .headline-bottom > .companies> .card > .market{
     margin: 10px 0;
+    font-size:11px;
+} */
+.headline-bottom > .companies> .card > .info{
     font-size:11px;
 }
 .headline-bottom > .companies> .card > .info.current{
-    margin: 15px 0;
-    font-size:11px;
+    margin: 6px 0;
 }
-.headline-bottom > .companies> .card > .info.total{
-    margin: 15px 0;
-    font-size:11px;
-    line-height:15px;
+.headline-bottom > .companies> .card > .info.current.up{
+    color: #f03e3e;
+}
+.headline-bottom > .companies> .card > .info.current.down{
+    color: #228be6;
+}
+.info.current > span{
+    font-weight:300;
+}
+.headline-bottom > .companies> .card > .info.capitalization{
+    margin-top: 26px;
+}
+.headline-bottom > .companies> .card > .info.volume{
+    margin-top: 8px;
+}
+.info.capitalization, .info.volume{
+    width:65%;
+    margin:auto;
+    overflow:hidden;
+}
+.info.capitalization > strong, .info.volume > strong{
+    float:left;
+}
+.info.capitalization > span, .info.volume > span{
+    font-weight:300;
+    float:right;
 }
 
+
 /* Newsline CSS */
+
 .newsline-container{
     width:100%;
     overflow:hidden;
@@ -118,7 +204,18 @@
     width:32%;
     float:left;
     margin:20px 0 0 0;
+    box-sizing: border-box;
+    border: solid 1px #dee2e6;
 }
+
+.newsline-box.up{
+    border-bottom: solid 3px #f03e3e;
+}
+
+.newsline-box.down{
+    border-bottom: solid 3px #228be6;
+}
+
 .newsline-box:nth-child(3n+2){
     margin:20px 2% 0 2%;
 }
@@ -127,51 +224,85 @@
     width:100%;
     height:180px;
     overflow:hidden;
+    cursor:pointer;
 }
 .newsline-top > .contents-background{
-    padding : 20px;
+    padding : 20px 30px;
     height:100%;
     box-sizing: border-box;
 }
 .newsline-top > .contents-background > .title{
-    font-size:20px;
+    font-size:18px;
 }
 .newsline-top > .contents-background > .date{
     position:absolute;
     bottom:20px;
-    right:10px;
+    left:30px;
     font-size:10px;
+    color: rgba(255, 255, 255, 0.5);
+
 }
 .newsline-bottom {
     height:150px;
+    padding:0 20px;
+    box-sizing:border-box;
     background-color:#fff;
 }
-.newsline-bottom > .company-list > .company{
+.newsline-bottom > .company-list > a > .company{
     height: 50px;
     width:100%;
     line-height:50px;
-    padding:0 20px;
     border-bottom:1px solid #d0d0d0;
     box-sizing: border-box;
     font-size:10px;
+    cursor:pointer;
+}
+.newsline-bottom > .company-list > a > .company:nth-child(3){
+    border-bottom:none;
+}
+.newsline-bottom > .company-list > a > .company.up{
+    color:#f03e3e;
 }
 
-.newsline-bottom > .company-list > .company >.name{
+.newsline-bottom > .company-list > a > .company.down{
+    color:#228be6;
+}
+
+.newsline-bottom > .company-list > a > .company >.arrow{
+    float:left;
+}
+.newsline-bottom > .company-list > a > .company >.arrow > img{
+    width:12px;
+    height:15px;
+    vertical-align:middle;
+    margin-right:5px;
+
+}
+
+.newsline-bottom > .company-list > a > .company >.name{
    float:left;
    font-size:12px;
    font-weight:bold;
 }
-.newsline-bottom > .company-list > .company >.code{
+.newsline-bottom > .company-list > a > .company >.code{
     float:left;
     font-size:10px;
     margin-left:10px;
  }
-.newsline-bottom > .company-list > .company >.price{
+.newsline-bottom > .company-list > a > .company >.price{
     float:right;
+    font-weight:bold;
     font-size:10px;
 }
-.newsline-bottom > .company-list > .company >.percent{
+.newsline-bottom > .company-list > a > .company >.percent{
     float:right;
     font-size:10px;
     margin-left:10px;
+}
+
+.newsline-bottom > .company-list > a > .company >.up{
+    color:#f03e3e;
+}
+.newsline-bottom > .company-list > a > .company > .down{
+    color:#228be6;
 }

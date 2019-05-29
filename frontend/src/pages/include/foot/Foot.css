@@ -1,10 +1,32 @@
 .footer{
-    height:20px;
-    line-height:20px;
-    border-bottom:1px solid #999;
+    height:80px;
+    line-height:80px;
+    border-top:1px solid #dee2e6;
 }
 .footer-container{
     width: 1080px;
     margin:auto;
     padding: 0 10px;
+}
+.footer-container > .info{
+    float:left;
+}
+.footer-container > .link{
+    float:right;
+    line-height:80px;
+}
+.footer-container > .link > img{
+    vertical-align:middle;
+    height:30px;
+    width:30px;
+    cursor:pointer;
+
+}
+.footer-container > .link > .home{
+    margin-right:30px;
+    content: url(../../../assets/homepage.png);
+}
+.footer-container > .link > .git{
+    content: url(../../../assets/github.png);
+
 }

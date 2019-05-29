@@ -42,13 +42,20 @@ class Positive:
 
         result = 0
         if text != '':
+
             target_data = [text]
             predict_data = self.vectorizer.transform(target_data)
             predict_data_array = predict_data.toarray()
 
             result = self.forest.predict(predict_data_array)
-            result = result[0]
+            result = int(result[0])
 
+            #훈련 데이터 업데이트
+            with open('./crawler/morpheme/positiveTrainData.csv', 'a') as csvfile:
+                fieldnames = ['text', 'positive']
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                data = {'text': text, 'positive': result}
+                writer.writerow(data)
 
         return result
 
