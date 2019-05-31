@@ -2,15 +2,15 @@ from elasticsearch import Elasticsearch
 import json
 
 class News:
-    es = Elasticsearch()
-
+    # es = Elasticsearch()
+    es = Elasticsearch(host='45.119.146.58',port='9200')
     def __init__(self):
         print("news init")
 
     def getNews(self,_page):
 
         result = {}
-        res = self.es.search(index="news", sort='date:desc', size='9')
+        res = self.es.search(index="news", sort='crawling_date:desc', size='9')
         res = ((res['hits'])['hits'])
         result['res'] = res
         print(result)
@@ -35,16 +35,22 @@ class News:
     def getUpdateNews(self,_crawlingDate):
 
         result = {}
-        query: {
-            "range": {
-                "crawling_date": {
-                    "gte": _crawlingDate
+        query = {
+                    "query": {
+                        "range": {
+                            "crawling_date": {
+                                "gte": _crawlingDate
+                            }
+                        }
+                    },
+                    "sort": [
+                        {"crawling_date": "asc"}
+                    ]
                 }
-            },
-            "sort": [
-                {"crawling_date": "asc"}
-            ]
-        }
+
+
+        print("HEELELEOO :::: ",_crawlingDate )
+
         res = self.es.search(index="news", body=query, size='9')
 
         res = ((res['hits'])['hits'])
@@ -55,16 +61,19 @@ class News:
     def getPreviousNews(self,_crawlingDate):
 
         result = {}
-        query: {
-            "range": {
-                "crawling_date": {
-                    "gte": _crawlingDate
+
+        query = {
+                    "query": {
+                        "range": {
+                            "crawling_date": {
+                                "lte": _crawlingDate
+                            }
+                        }
+                    },
+                    "sort": [
+                        {"crawling_date": "desc"}
+                    ]
                 }
-            },
-            "sort": [
-                {"crawling_date": "asc"}
-            ]
-        }
         res = self.es.search(index="news", body=query, size='9')
 
         res = ((res['hits'])['hits'])

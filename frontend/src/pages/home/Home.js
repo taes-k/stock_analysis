@@ -14,19 +14,46 @@ import './Home.css';
 class Home extends Component{
     constructor(props){
         super(props);
+        this.state = {
+            previousFlag : true //무한 스크롤 중복방지 플래그
+        }
     }
+
     componentDidMount(){
         //초기 뉴스 불러오기
         this.getNewsInit()
-
+        //10분 간격 update된 뉴스 불러오기
         this.interval = setInterval(()=> {
             this.getNewsUpdate()
         },300000);
+        //무한스크롤, 이전뉴스 불러오기
+
+        window.addEventListener("scroll", this.handleScroll);
     }
 
-    getNewsInit(){
-        return axios.get('http://45.119.146.58/news/',{
-        //return axios.get('http://127.0.0.1:8000/news/',{
+    componentWillUnmount() {
+        // 언마운트 될때에, 스크롤링 이벤트 제거
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    handleScroll = () => {
+        const { innerHeight } = window;
+        const { scrollHeight } = document.body;
+        // IE에서는 document.documentElement 를 사용.
+        const scrollTop =
+          (document.documentElement && document.documentElement.scrollTop) ||
+          document.body.scrollTop;
+        // 스크롤링 했을때, 브라우저의 가장 밑에서 100정도 높이가 남았을때에 실행하기위함.
+        if (scrollHeight - innerHeight - scrollTop < 100) {
+            this.getPreviousNews()
+          console.log("Almost Bottom Of This Browser");
+        }
+    };
+
+    //초기 뉴스 불러오기
+    getNewsInit = () =>{
+        //return axios.get('http://45.119.146.58/news/',{
+        return axios.get('http://127.0.0.1:8000/news/',{
             params:{
                 page: 0,
             }
@@ -60,11 +87,17 @@ class Home extends Component{
         })
     }
 
-    getNewsUpdate(){
-        return axios.get('http://45.119.146.58/news/update',{
-        //return axios.get('http://127.0.0.1:8000/news/update',{
+    //신규 뉴스 불러오기
+    getNewsUpdate = () =>{
+        var date = new Date(this.props.news[0][0].crawlingDate.replace(' ','T')+"+09:00")
+        date.setSeconds(date.getSeconds()+1)
+        
+        let dateString = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
+        
+        //return axios.get('http://45.119.146.58/news/update',{
+        return axios.get('http://127.0.0.1:8000/news/update/',{
             params:{
-                crawlingDate: this.props.news[0][0].crawlingDate,
+                crawlingDate: dateString,
             }
         })
         .then((response)=>{
@@ -76,6 +109,7 @@ class Home extends Component{
                     url : el._source.url,
                     title : el._source.title,
                     contents : el._source.contents,
+                    crawlingDate : el._source.crawling_date,
                     date : el._source.date,
                     profile : el._source.profile,
                     positive : el._source.positive,
@@ -84,7 +118,7 @@ class Home extends Component{
                 };
                 companyData.push(el._source.company)
 
-                this.props.addNews(data)
+                this.props.insertNews(data)
             });
             this.getCompanyInfo(companyData)
         })
@@ -94,6 +128,52 @@ class Home extends Component{
         })
     }
 
+    //이전 뉴스 불러오기
+    getPreviousNews = () =>{
+        //무한 스크롤 중복방지 플래그
+        if(this.state.previousFlag){
+            this.state.previousFlag = false;
+            var date = new Date(this.props.news[0][this.props.newsCount-1].crawlingDate.replace(' ','T')+"+09:00")
+            date.setSeconds(date.getSeconds()-1)
+            
+            let dateString = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
+            
+            //return axios.get('http://45.119.146.58/news/update',{
+            return axios.get('http://127.0.0.1:8000/news/previous/',{
+                params:{
+                    crawlingDate: dateString,
+                }
+            })
+            .then((response)=>{
+                let result = response.data.res
+                let companyData = []
+                
+                result.forEach(el => {
+                    let data = {
+                        url : el._source.url,
+                        title : el._source.title,
+                        contents : el._source.contents,
+                        crawlingDate : el._source.crawling_date,
+                        date : el._source.date,
+                        profile : el._source.profile,
+                        positive : el._source.positive,
+                        keyword : el._source.keyword,
+                        company : el._source.company
+                    };
+                    companyData.push(el._source.company)
+
+                    this.props.addNews(data)
+                });
+                this.getCompanyInfo(companyData)
+                this.state.previousFlag = true
+            })
+
+            .catch((error)=>{
+                console.log("ERROR : "+error)
+            })
+        }
+    }
+    //회사정보 불러오기
     getCompanyInfo(companyData){
         return new Promise(() =>{
             companyData.forEach(companyArrEl => {
@@ -134,12 +214,14 @@ class Home extends Component{
 const mapStateToProps = (state) => (
 {
     news : Array(state.newsReducer.news),
+    newsCount : state.newsReducer.count,
     companyDic : state.companyReducer.company
 });
 
 let mapDispatchToProps = (dispatch) => {
     return {
         addNews: (data) => dispatch(newsActionCreators.addNews(data)),
+        insertNews: (data) => dispatch(newsActionCreators.insertNews(data)),
         addCompany: (data) => dispatch(companyActionCreators.addCompany(data))
     }
 }

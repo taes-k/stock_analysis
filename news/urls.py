@@ -20,6 +20,6 @@ from news import views
 urlpatterns = [
     path('',views.getNews, name='getNews'),
     path('search/',views.searchNews, name='searchNews'),
-    path('update/',views.searchNews, name='updateNews'),
-    path('previous/',views.searchNews, name='previousNews'),
+    path('update/',views.getUpdateNews, name='updateNews'),
+    path('previous/',views.getPreviousNews, name='previousNews'),
 ]

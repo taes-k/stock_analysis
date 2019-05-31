@@ -21,5 +21,5 @@ urlpatterns = [
     path('crawling',views.crawling, name='index'),
     path('search',views.search, name='search'),
     path('crawling/init',views.initCrawling, name='search'),
-    path('crawling/auto',views.autoCrawling, name="autoCrawlingn"),
+    path('crawling/auto',views.autoCrawling, name="autoCrawling"),
 ]

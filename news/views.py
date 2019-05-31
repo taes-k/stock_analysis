@@ -19,7 +19,7 @@ def getUpdateNews(request):
 
 def getPreviousNews(request):
     news = News()
-    result = JsonResponse(news.getUpdateNews(request.GET['crawlingDate']))
+    result = JsonResponse(news.getPreviousNews(request.GET['crawlingDate']))
     return result
 
 

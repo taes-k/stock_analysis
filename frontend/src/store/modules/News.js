@@ -1,11 +1,29 @@
 //Type
 const ADD_NEWS = "ADD_NEWS"
+const INSERT_NEWS = "INSERT_NEWS"
 const DEL_NEWS = "DEL_NEWS"
 
 //Action
 function addNews(value){
     return{
         type: ADD_NEWS,
+        data: {
+            url : value.url,
+            title : value.title,
+            contents : value.contents,
+            crawlingDate : value.crawlingDate,
+            date : value.date,
+            profile : value.profile,
+            positive : value.positive,
+            keyword : value.keyword,
+            company : value.company
+        }
+    }
+}
+
+function insertNews(value){
+    return{
+        type: INSERT_NEWS,
         data: {
             url : value.url,
             title : value.title,
@@ -46,10 +64,10 @@ const initTodoCountState = {
 
 //Reducer
 function newsReducer(state = initTodoCountState, action) {
+    let newsArr = state.news;
+
     switch (action.type) {
     case ADD_NEWS:
-        console.log(state)
-        let newsArr = state.news;
         if(state.count == 0){
             let newArr = []
             newArr.push(action.data);
@@ -61,6 +79,14 @@ function newsReducer(state = initTodoCountState, action) {
             news: newsArr,
             count: state.count+1
         });
+        break;
+    case INSERT_NEWS:
+        newsArr.unshift(action.data)
+        return Object.assign({}, state, {
+            news: newsArr,
+            count: state.count+1
+        });
+        break;
     case DEL_NEWS:
         return Object.assign({}, state, {
             news: [],
@@ -75,6 +101,7 @@ function newsReducer(state = initTodoCountState, action) {
 // Export
 const newsActionCreators = {
     addNews,
+    insertNews,
     deleteNews
 };
 export { newsActionCreators };  // action export
