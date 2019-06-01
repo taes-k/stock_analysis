@@ -1,19 +1,18 @@
 import requests
 import re
-from selenium import webdriver
 from bs4 import BeautifulSoup
+from crawler.morpheme.company import Company as CompanyModule
 
 
 class Company:
+
+    com = CompanyModule()
 
     def __init__(self):
         print("init")
 
     def getCompanyInfoByCode(self,_code):
         result = {}
-
-        print("I'M in getcompanyInfo")
-        print("CODE ::: ",_code)
 
         url = "https://finance.naver.com/item/main.nhn?code="+str(_code)
 
@@ -60,3 +59,9 @@ class Company:
         result['total_stock'] = int(re.sub(',','',total_stock.text,0,re.I | re.S))
 
         return result
+
+
+    def getCompanyInfoByName(self,_name):
+        code = self.com.get_company_code(_name)
+
+        return self.getCompanyInfoByCode(code)

@@ -84,3 +84,7 @@ class Company:
                 result_list.append({'name':acc_company_list[i][0],'code': self.company_dic.get(acc_company_list[i][0]) ,'score':acc_company_list[i][1]})
 
         return result_list
+
+    def get_company_code(self, name):
+
+        return self.company_dic.get(name)

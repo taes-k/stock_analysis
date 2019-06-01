@@ -14,18 +14,23 @@ import "./Search.css"
 class Search extends Component{
     constructor(props){
         super(props);
+        this.state = {
+            searchedCompany : {}
+        }
     }
 
     componentDidMount(){
+        this.getCompany();
+        
         this.props.deleteNews()
         this.getNews();
     }
 
     getCompany(){
-        //return axios.get('http://45.119.146.58/company/name/',{
-        return axios.get('http://127.0.0.1:8000/company/name/',{
+        //return axios.get('http://45.119.146.58/company/',{
+        return axios.get('http://127.0.0.1:8000/company/',{
             params:{
-                text: this.props.match.params.text,
+                name: this.props.match.params.text,
             }
         })
         .then((response)=>{
@@ -120,7 +125,7 @@ class Search extends Component{
                 <div className="container">
                     <div className="search-container">
                         <p>상장사 <span>'{ this.props.match.params.text }'</span> 정보</p>
-                        <CompanyComponent/>
+                        <CompanyComponent data={this.state.searchedCompany}/>
                         <p><span>'{ this.props.match.params.text }'</span> 키워드 관련뉴스 검색 결과</p>
                         <NewsComponent />
                     </div>

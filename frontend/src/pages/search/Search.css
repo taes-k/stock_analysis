@@ -16,51 +16,91 @@
     position:relative;
     width:100%;
 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    background-color:#fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 1px 0 #dee2e6;
+    border: solid 1px #ced4da;
+    overflow:hidden;
     margin-top:10px;
 }
-
-.company-top{
-    width:100%;
-    overflow:hidden;
+.company-container > .contents-background{
+    padding:0;
+    color:#495057;
 }
-.company-top > .title{
-    font-size:30px;
+.company-left{
+    box-sizing: border-box;
+    float:left;
+    width:45%;
+    border-right:1px solid #f1f3f5;
+}
+.company-left > .company-top{
+   padding:15px 28px;
+   border-bottom: solid 1px #f1f3f5;
+}
+.company-left > .company-top > .row{
+    margin-top : 5px;
+   overflow:hidden;
+}
+.company-left > .company-top > .row > .title{
+    float:left;  
+    font-size: 22px;
     font-weight:bold;
-    width:80%;
-    float:left;
+    color: #495057;
 }
-.company-top > .date{
-    font-size:14px;
-    width:20%;
-    text-align:right;
-    float:left;
+.company-left > .company-top > .row > .title > .code{
+    margin-left:8px;
+    font-size: 18px;
+    color: #adb5bd;
+}
+.company-left > .company-top > .row > .date{
+    float:right;
+    font-size:12px;
+    color:#adb5bd;
 
 }
-.company-middle{
-    margin: 40px 0;
-    overflow:hidden;
-}
-.company-middle >.contents{
-    height:100px;
+.company-left > .company-top > .row > .current {
     font-size:20px;
-    line-height:35px;
-
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: box; 
-    overflow:hidden; 
-    vertical-align:top; 
-    text-overflow: ellipsis; 
-    word-break:break-all; 
-    -webkit-box-orient:vertical; 
-    -webkit-line-clamp:3
+    font-weight:bold;
 }
-.company-bottom > .companies{
+.company-left > .company-top > .row > .current > .change{
+    font-size:14px;
+}
+.company-left > .company-bottom{
+   padding:23px 28px;
+}
+.company-left > .company-bottom > .row {
     overflow:hidden;
 }
+.company-left > .company-bottom > .row:nth-child(2) {
+    margin-top:28px;
+}
+.company-left > .company-bottom > .row > .detail_info{
+    float:left;
+    width:32%;
+    box-sizing: border-box;
+    font-weight:bold;
+}
+.company-left > .company-bottom > .row > .detail_info:nth-child(3n+2){
+    margin:0 2%;
+}
+.company-left > .company-bottom > .row > .detail_info > .title{
+    font-size:15px;
+    color: #adb5bd;
+}
+.company-left > .company-bottom > .row > .detail_info > .contents{
+    font-size:16px;
+    color: #495057;
+}
+
+
+.company-right{
+    box-sizing: border-box;
+    float:left;
+    width:55%;
+}
+
+
+
 
 .company-bottom > .companies> .card{
     height:130px;
