@@ -179,9 +179,10 @@ class Home extends Component{
             companyData.forEach(companyArrEl => {
                 console.log("companyEl.code",companyArrEl)
                 companyArrEl.forEach(companyEl => {
-                    axios.get('http://45.119.146.58/company/',{
+                    //axios.get('http://45.119.146.58/company/',{
+                    axios.get('http://127.0.0.1:8000/company/',{
                         params:{
-                            company: companyEl.code,
+                            code: companyEl.code,
                         }
                     })
                     .then(res => {
@@ -204,6 +205,9 @@ class Home extends Component{
                     <div className="home-container">
                         <Headline />
                         <NewsComponent />
+                        <div className="pre-loader-container">
+                            <img className={"pre-loader "+(this.state.previousFlag ? "off" : "on")}></img>
+                        </div>
                     </div>
                 </div>
                 <Foot />

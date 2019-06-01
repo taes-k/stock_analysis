@@ -6,6 +6,7 @@
 }
 .search-container > p{
     margin : 20px 0 0 0;
+    font-weight: bold;
 }
 .search-container > p > span{
     font-weight: bold;

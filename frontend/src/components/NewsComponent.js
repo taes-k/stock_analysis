@@ -64,8 +64,8 @@ const NewslineCard = (props) => {
             </div>
             <div class="name">{props.data.name}</div>
             <div class="code">{props.info.code}</div>
-            <div class={"percent "+(props.info.change_percent>0 ? "up" : "down")}>({props.info.change_percent}%)</div>
-            <div class={"price "+(props.info.change_percent>0 ? "up" : "down")}>₩ {props.info.current_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
+            <div class={"percent "+(props.info.change_percent>0 ? "up" : (props.info.change_percent==0 ? "" : "down"))}>({props.info.change_percent}%)</div>
+            <div class={"price "+(props.info.change_percent>0 ? "up" : (props.info.change_percent==0 ? "" : "down"))}>₩ {props.info.current_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
         </div>
     </Link>
 )};

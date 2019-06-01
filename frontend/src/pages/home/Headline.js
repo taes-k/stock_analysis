@@ -74,7 +74,7 @@ const CompanyCard = (props) => {
                 </Link>
                 <span className="company-id"> &nbsp;{props.code}</span>
             </div>
-            <div className={"info current "+(props.info.change_percent>0 ? "up" : "down")}>
+            <div className={"info current "+(props.info.change_percent > 0 ? "up" :(props.info.change_percent == 0 ? "" : "down"))}>
                 <strong>₩ {props.info.current_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} </strong>
                 <span>( {props.info.change_percent}% )</span></div>
             <div className="info capitalization">

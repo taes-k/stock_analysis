@@ -3,5 +3,7 @@ from django.http import HttpResponse, JsonResponse
 
 def getCompanyInfo(request):
     company = Company()
-    result = JsonResponse(company.getCompanyInfo(request.GET['company']))
+
+    print("name ::", request.GET['name'])
+    result = JsonResponse(company.getCompanyInfoByCode(request.GET['code']))
     return result

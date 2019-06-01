@@ -9,10 +9,14 @@ class Company:
     def __init__(self):
         print("init")
 
-    def getCompanyInfo(self,_code):
+    def getCompanyInfoByCode(self,_code):
         result = {}
 
+        print("I'M in getcompanyInfo")
+        print("CODE ::: ",_code)
+
         url = "https://finance.naver.com/item/main.nhn?code="+str(_code)
+
 
         request = requests.get(url);
         html = request.text

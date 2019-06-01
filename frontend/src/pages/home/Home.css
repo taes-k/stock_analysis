@@ -10,6 +10,19 @@
     margin:auto;
     padding: 0 20px;
 }
+.pre-loader-container{
+    margin-top:15px;
+    text-align:center;
+}
+.pre-loader{
+    width:44px;
+    height:44px;
+    content: url( "../../assets/loading.gif" );
+
+}
+.pre-loader.off{
+    display:none;
+}
 .black-background{
     position:absolute;
     left:0;
