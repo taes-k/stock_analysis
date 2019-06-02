@@ -93,7 +93,7 @@ class Home extends Component{
         
         let dateString = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
         
-        return axios.get('http://45.119.146.58/news/update',{
+        return axios.get('http://45.119.146.58/news/update/',{
         // return axios.get('http://127.0.0.1:8000/news/update/',{
             params:{
                 crawlingDate: dateString,
@@ -140,7 +140,7 @@ class Home extends Component{
             
             let dateString = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
             
-            return axios.get('http://45.119.146.58/news/update',{
+            return axios.get('http://45.119.146.58/news/previous/',{
             // return axios.get('http://127.0.0.1:8000/news/previous/',{
                 params:{
                     crawlingDate: dateString,
