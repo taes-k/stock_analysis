@@ -253,6 +253,10 @@
     height:180px;
     overflow:hidden;
     cursor:pointer;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 .newsline-top > .contents-background{
     padding : 20px 30px;

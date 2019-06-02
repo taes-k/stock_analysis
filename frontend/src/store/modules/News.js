@@ -20,7 +20,7 @@ function addNews(value){
             contents : value.contents,
             crawlingDate : value.crawlingDate,
             date : value.date,
-            profile : value.profile,
+            profile : (value.profile==null?"src/assets/default-news.jpg":value.profile),
             positive : value.positive,
             keyword : value.keyword,
             company : value.company
@@ -37,7 +37,7 @@ function insertNews(value){
             contents : value.contents,
             crawlingDate : value.crawlingDate,
             date : value.date,
-            profile : value.profile,
+            profile : (value.profile==null?"src/assets/default-news.jpg":value.profile),
             positive : value.positive,
             keyword : value.keyword,
             company : value.company

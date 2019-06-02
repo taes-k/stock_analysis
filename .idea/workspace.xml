@@ -3,27 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company/module/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/module/company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/morpheme.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/morpheme.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positive.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/loading.gif" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/loading.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CompanyComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CompanyComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NewsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NewsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/include/head/Head.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/include/head/Head.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/include/head/Head.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/include/head/Head.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/include/searchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/include/searchBar/SearchBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/Search.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/Search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/StockGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/StockGraph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/Company.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/modules/Company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/modules/News.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/modules/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/module/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/module/news.py" afterDir="false" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -143,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/news/module/news.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="315">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -407,7 +386,7 @@
     <frame x="1823" y="-247" width="1280" height="1016" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7952468" visible="true" weight="0.34710088" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7952468" visible="true" weight="0.34710088" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.2047532" side_tool="true" visible="true" weight="0.34710088" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -419,7 +398,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50898635" side_tool="true" weight="0.31306306" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32951945" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.40800866" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.40800866" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -693,8 +672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/news/module/news.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="315">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

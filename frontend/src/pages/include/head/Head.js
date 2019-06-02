@@ -8,11 +8,10 @@ class Head extends Component{
         return (
             <div className="header">
                 <div className="header-container">
-
-                        <div className="logo-container" onClick={() =>{window.location.href='/'}}>
-                            <span className="title">BSN</span>
-                            <span className="sub-title">Breaking Stock News</span>
-                        </div>
+                    <div className="logo-container" onClick={() =>{window.location.href='/'}}>
+                        <span className="title">BSN</span>
+                        <span className="sub-title">Breaking Stock News</span>
+                    </div>
                     <SearchBar />
                 </div>
             </div>
