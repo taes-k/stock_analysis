@@ -20,6 +20,13 @@ class NewsComponent extends Component{
         return (
             <div className="newsline-container">
                 {newscard}
+                <div className={"news-blank "+(this.props.newsCount==0 && this.props.isUpdated ?"on":"")}>
+                    <img className="blank"/><br/>
+                    <p>
+                        해당 키워드 관련뉴스가 없습니다. <br/> 
+                        다른 키워드로 다시 검색해 보세요!
+                    </p>
+                    </div>
             </div>
         );
     }
@@ -59,13 +66,13 @@ const NewslineCard = (props) => {
     return(        
     <Link to={"/search/"+(props.data.name)}>
         <div className={"company "+(props.positive>0 ? "up" : "down")} onClick={()=> props.history.push('/serach/YG')} >
-            <div class="arrow">
-                <img class={"arrow "+(props.positive>0 ? "up" : "down")}></img>
+            <div className="arrow">
+                <img className={"arrow "+(props.positive>0 ? "up" : "down")}></img>
             </div>
-            <div class="name">{props.data.name}</div>
-            <div class="code">{props.info.code}</div>
-            <div class={"percent "+(props.info.change_percent>0 ? "up" : (props.info.change_percent==0 ? "" : "down"))}>({props.info.change_percent}%)</div>
-            <div class={"price "+(props.info.change_percent>0 ? "up" : (props.info.change_percent==0 ? "" : "down"))}>₩ {props.info.current_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
+            <div className="name">{props.data.name}</div>
+            <div className="code">{props.info.code}</div>
+            <div className={"percent "+(props.info.change_percent>0 ? "up" : (props.info.change_percent==0 ? "" : "down"))}>({props.info.change_percent}%)</div>
+            <div className={"price "+(props.info.change_percent>0 ? "up" : (props.info.change_percent==0 ? "" : "down"))}>₩ {props.info.current_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
         </div>
     </Link>
 )};
@@ -73,6 +80,8 @@ const NewslineCard = (props) => {
 const mapStateToProps = (state) => (
 {
     news : Array(state.newsReducer.news),
+    newsCount : state.newsReducer.count,
+    isUpdated : state.newsReducer.isUpdated,
     companyDic : state.companyReducer.company
 });
 

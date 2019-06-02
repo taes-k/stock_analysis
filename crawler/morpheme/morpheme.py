@@ -6,7 +6,6 @@ from crawler.morpheme.company import Company
 
 class Morpheme:
     es = Elasticsearch()
-
     target_title = ""
     target_contents = ""
     pos_title_list = []

@@ -5,7 +5,6 @@ class SearchBar extends Component{
     state = {
         text: ''
     }
-   
     searchEnterPress = (event) =>{
         var code = event.keyCode || event.which;
         if(code == 13){

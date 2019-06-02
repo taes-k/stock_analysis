@@ -2,8 +2,8 @@ from elasticsearch import Elasticsearch
 import json
 
 class News:
-    # es = Elasticsearch()
-    es = Elasticsearch(host='45.119.146.58',port='9200')
+    es = Elasticsearch()
+    #es = Elasticsearch(host='45.119.146.58',port='9200')
     def __init__(self):
         print("news init")
 

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import StockGraph from "../pages/search/StockGraph";
 
 class CompanyComponent extends Component{
 
     render (){
-
-        console.log("PROPSSSS :::",this.props)
         return (
             <div className="company-container">
                 <div className="contents-background">
@@ -75,7 +74,7 @@ class CompanyComponent extends Component{
                         </div>
                     </div>
                     <div className="company-right">
-                        <StockGraph></StockGraph>
+                        <StockGraph companyData={this.props.companyData}></StockGraph>
                     </div>
                 </div>
             </div>
@@ -83,4 +82,9 @@ class CompanyComponent extends Component{
     }
 };
 
-export default CompanyComponent;
+const mapStateToProps = (state) => (
+    {
+        companyData : state.searchedCompanyReducer.company
+    });
+    
+export default connect(mapStateToProps)(CompanyComponent);

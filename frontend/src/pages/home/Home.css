@@ -212,6 +212,21 @@
     width:100%;
     overflow:hidden;
 }
+.newsline-container > .news-blank{
+    display:none;
+    text-align: center;
+    padding: 80px 0;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 300;
+}
+.newsline-container > .news-blank > p{
+    margin-top:40px;
+}
+.newsline-container > .news-blank.on{
+    display:block;
+}
+
 .newsline-box{
     position:relative;
     width:32%;
@@ -318,4 +333,9 @@
 }
 .newsline-bottom > .company-list > a > .company > .down{
     color:#228be6;
+}
+
+img.blank {
+    content: url( "../../assets/blank.png" );
+
 }

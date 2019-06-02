@@ -1,9 +1,16 @@
 //Type
+const ADD_NEWS_INIT = "ADD_NEWS_INIT"
 const ADD_NEWS = "ADD_NEWS"
 const INSERT_NEWS = "INSERT_NEWS"
 const DEL_NEWS = "DEL_NEWS"
 
 //Action
+function addNewsInit(){
+    return{
+        type: ADD_NEWS_INIT
+    }
+}
+
 function addNews(value){
     return{
         type: ADD_NEWS,
@@ -59,7 +66,8 @@ const initTodoCountState = {
          company : []
         }
     ],
-    count : 0
+    count : 0,
+    isUpdated : false,
 }
 
 //Reducer
@@ -67,6 +75,10 @@ function newsReducer(state = initTodoCountState, action) {
     let newsArr = state.news;
 
     switch (action.type) {
+    case ADD_NEWS_INIT:
+        return Object.assign({}, state, {
+            isUpdated: true
+        });
     case ADD_NEWS:
         if(state.count == 0){
             let newArr = []
@@ -77,20 +89,23 @@ function newsReducer(state = initTodoCountState, action) {
 
         return Object.assign({}, state, {
             news: newsArr,
-            count: state.count+1
+            count: state.count+1,
+            isUpdated: true
         });
         break;
     case INSERT_NEWS:
         newsArr.unshift(action.data)
         return Object.assign({}, state, {
             news: newsArr,
-            count: state.count+1
+            count: state.count+1,
+            isUpdated: true
         });
         break;
     case DEL_NEWS:
         return Object.assign({}, state, {
             news: [],
-            count: 0
+            count: 0,
+            isUpdated: false
         });
     default:
         return state;
@@ -100,6 +115,7 @@ function newsReducer(state = initTodoCountState, action) {
 
 // Export
 const newsActionCreators = {
+    addNewsInit,
     addNews,
     insertNews,
     deleteNews

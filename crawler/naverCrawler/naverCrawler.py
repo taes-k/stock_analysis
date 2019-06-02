@@ -10,6 +10,7 @@ from crawler.morpheme.morpheme import Morpheme
 
 class NewsCrawler:
     es = Elasticsearch()
+    #es = Elasticsearch(host='45.119.146.58',port='9200')
     mor = Morpheme()
     news_url=''
     exceptUrl=[]

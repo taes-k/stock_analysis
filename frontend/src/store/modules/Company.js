@@ -48,7 +48,6 @@ const initState = {
 function companyReducer(state = initState, action) {
     switch (action.type) {
     case ADD_COMPANY:
-        console.log("COMPANY STATE ADD : ",state)
         let companyDic = state.company;
         companyDic[action.data.code] = action.data
 

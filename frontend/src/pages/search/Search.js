@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from "axios";
 import { newsActionCreators } from "../../store/modules/News";
 import { companyActionCreators } from "../../store/modules/Company";
+import { searchedCompanyActionCreators } from "../../store/modules/SearchedCompany";
 
 import Head from "../include/head/Head";
 import Foot from "../include/foot/Foot";
@@ -16,60 +17,81 @@ class Search extends Component{
         super(props);
         this.state = {
             searchFlag : false,
-            searchedCompanyData : {
-                name : "",
-                code : "",
-                current_price : 0,
-                change_price : 0,
-                chamge_percent : 0,
-                market : "",
-                total_price : 0,
-                total_stock : 0,
-                trade_count : 0,
-                yesterday_price : 0,
-                max_price : 0,
-                min_price : 0,
-                start_price : 0,
-                year_max_price : 0,
-                year_min_price : 0
-            }
+            newsFlag : false,
         }
     }
 
     componentDidMount(){
         this.getCompany();
-
         this.props.deleteNews()
         this.getNews();
     }
 
-    getCompany(){
-        //return axios.get('http://45.119.146.58/company/',{
-        return axios.get('http://127.0.0.1:8000/company/',{
+    componentDidUpdate(prevProps, prevState) {
+        if(prevProps.match.params.text != this.props.match.params.text){
+            this.getCompany();
+            this.props.deleteNews()
+            this.getNews();
+        }else{
+
+            window.scrollTo(0, 0)
+        }
+    }
+
+    getCompany = () => {
+
+        this.setState({
+            searchFlag : false
+        })
+        return axios.get('http://45.119.146.58/company/',{
+        // return axios.get('http://127.0.0.1:8000/company/',{
             params:{
                 name: this.props.match.params.text,
             }
         })
         .then((response)=>{
-            console.log("search result : ",response.data)
             let result = response.data;
-            let newsData = [];
-            this.setState({
-                searchFlag : true,
-                searchedCompanyData:result     
-            })
+            if(result.return_code == 200){
+                this.props.addSearchedCompany(result)
+                this.setState({
+                    searchFlag : true
+                })
+            }else {
+                let data = {
+                    name : "",
+                    code : "",
+                    current_price : 0,
+                    change_price : 0,
+                    chamge_percent : 0,
+                    market : "",
+                    total_price : 0,
+                    total_stock : 0,
+                    trade_count : 0,
+                    yesterday_price : 0,
+                    max_price : 0,
+                    min_price : 0,
+                    start_price : 0,
+                    year_max_price : 0,
+                    year_min_price : 0
+                }
+                this.props.addSearchedCompany(data)
+                this.setState({
+                    searchFlag : false
+                })
+            }
         })
         .catch((error)=>{
             console.log("ERROR : "+error)
-            this.setState({
-                searchFlag : false
-            })
         })
     }
 
     getNews(){
-        //return axios.get('http://45.119.146.58/news/search/',{
-        return axios.get('http://127.0.0.1:8000/news/search/',{
+
+        this.setState({
+            newsFlag : true   
+        })
+        return axios.get('http://45.119.146.58/news/search/',{
+        // return axios.get('http://127.0.0.1:8000/news/search/',{
             params:{
                 text: this.props.match.params.text,
             }
@@ -77,9 +99,8 @@ class Search extends Component{
         .then((response)=>{
             let result = response.data.res
             let companyData = []
-            
+            this.props.addNewsInit()
             result.forEach(el => {
-            
                 let data = {
                     url : el._source.url,
                     title : el._source.title,
@@ -96,6 +117,9 @@ class Search extends Component{
                 this.props.addNews(data)
             });
             this.getCompanyInfo(companyData)
+            this.setState({
+                newsFlag : false 
+            })
         })
 
         .catch((error)=>{
@@ -108,8 +132,8 @@ class Search extends Component{
         return new Promise(() =>{
             companyData.forEach(companyArrEl => {
                 companyArrEl.forEach(companyEl => {
-                    //axios.get('http://45.119.146.58/company/',{
-                    axios.get('http://127.0.0.1:8000/company/',{
+                    axios.get('http://45.119.146.58/company/',{
+                    // axios.get('http://127.0.0.1:8000/company/',{
                         params:{
                             code: companyEl.code,
                         }
@@ -134,11 +158,14 @@ class Search extends Component{
                     <div className="search-container">
                         <div className={"search "+(this.state.searchFlag?"find":"")}>
                             <p>상장사 <span>'{ this.props.match.params.text }'</span> 정보</p>
-                            <CompanyComponent companyData={this.state.searchedCompanyData}/>
+                            <CompanyComponent/>
                         </div>
                         <div>
                             <p><span>'{ this.props.match.params.text }'</span> 키워드 관련뉴스 검색 결과</p>
                             <NewsComponent />
+                            <div className="pre-loader-container">
+                                <img className={"pre-loader "+(this.state.newsFlag ? "on" : "off")}></img>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -150,9 +177,11 @@ class Search extends Component{
 
 let mapDispatchToProps = (dispatch) => {
     return {
+        addNewsInit: () => dispatch(newsActionCreators.addNewsInit()),
         addNews: (data) => dispatch(newsActionCreators.addNews(data)),
         deleteNews: () => dispatch(newsActionCreators.deleteNews()),
-        addCompany: (data) => dispatch(companyActionCreators.addCompany(data))
+        addCompany: (data) => dispatch(companyActionCreators.addCompany(data)),
+        addSearchedCompany: (data) => dispatch(searchedCompanyActionCreators.addSearchedCompany(data))
     }
 }
 

@@ -43,17 +43,16 @@ class Home extends Component{
         const scrollTop =
           (document.documentElement && document.documentElement.scrollTop) ||
           document.body.scrollTop;
-        // 스크롤링 했을때, 브라우저의 가장 밑에서 100정도 높이가 남았을때에 실행하기위함.
+        // 스크롤 하단에서 실행
         if (scrollHeight - innerHeight - scrollTop < 100) {
             this.getPreviousNews()
-          console.log("Almost Bottom Of This Browser");
         }
     };
 
     //초기 뉴스 불러오기
     getNewsInit = () =>{
-        //return axios.get('http://45.119.146.58/news/',{
-        return axios.get('http://127.0.0.1:8000/news/',{
+        return axios.get('http://45.119.146.58/news/',{
+        // return axios.get('http://127.0.0.1:8000/news/',{
             params:{
                 page: 0,
             }
@@ -94,8 +93,8 @@ class Home extends Component{
         
         let dateString = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
         
-        //return axios.get('http://45.119.146.58/news/update',{
-        return axios.get('http://127.0.0.1:8000/news/update/',{
+        return axios.get('http://45.119.146.58/news/update',{
+        // return axios.get('http://127.0.0.1:8000/news/update/',{
             params:{
                 crawlingDate: dateString,
             }
@@ -141,8 +140,8 @@ class Home extends Component{
             
             let dateString = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
             
-            //return axios.get('http://45.119.146.58/news/update',{
-            return axios.get('http://127.0.0.1:8000/news/previous/',{
+            return axios.get('http://45.119.146.58/news/update',{
+            // return axios.get('http://127.0.0.1:8000/news/previous/',{
                 params:{
                     crawlingDate: dateString,
                 }
@@ -151,6 +150,7 @@ class Home extends Component{
                 let result = response.data.res
                 let companyData = []
                 
+                this.props.addNewsInit()
                 result.forEach(el => {
                     let data = {
                         url : el._source.url,
@@ -182,10 +182,9 @@ class Home extends Component{
     getCompanyInfo(companyData){
         return new Promise(() =>{
             companyData.forEach(companyArrEl => {
-                console.log("companyEl.code",companyArrEl)
                 companyArrEl.forEach(companyEl => {
-                    //axios.get('http://45.119.146.58/company/',{
-                    axios.get('http://127.0.0.1:8000/company/',{
+                    axios.get('http://45.119.146.58/company/',{
+                    // axios.get('http://127.0.0.1:8000/company/',{
                         params:{
                             code: companyEl.code,
                         }
@@ -229,6 +228,7 @@ const mapStateToProps = (state) => (
 
 let mapDispatchToProps = (dispatch) => {
     return {
+        addNewsInit: (data) => dispatch(newsActionCreators.addNewsInit()),
         addNews: (data) => dispatch(newsActionCreators.addNews(data)),
         insertNews: (data) => dispatch(newsActionCreators.insertNews(data)),
         addCompany: (data) => dispatch(companyActionCreators.addCompany(data))

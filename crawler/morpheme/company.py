@@ -75,7 +75,7 @@ class Company:
                                 company_score_dic[company_name] = abs(score)
 
         acc_company_list = sorted(company_score_dic.items(), key=lambda x: abs(x[1]), reverse=True)
-        size = (5 if len(acc_company_list) >= 5 else len(acc_company_list))
+        size = (3 if len(acc_company_list) >= 3 else len(acc_company_list))
 
         result_list = []
         for i in range(0, size):

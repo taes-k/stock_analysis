@@ -50,10 +50,6 @@ class Company:
         year_min_price = soup.select('#tab_con1 > div:nth-child(4) > table > tr:last-child > td > em')[1]
 
 
-        print("start MAX ::::: ",start_price)
-        print("YEAR MAX ::::: ",year_max_price)
-        print("YEAR MIN ::::: ",year_min_price)
-
         result['code'] = _code
         result['name'] = name.text
         result['market'] = market.text[0:3]
@@ -70,10 +66,14 @@ class Company:
         result['total_price'] = total_price_text
         result['total_stock'] = int(re.sub(',','',total_stock.text,0,re.I | re.S))
 
+        result['return_code'] = 200
+
         return result
 
 
     def getCompanyInfoByName(self,_name):
         code = self.com.get_company_code(_name)
-
+        print("code error check :",code)
+        if code == None :
+            return {'return_code':400}
         return self.getCompanyInfoByCode(code)
