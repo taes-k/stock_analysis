@@ -51,7 +51,6 @@ const initState = {
 function searchedCompanyReducer(state = initState, action) {
     switch (action.type) {
     case ADD_SEARCHED_COMPANY:
-        console.log("SEARCHED COMPANY INFO L: ",action.data)
         return Object.assign({}, state, {
             company: action.data,
         });
