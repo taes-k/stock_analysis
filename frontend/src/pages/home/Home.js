@@ -132,7 +132,10 @@ class Home extends Component{
     getPreviousNews = () =>{
         //무한 스크롤 중복방지 플래그
         if(this.state.previousFlag){
-            this.state.previousFlag = false;
+
+            this.setState({
+                previousFlag : false   
+            })
             var date = new Date(this.props.news[0][this.props.newsCount-1].crawlingDate.replace(' ','T')+"+09:00")
             date.setSeconds(date.getSeconds()-1)
             
@@ -165,7 +168,9 @@ class Home extends Component{
                     this.props.addNews(data)
                 });
                 this.getCompanyInfo(companyData)
-                this.state.previousFlag = true
+                this.setState({
+                    previousFlag : true   
+                })
             })
 
             .catch((error)=>{

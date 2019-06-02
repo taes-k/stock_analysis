@@ -4,11 +4,17 @@
     margin:auto;
     padding: 0 10px;
 }
-.search-container > p{
+.search-container > .search{
+    display:none;
+}
+.search-container > .search.find{
+    display:block;
+}
+.search-container > div > p{
     margin : 20px 0 0 0;
     font-weight: bold;
 }
-.search-container > p > span{
+.search-container > div > p > span{
     font-weight: bold;
 }
 /* comapnyComponent CSS */
@@ -62,9 +68,48 @@
     font-size:20px;
     font-weight:bold;
 }
+.company-left > .company-top > .row > .current.up {
+    color:#f03e3e;
+}
+.company-left > .company-top > .row > .current.down {
+    color:#228be6;
+}
 .company-left > .company-top > .row > .current > .change{
+    margin-left:10px;
     font-size:14px;
 }
+.company-left > .company-top > .row > .current > .arrow {
+    width: 12px;
+    height: 15px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.company-left > .company-top > .row > .market{
+    margin:10px 0;
+    font-size:16px;
+    font-weight:bold;
+    color: #adb5bd;
+}
+
+.company-left > .company-top > .row > .total-info{
+    float:left;
+    width:32%;
+    box-sizing: border-box;
+    font-weight:bold;
+}
+
+.company-left > .company-top > .row > .total-info:nth-child(3n+2){
+    margin:0 2%;
+}
+
+.company-left > .company-top > .row > .total-info > .title{
+    font-size:15px;
+    color : #adb5bd
+}
+.company-left > .company-top > .row > .total-info > .contents{
+    font-size:16px;
+}
+
 .company-left > .company-bottom{
    padding:23px 28px;
 }
@@ -72,22 +117,22 @@
     overflow:hidden;
 }
 .company-left > .company-bottom > .row:nth-child(2) {
-    margin-top:28px;
+    margin-top:40px;
 }
-.company-left > .company-bottom > .row > .detail_info{
+.company-left > .company-bottom > .row > .detail-info{
     float:left;
     width:32%;
     box-sizing: border-box;
     font-weight:bold;
 }
-.company-left > .company-bottom > .row > .detail_info:nth-child(3n+2){
+.company-left > .company-bottom > .row > .detail-info:nth-child(3n+2){
     margin:0 2%;
 }
-.company-left > .company-bottom > .row > .detail_info > .title{
+.company-left > .company-bottom > .row > .detail-info > .title{
     font-size:15px;
     color: #adb5bd;
 }
-.company-left > .company-bottom > .row > .detail_info > .contents{
+.company-left > .company-bottom > .row > .detail-info > .contents{
     font-size:16px;
     color: #495057;
 }
@@ -95,6 +140,7 @@
 
 .company-right{
     box-sizing: border-box;
+    padding:30px;
     float:left;
     width:55%;
 }

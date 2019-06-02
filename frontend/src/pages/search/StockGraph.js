@@ -246,8 +246,33 @@ import ReactHighcharts from 'react-highcharts';
 //     }
 // };
 var config = {
+    chart:{
+        height: 320
+    },
+    title:{
+        text:""
+    },
     xAxis: {
-      categories: ['10:00','','','17:00']
+      categories: ['10:00','','','17:00'],
+      title:{
+        enabled:false
+      }
+    },
+    yAxis:{
+        title:{
+          enabled:false
+        }
+    },
+    legend:{
+        enabled:false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+            }
+        }
     },
     series: [{
       data: [21000,23000,20000,25000]

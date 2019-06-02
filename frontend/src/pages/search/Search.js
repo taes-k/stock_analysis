@@ -15,13 +15,30 @@ class Search extends Component{
     constructor(props){
         super(props);
         this.state = {
-            searchedCompany : {}
+            searchFlag : false,
+            searchedCompanyData : {
+                name : "",
+                code : "",
+                current_price : 0,
+                change_price : 0,
+                chamge_percent : 0,
+                market : "",
+                total_price : 0,
+                total_stock : 0,
+                trade_count : 0,
+                yesterday_price : 0,
+                max_price : 0,
+                min_price : 0,
+                start_price : 0,
+                year_max_price : 0,
+                year_min_price : 0
+            }
         }
     }
 
     componentDidMount(){
         this.getCompany();
-        
+
         this.props.deleteNews()
         this.getNews();
     }
@@ -34,28 +51,19 @@ class Search extends Component{
             }
         })
         .then((response)=>{
-            console.log("search result : ",response)
-            let result = response.data.res;
+            console.log("search result : ",response.data)
+            let result = response.data;
             let newsData = [];
-            result.forEach(el => {
-                let data = {
-                    url : el._source.url,
-                    title : el._source.title,
-                    contents : el._source.contents,
-                    date : el._source.date,
-                    profile : el._source.profile,
-                    positive : el._source.positive,
-                    keyword : el._source.keyword,
-                    company : el._source.company
-                };
-                newsData.push(data);
-            });
             this.setState({
-                news:newsData     
+                searchFlag : true,
+                searchedCompanyData:result     
             })
         })
         .catch((error)=>{
             console.log("ERROR : "+error)
+            this.setState({
+                searchFlag : false
+            })
         })
     }
 
@@ -124,10 +132,14 @@ class Search extends Component{
                 <Head />
                 <div className="container">
                     <div className="search-container">
-                        <p>상장사 <span>'{ this.props.match.params.text }'</span> 정보</p>
-                        <CompanyComponent data={this.state.searchedCompany}/>
-                        <p><span>'{ this.props.match.params.text }'</span> 키워드 관련뉴스 검색 결과</p>
-                        <NewsComponent />
+                        <div className={"search "+(this.state.searchFlag?"find":"")}>
+                            <p>상장사 <span>'{ this.props.match.params.text }'</span> 정보</p>
+                            <CompanyComponent companyData={this.state.searchedCompanyData}/>
+                        </div>
+                        <div>
+                            <p><span>'{ this.props.match.params.text }'</span> 키워드 관련뉴스 검색 결과</p>
+                            <NewsComponent />
+                        </div>
                     </div>
                 </div>
                 <Foot />

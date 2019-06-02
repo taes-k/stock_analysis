@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/company/module/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/module/company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/company.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/CompanyComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CompanyComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/Search.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/Search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/StockGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/StockGraph.js" afterDir="false" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="12" selection-end-column="20" />
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="12" selection-end-column="20" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -61,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/company/module/company.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+            <state relative-caret-position="193">
+              <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -90,7 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_realated_companies</find>
       <find>border</find>
       <find>input</find>
       <find>url</find>
@@ -120,6 +120,7 @@
       <find>cs</find>
       <find>company</find>
       <find>company_dic</find>
+      <find>first</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,10 +172,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1480" />
-    <option name="y" value="-256" />
-    <option name="width" value="1643" />
-    <option name="height" value="1057" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -331,12 +331,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1480" y="-256" width="1643" height="1057" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79651165" visible="true" weight="0.26942047" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7941176" visible="true" weight="0.34710088" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.20348836" side_tool="true" visible="true" weight="0.26942047" />
+      <window_info id="Favorites" order="2" sideWeight="0.20588236" side_tool="true" visible="true" weight="0.34710088" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32951945" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49707174" weight="0.32112068" />
@@ -346,7 +346,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50898635" side_tool="true" weight="0.31306306" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32951945" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.28704664" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.40437958" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -598,7 +598,7 @@
     <entry file="file://$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="12" selection-end-column="20" />
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="12" selection-end-column="20" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -614,8 +614,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/company/module/company.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+        <state relative-caret-position="193">
+          <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
