@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" afterDir="false" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/news/module/news.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="293">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -219,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1823" />
     <option name="y" value="-247" />
     <option name="width" value="1280" />
@@ -380,10 +377,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1823" y="-247" width="1280" height="1016" extended-state="0" />
-    <editor active="true" />
+    <frame x="1823" y="-247" width="1280" height="1016" extended-state="1" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7952468" visible="true" weight="0.34710088" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7952468" visible="true" weight="0.34710088" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.2047532" side_tool="true" visible="true" weight="0.34710088" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -395,7 +391,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50898635" side_tool="true" weight="0.31306306" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32951945" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.40800866" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.40800866" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -669,8 +665,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/news/module/news.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="293">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
