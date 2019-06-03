@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/search/Search.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/search/Search.css" afterDir="false" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -377,7 +378,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1823" y="-247" width="1280" height="1016" extended-state="1" />
+    <frame x="1823" y="-247" width="1280" height="1016" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7952468" visible="true" weight="0.34710088" />
       <window_info id="Structure" order="1" weight="0.25" />

@@ -1,13 +1,16 @@
 
+.search{
+    min-width:1100px;
+}
 .search-container{
     width: 1060px;
     margin:auto;
     padding: 0 20px;
 }
-.search-container > .search{
+.search-container > .company-search{
     display:none;
 }
-.search-container > .search.find{
+.search-container > .company-search.find{
     display:block;
 }
 .search-container > div > p{

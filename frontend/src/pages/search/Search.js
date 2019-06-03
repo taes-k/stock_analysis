@@ -156,7 +156,7 @@ class Search extends Component{
                 <Head />
                 <div className="container">
                     <div className="search-container">
-                        <div className={"search "+(this.state.searchFlag?"find":"")}>
+                        <div className={"company-search "+(this.state.searchFlag?"find":"")}>
                             <p>상장사 <span>'{ this.props.match.params.text }'</span> 정보</p>
                             <CompanyComponent/>
                         </div>
