@@ -72,7 +72,8 @@ class Search extends Component{
                     min_price : 0,
                     start_price : 0,
                     year_max_price : 0,
-                    year_min_price : 0
+                    year_min_price : 0,
+                    date:""
                 }
                 this.props.addSearchedCompany(data)
                 this.setState({

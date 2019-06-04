@@ -1,6 +1,8 @@
 import requests
 import re
 from bs4 import BeautifulSoup
+from datetime import datetime
+from pytz import timezone
 from crawler.morpheme.company import Company as CompanyModule
 
 
@@ -49,7 +51,7 @@ class Company:
         year_max_price = soup.select('#tab_con1 > div:nth-child(4) > table > tr:last-child > td > em')[0]
         year_min_price = soup.select('#tab_con1 > div:nth-child(4) > table > tr:last-child > td > em')[1]
 
-
+        result['date'] = datetime.strftime(datetime.now(timezone('Asia/Seoul')), "%Y-%m-%d %H:%M:%S")
         result['code'] = _code
         result['name'] = name.text
         result['market'] = market.text[0:3]

@@ -15,7 +15,7 @@ class CompanyComponent extends Component{
                                     {this.props.companyData.name}<span class="code">{this.props.companyData.code}</span>
                                 </div>
                                 <div className="date">
-                                    20190505
+                                    {this.props.companyData.date}
                                 </div>
                             </div>
                             <div className="row">

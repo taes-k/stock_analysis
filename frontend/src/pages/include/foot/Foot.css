@@ -22,7 +22,7 @@
     cursor:pointer;
 
 }
-.footer-container > .link > .home{
+.footer-container > .link > .homepage{
     margin-right:30px;
     content: url(../../../assets/homepage.png);
 }

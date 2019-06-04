@@ -20,7 +20,8 @@ function addSearchedCompany(value){
             yesterday_price: value.yesterday_price,
             start_price: value.start_price,
             year_max_price: value.year_max_price,
-            year_min_price: value.year_min_price
+            year_min_price: value.year_min_price,
+            date: value.date
         }
     }
 }
@@ -42,7 +43,8 @@ const initState = {
         yesterday_price: 0,
         start_price: 0,
         year_max_price: 0,
-        year_min_price: 0
+        year_min_price: 0,
+        date: ""
     },
     count : 0
 }
