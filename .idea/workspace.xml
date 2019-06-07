@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_1906071111.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData_190607.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company/module/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/module/company.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/morpheme/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/include/foot/Foot.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/include/foot/Foot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positive.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_1906071111.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_0607back.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData_190607.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData_0607back.csv" afterDir="false" />
     </list>
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/morpheme/morpheme.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="105">
               <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -42,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/morpheme/positive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="870">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
@@ -54,17 +53,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/morpheme/company.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="82" column="46" lean-forward="true" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+            <state relative-caret-position="1230">
+              <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/news/module/news.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="324">
+              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -76,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/company/module/company.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -84,28 +83,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_1906071111.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="6668" column="10" lean-forward="true" selection-start-line="6668" selection-start-column="10" selection-end-line="6668" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="8764" column="12" lean-forward="true" selection-start-line="8764" selection-start-column="12" selection-end-line="8764" selection-end-column="12" />
+            <state relative-caret-position="427">
+              <caret line="6669" column="12" lean-forward="true" selection-start-line="6669" selection-start-column="12" selection-end-line="6669" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData_190607.csv">
+        <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_0607back.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
+            <state relative-caret-position="470">
+              <caret line="8776" column="9" selection-start-line="8776" selection-start-column="9" selection-end-line="8776" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34860">
               <caret line="2324" column="22" selection-start-line="2324" selection-start-column="22" selection-end-line="2324" selection-end-column="22" />
             </state>
           </provider>
@@ -114,14 +113,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="9420">
               <caret line="628" column="14" selection-start-line="628" selection-start-column="11" selection-end-line="628" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv">
+        <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData_0607back.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="37590">
               <caret line="2506" selection-start-line="2506" selection-end-line="2506" />
@@ -212,13 +211,13 @@
         <option value="$PROJECT_DIR$/crawler/morpheme/morpheme.py" />
         <option value="$PROJECT_DIR$/crawler/naverCrawler/naverCrawler.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" />
-        <option value="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" />
         <option value="$PROJECT_DIR$/crawler/morpheme/company.py" />
         <option value="$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_1906071111.csv" />
         <option value="$PROJECT_DIR$/crawler/morpheme/positiveTrainData_190607.csv" />
         <option value="$PROJECT_DIR$/company/module/company.py" />
         <option value="$PROJECT_DIR$/news/module/news.py" />
+        <option value="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" />
       </list>
     </option>
   </component>
@@ -396,7 +395,7 @@
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.2047532" side_tool="true" weight="0.34710088" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32951945" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49707174" weight="0.32112068" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -404,7 +403,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50898635" side_tool="true" weight="0.31306306" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32951945" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.30627707" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" weight="0.3051948" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -596,9 +595,10 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_190607.csv" />
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/morpheme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="105">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -608,7 +608,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/positive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="870">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
@@ -616,72 +616,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_190607.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2254">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/morpheme/company.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="82" column="46" lean-forward="true" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37590">
-          <caret line="2506" selection-start-line="2506" selection-end-line="2506" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_1906071111.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="6668" column="10" lean-forward="true" selection-start-line="6668" selection-start-column="10" selection-end-line="6668" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="8764" column="12" lean-forward="true" selection-start-line="8764" selection-start-column="12" selection-end-line="8764" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData_190607.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="2324" column="22" selection-start-line="2324" selection-start-column="22" selection-end-line="2324" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="628" column="14" selection-start-line="628" selection-start-column="11" selection-end-line="628" selection-end-column="14" />
+        <state relative-caret-position="1230">
+          <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/module/company.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34860">
+          <caret line="2324" column="22" selection-start-line="2324" selection-start-column="22" selection-end-line="2324" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/morpheme/listedCompanyList.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9420">
+          <caret line="628" column="14" selection-start-line="628" selection-start-column="11" selection-end-line="628" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveTrainData_0607back.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37590">
+          <caret line="2506" selection-start-line="2506" selection-end-line="2506" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/news/module/news.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="324">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_0607back.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="8776" column="9" selection-start-line="8776" selection-start-column="9" selection-end-line="8776" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="6669" column="12" lean-forward="true" selection-start-line="6669" selection-start-column="12" selection-end-line="6669" selection-end-column="12" />
         </state>
       </provider>
     </entry>

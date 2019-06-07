@@ -16,7 +16,7 @@ class Company:
                 self.company_list.append(row.get('name'))
                 self.company_dic[row.get('name')] = row.get('code')
         #키워드 List init
-        with open('./crawler/morpheme/positiveCompanyDic.csv', 'rt') as csvfile:
+        with open('./crawler/morpheme/positiveCompanyDic_0607back.csv', 'rt') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 if self.company_realtion_keyword_dic.get(row.get('keyword')) == None:
@@ -64,7 +64,7 @@ class Company:
                             #다른 회사 이름이 keyword일 경우 0.5점 , 기타 keyword일 경우 0.3점
                             score = (company_name == keywords[idx] and 1 or (keywords[idx] in self.company_list and 0.5 or 0.3))
                             data = {'keyword': keywords[idx], 'company': company_name, 'score': score}
-                            with open('./crawler/morpheme/positiveCompanyDic.csv', 'a') as csvfile:
+                            with open('./crawler/morpheme/positiveCompanyDic_0607back.csv', 'a') as csvfile:
                                 fieldnames = ['keyword','company','score']
                                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                                 writer.writerow(data)

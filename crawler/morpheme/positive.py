@@ -16,7 +16,7 @@ class Positive:
         self.forest.fit(train_data_array,self.score) #train data 학습
 
     def positive_init(self):
-        with open('./crawler/morpheme/positiveTrainData.csv', 'rt') as csvfile:
+        with open('./crawler/morpheme/positiveTrainData_0607back.csv', 'rt') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self.texts.append(row.get('text'))
@@ -51,7 +51,7 @@ class Positive:
             result = int(result[0])
 
             # #훈련 데이터 업데이트
-            # with open('./crawler/morpheme/positiveTrainData.csv', 'a') as csvfile:
+            # with open('./crawler/morpheme/positiveTrainData_0607back.csv', 'a') as csvfile:
             #     fieldnames = ['text', 'positive']
             #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             #     data = {'text': text, 'positive': result}
@@ -65,7 +65,7 @@ class Positive:
         i = input()
 
         if i!='3' :
-            with open('./crawler/morpheme/positiveTrainData.csv', 'a') as csvfile:
+            with open('./crawler/morpheme/positiveTrainData_0607back.csv', 'a') as csvfile:
                 fieldnames = ['text', 'positive']
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 text = ''
