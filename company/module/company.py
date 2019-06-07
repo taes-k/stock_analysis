@@ -30,7 +30,7 @@ class Company:
         change = soup.select('#chart_area > div.rate_info > div > p.no_exday > em:nth-child(2) > span:nth-child(1)')[0]
         change = (change.text == '하락' and -1 or 1)
         change_price = soup.select('#chart_area > div.rate_info > div > p.no_exday > em:nth-child(2) > span.blind')[0]
-        market = soup.select('#tab_con1 > div.first > table > tr:nth-child(3) > td')[0]
+        market = soup.select('.description > img')[0]
 
         change_percent = soup.select('#chart_area > div.rate_info > div > p.no_exday > em:nth-child(4) > span.blind')[0]
 
@@ -42,31 +42,44 @@ class Company:
 
         trade_count = soup.select('#chart_area > div.rate_info > table.no_info > tr > td > em > span.blind')[3]
 
-        total_price = soup.select('#tab_con1 > div.first > table > tr.strong > td')
-        total_price_text = total_price[0].text
-        total_price_text = re.sub('\\t', '', total_price_text, 0, re.I | re.S)
-        total_price_text = re.sub('\\n', '', total_price_text, 0, re.I | re.S)
-        total_stock = soup.select('#tab_con1 > div.first > table > tr:nth-child(4) > td > em')[0]
 
-        year_max_price = soup.select('#tab_con1 > div:nth-child(4) > table > tr:last-child > td > em')[0]
-        year_min_price = soup.select('#tab_con1 > div:nth-child(4) > table > tr:last-child > td > em')[1]
 
-        result['date'] = datetime.strftime(datetime.now(timezone('Asia/Seoul')), "%Y-%m-%d %H:%M:%S")
+        try :
+            total_price = soup.select('#tab_con1 > div.first > table > tr.strong > td')
+            total_price_text = total_price[0].text
+            total_price_text = re.sub('\\t', '', total_price_text, 0, re.I | re.S)
+            total_price_text = re.sub('\\n', '', total_price_text, 0, re.I | re.S)
+            result['total_price'] = total_price_text
+        except :
+            result['total_price'] = "-"
+
+        try :
+            total_stock = soup.select('#_market_sum')[0]
+            result['total_stock'] = int(re.sub(',','',total_stock.text,0,re.I | re.S))
+        except :
+            result['total_stock'] = 0
+
+        try :
+            year_max_price = soup.select('#tab_con1 > div:nth-child(4) > table > tr:last-child > td > em')[0]
+            year_min_price = soup.select('#tab_con1 > div:nth-child(4) > table > tr:last-child > td > em')[1]
+            result['year_max_price'] = int(re.sub(',','',year_max_price.text,0,re.I | re.S))
+            result['year_min_price'] = int(re.sub(',','',year_min_price.text,0,re.I | re.S))
+        except :
+            result['year_max_price'] = 0
+            result['year_min_price'] = 0
+
+        result['date'] = datetime.strftime(datetime.now(timezone('Asia/Seoul')), "%Y-%m-%d %H:%M")
         result['code'] = _code
         result['name'] = name.text
-        result['market'] = market.text[0:3]
+        result['market'] = market['alt']
         result['current_price'] = int(re.sub(',','',current_price.text,0,re.I | re.S))
         result['change_price'] = int(re.sub(',','',change_price.text,0,re.I | re.S)) * change
         result['change_percent'] = float(change_percent.text) * change
         result['max_price'] = int(re.sub(',','',max_price.text,0,re.I | re.S))
         result['min_price'] = int(re.sub(',','',min_price.text,0,re.I | re.S))
-        result['year_max_price'] = int(re.sub(',','',year_max_price.text,0,re.I | re.S))
-        result['year_min_price'] = int(re.sub(',','',year_min_price.text,0,re.I | re.S))
         result['trade_count'] = int(re.sub(',','',trade_count.text,0,re.I | re.S))
         result['yesterday_price'] = int(re.sub(',','',yesterday_price.text,0,re.I | re.S))
         result['start_price'] = int(re.sub(',','',start_price.text,0,re.I | re.S))
-        result['total_price'] = total_price_text
-        result['total_stock'] = int(re.sub(',','',total_stock.text,0,re.I | re.S))
 
         result['return_code'] = 200
 

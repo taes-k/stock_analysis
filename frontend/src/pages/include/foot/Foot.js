@@ -10,9 +10,9 @@ class Foot extends Component{
                         <span >Taes.k @2019</span>
                     </div>
                     <div className="link">
-                        <img class="homepage" onClick={()=>window.open("https://taes-k.github.io/")}></img>
+                        <img className="homepage" onClick={()=>window.open("https://taes-k.github.io/")}></img>
 
-                        <img class="git" onClick={()=>window.open("https://github.com/taes-k")}></img>
+                        <img className="git" onClick={()=>window.open("https://github.com/taes-k")}></img>
 
 
                     </div>

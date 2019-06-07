@@ -80,7 +80,7 @@ class Company:
         result_list = []
         for i in range(0, size):
             #0.8점 이상의 관련도를 갖은 회사명만 추출
-            if acc_company_list[i][1] >= 0.9 :
+            if acc_company_list[i][1] >= 0.8 :
                 result_list.append({'name':acc_company_list[i][0],'code': self.company_dic.get(acc_company_list[i][0]) ,'score':acc_company_list[i][1]})
 
         return result_list
