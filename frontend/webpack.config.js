@@ -40,6 +40,9 @@ module.exports = {
         })
     ],
     devServer: {
+        allowedHosts: [
+            '.stocknews.me'
+        ],
         inline: true,
         port: 3000,
         historyApiFallback: true

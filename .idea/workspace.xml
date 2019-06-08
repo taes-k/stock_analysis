@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positive.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_1906071111.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveCompanyDic_0607back.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData_190607.csv" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/morpheme/positiveTrainData_0607back.csv" afterDir="false" />
-    </list>
+    <list default="true" id="e7248b17-a6db-48c0-bd54-6b18121ce8b0" name="Default" comment="" />
     <ignored path="stock_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -389,9 +381,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1443" y="-257" width="1503" height="1016" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7952468" visible="true" weight="0.2948718" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7952468" visible="true" weight="0.2948718" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.2047532" side_tool="true" weight="0.34710088" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -403,7 +394,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50898635" side_tool="true" weight="0.31306306" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32951945" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" weight="0.3051948" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49101365" visible="true" weight="0.3051948" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
