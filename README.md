@@ -16,7 +16,7 @@
 - 한국예탁결제원 주식정보서비스api
 
 ## Demo
-<http://13.209.47.27>
+<http://www.stocknews.me>
 
 ## Example
 
@@ -30,8 +30,8 @@
 
 ## 서비스 안내
 ### 형태소분석
-elasticSearch nori_analyzer 사용.  
-user_dict에 상장기업 회사명들 사용자 사전 추가.
+Elasticsearch nori_analyzer  
+user_dict에 상장기업 회사명들 사용자 사전 추가
 
 ###  키워드 추출
 최다 빈도 명사형 단어 = 키워드 ( 단, 기사제목에 나온 명사형 단어에는 가중치를 부여 )
