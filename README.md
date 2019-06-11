@@ -1,4 +1,4 @@
-# News Cralwer Stock Analysis
+# BSN (Breaking Stock News)
 
 ## 실행환경
 - Python 3.7.3
@@ -16,8 +16,11 @@
 - 한국예탁결제원 주식정보서비스api
 
 ## Demo
-<http://www.stocknews.me>
-
+<http://www.stocknews.me>  
+  
+## 프로젝트 개발기  
+<https://taes-k.github.io/docs/project>  
+  
 ## Example
 
 <div>
