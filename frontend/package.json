@@ -29,7 +29,7 @@
     "webpack-cli": "^3.3.1"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "highcharts-drilldown": "^0.1.7",
     "react-highcharts": "^16.0.2",
     "react-redux": "^7.0.2",
